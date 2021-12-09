@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+    <%- partial('../partials/head.ejs'); %>
+    <body id="top">
+        <div class="bgded" style="background-image:url('images/leaf.jpeg');">
+            <div class="wrapper row1">
+                <header id="header" class="hoc clear">
+                    <div id="logo" class="fl_left">
+                        <img style="width: 150px; height: 95px; margin-top: -7px;" src="images/logo.png">
+                    </div>
+                    <nav id="mainav" class="fl_right">
+                        <ul class="clear">
+                            <li class="active"><a href="/">Почетна</a></li>
+                            <li class="active"><a href="/proizvodi">Производи</a></li>
+                            <li class="active"><a href="/contact">КОНТАКТ</a></li>
+                        </ul>
+                        <div class="smallDisplay" style="text-align: right;">
+                            <div class="dropdown">
+                                <button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
+                                <div id="myDropdown" class="dropdown-content dropdown-menu-right">
+                                    <a href="/">ПОЧЕТНА</a>
+                                    <a href="/proizvodi">ПРОИЗВОДИ</a>
+                                    <a href="/contact">КОНТАКТ</a>
+							</div>
+						</div>
+            		</nav>
+                </header>
+            </div>
+            <div class="overlay2">
+                <div id="pageintro2" class="hoc clear">
+                    <article>
+                        <p> Фирмата Макотехна дооел е формирана во Септември 1996 горина, како мала фирма со двајца вработени со деловен статус како активна фирма со 100% приватен домашен капитал. Големината на субјектоте од типот на мали претпријатија во организиран облик 05,4-доел и регистрирана дејност 20,41 - Производство на сапуни и детергенти, препрати за чистење и полирање, како и регистрирана дејност во надворешно - трговски промет. Директорот по образование е дипломиран инжинер технолог по био-прехрамбено инжинерство, како млад ентузијаст влезе во делот на примена применета хемија и тоа во дел на производство на средства за домашна хемија и производство на антифриз и автокозметика.
+                        МАКОТЕХНА во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper row5">
+            <div id="copyright" class="hoc clear">
+                <p class="fl_left" style="color: green">Copyright &copy; 2021 - All Rights Reserved - <a style="color: green" href="#">Макотехна</a></p>
+            </div>
+        </div>
+        <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
+    </body>
+    <!-- JAVASCRIPTS -->
+    <script src="layout/scripts/jquery.min.js"></script>
+    <script src="layout/scripts/jquery.backtotop.js"></script>
+    <script src="layout/scripts/mainScript.js"></script>
+  
+</html>

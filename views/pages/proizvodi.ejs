@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+    <%- partial('../partials/head.ejs'); %>
+    <body id="top">
+        
+
+        <div class="bgded" style="background-image:url('images/leaf.jpeg');">
+            <div class="wrapper row1">
+                <header id="header" class="hoc clear">
+                    <div id="logo" class="fl_left">
+                        <img style="width: 150px; height: 95px; margin-top: -7px;" src="images/logo.png">
+                    </div>
+                    <nav id="mainav" class="fl_right">
+                        <ul class="clear">
+                            <li class="active"><a href="/">Почетна</a></li>
+                            <li class="active"><a href="/contact">КОНТАКТ</a></li>
+                            <li class="active"><a href="/about">За Нас</a></li>
+                        </ul>
+                        <div class="smallDisplay" style="text-align: right;">
+							<div class="dropdown">
+								<button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
+								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
+									<a href="/">ПОЧЕТНА</a>
+									<a href="/about">ЗА НАС</a>
+									<a href="/contact">КОНТАКТ</a>
+								</div>
+							</div>
+						</div>
+            		</nav>
+                </header>
+            </div>
+            <div class="overlay">
+                <div id="pageintro" class="hoc clear">
+                    <div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+    </div>
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper row5">
+            <div id="copyright" class="hoc clear">
+                <p class="fl_left" style="color: green">Copyright &copy; 2021 - All Rights Reserved - <a style="color: green" href="#">Макотехна</a></p>
+            </div>
+        </div>
+        <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
+    </body>
+    <!-- JAVASCRIPTS -->
+    <script src="layout/scripts/jquery.min.js"></script>
+    <script src="layout/scripts/jquery.backtotop.js"></script>
+    <script src="layout/scripts/mainScript.js"></script>
+  
+</html>
