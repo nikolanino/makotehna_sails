@@ -19,8 +19,8 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  AuthController: {
-        '*': true,
-    },
+  IndexController: {
+      'dashboard': 'isAuthenticated',
+  },
 
 };

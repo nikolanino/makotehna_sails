@@ -14,13 +14,12 @@ module.exports = {
                     message: info.message,
                     user
                 });
+                return res.redirect('/login');
             }
             req.login(user, function(err) {
                 if (err) res.send(err);
-                return res.send({
-                    message: info.message,
-                    user
-                });
+                
+                return res.redirect('/admin/dashboard');
             });
         })(req, res);
     },

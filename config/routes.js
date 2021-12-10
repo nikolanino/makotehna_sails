@@ -29,7 +29,17 @@ module.exports.routes = {
   'GET /login': { view: 'pages/login' },
   'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
-  'GET /register': { view: 'pages/register' }
+  'GET /register': { view: 'pages/register' },
+
+  /////////////////////////////////////////
+
+  '/admin/dashboard': { view: 'pages/admin/dashboard', controller: 'index', action: 'dashboard' },
+
+  '/add/category': { controller: 'category', action: 'addCategory' },
+  '/destroy/category/:id': { controller: 'category', action: 'destroyCategory' },
+
+  '/add/product': { controller: 'product', action: 'addProduct' },
+  '/destroy/product/:id': { controller: 'product', action: 'destroyProduct' },
 
 
 };

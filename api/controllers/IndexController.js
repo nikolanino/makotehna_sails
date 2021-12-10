@@ -6,9 +6,20 @@
  */
 
 module.exports = {
-  index: function (req, res) {
-      
-  }
+
+    dashboard: function (req, res) {
+        User.find().exec(function(err, users){
+            if(err) return console.log(err);
+            Product.find().exec(function(err, products){
+                if(err) return console.log(err);
+                Category.find().exec(function(err, categories){
+                    if(err) return console.log(err);
+
+                    return res.view({ users:users, categories:categories, products:products });
+                });
+            });
+        });
+    },
 
 };
 
