@@ -24,7 +24,12 @@ module.exports.routes = {
   '/proizvodi': {view: 'pages/proizvodi'},
   '/contact': {view: 'pages/contact'},
 
+  /////////////////////////////////////////
 
+  'GET /login': { view: 'pages/login' },
+  'POST /login': 'AuthController.login',
+  '/logout': 'AuthController.logout',
+  'GET /register': { view: 'pages/register' }
 
 
 };

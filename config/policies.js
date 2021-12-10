@@ -8,6 +8,8 @@
  * https://sailsjs.com/docs/concepts/policies
  */
 
+ var passport = require('passport');
+
 module.exports.policies = {
 
   /***************************************************************************
@@ -17,6 +19,8 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  AuthController: {
+        '*': true,
+    },
 
 };

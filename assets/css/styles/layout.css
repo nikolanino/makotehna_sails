@@ -26,7 +26,7 @@ File: Layout CSS
 --------------------------------------------------------------------------------------------------------------- */
 #topbar{padding:20px 0; font-size:.8rem; text-transform:uppercase;}
 
-#topbar ul li{display:inline-block; margin-right:15px;}
+#topbar ul li{display:inline-block; margin-right:15px; }
 #topbar ul li:last-child{margin-right:0; padding-right:0; border-right:none;}
 #topbar i{line-height:normal;}
 #topbar > div:nth-of-type(2) i{font-size:1rem;}
@@ -199,6 +199,9 @@ File: Layout CSS
 #footer .latestimg > li img{width:100%;}/* Force the image to resize to take the full space - may have to be changed for tablets, depends on personal preference */
 #footer .latestimg > li a.imgover{display:block;}
 
+.socialMedia a { margin: 0px 5px!important; }
+.socialMedia a i { color: green; font-size: 20px; vertical-align: middle; }
+
 
 /* Copyright
 --------------------------------------------------------------------------------------------------------------- */
@@ -237,7 +240,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav li{display:inline-block; position:relative; margin:0 15px 0 0; padding:0;}
 #mainav li:last-child{margin-right:0;}
 #mainav li li{width:100%; margin:0;}
-#mainav li a{display:block; padding:45px 0;}
+#mainav li a{display:block; padding:45px 0; text-decoration: none;}
 #mainav li li a{border:solid; border-width:0 0 1px 0;}
 #mainav .drop{padding-left:15px;}
 #mainav li li a, #mainav li li .drop{display:block; margin:0; padding:10px 15px;}
@@ -465,6 +468,25 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .dropdown a:hover {background-color: #ddd;}
 .show {display: block; position: fixed; margin-left: -88px;}
 
+.contactInfo { background: white; border-radius: 10px; margin: 5px; padding: 10px; color: green; }
+.contactInfo h1 { text-align: center; margin-bottom: 15px; font-weight: 700; font-family: system-ui; }
+.contactInfo ul { list-style: none; display: contents; margin: 0; text-align: center; }
+.contactInfo ul li { margin: 0px 10px; }
+.contactInfo ul li i { margin-right: 10px;vertical-align: middle;font-size: 25px; }
+
+.itemsCategory { background: white; border-radius: 10px; margin: 5px; padding: 10px; color: green; }
+.itemsCategory h1 { text-align: center; margin-bottom: 15px; font-weight: 700; font-family: system-ui; font-size: 18px; }
+.itemsCategory ul { list-style: none; display: contents; margin: 0; text-align: left; }
+.itemsCategory ul li { margin: 0px 10px; }
+.itemsCategory ul li i { margin-right: 10px;vertical-align: middle;font-size: 25px; }
+.itemsCategory a { color: green; text-decoration: none; text-transform: uppercase; }
+.itemsCategory a:hover { color: green; font-weight: 600; }
+
+.modal { display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4); }
+.modal-content {background-color: #fefefe; margin: auto;padding: 20px;border: 1px solid #888;width: 80%; }
+.close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; }
+.close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
+
 
 /* Tables + Comments */
 table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}
@@ -522,10 +544,10 @@ table a, #comments a{background-color:inherit;}
 	#copyright{}
 	#copyright p:first-of-type{margin-bottom:10px;}
 
-	#pageintro { padding: 220px 0!important; }
-	#pageintro2 { padding: 180px 0!important; }
+	#pageintro { padding: 220px 0!important; } 
+	#pageintro2 { padding: 20px 0!important; } /* 180px 0 */
 	.overlay{ height: 650px!important; }
-	.overlay2{ height: 645px!important; }
+	.overlay2{ height: auto!important; } /* 220px 0 */
 	.smallDisplay{ display: block!important; }
 }
 
@@ -563,7 +585,7 @@ table a, #comments a{background-color:inherit;}
 	#pageintro { padding: 256px 0!important; }
 	#pageintro2 { padding: 50px 0!important; }
 	.overlay{ height: 595px!important; }
-	.overlay2{ height: auto!important; }
+	.overlay2{ height: auto!important; min-height: 725px!important; }
 	#header { padding: 0!important; padding-top: 30px!important;}
 }
 

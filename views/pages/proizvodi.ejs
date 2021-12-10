@@ -29,35 +29,53 @@
             		</nav>
                 </header>
             </div>
-            <div class="overlay">
-                <div id="pageintro" class="hoc clear">
+            <div class="overlay2" style="height: auto; min-height: 750px;">
+                <div id="pageintro2" class="hoc clear" style="padding: 15px 0;">
                     <div class="row">
-  <div class="col-4">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-    </div>
-  </div>
-  <div class="col-8">
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
-    </div>
-  </div>
-</div>
+                        <div class="col-12 col-md-3">
+                            <div class="itemsCategory">
+                                <h1>КАТЕГОРИИ</h1>
+                                <ul>
+                                    <a href="#"><li>Категорија 1</li></a>
+                                    <hr>
+                                    <a href="#"><li>Категорија 2</li></a>
+                                    <hr>
+                                    <a href="#"><li>Категорија 1</li></a>
+                                    <hr>
+                                    <a href="#"><li>Категорија 2</li></a>
+                                    <hr>
+                                    <a href="#"><li>Категорија 1</li></a>
+                                    <hr>
+                                    <a href="#"><li>Категорија 2</li></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="itemsCategory">
+                                        <img src="https://minako.com.mk/wp-content/uploads/2020/04/07928000_d01_h.jpg">
+                                        <hr>
+                                        <h1 style="font-size: 15px;">Диспензер зa бришачи</h1>
+                                    </div>
+
+                                    <div id="itemModal" class="modal">
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="wrapper row5">
-            <div id="copyright" class="hoc clear">
-                <p class="fl_left" style="color: green">Copyright &copy; 2021 - All Rights Reserved - <a style="color: green" href="#">Макотехна</a></p>
-            </div>
-        </div>
+        <%- partial('../partials/footer.ejs'); %>
         <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
     </body>
     <!-- JAVASCRIPTS -->
