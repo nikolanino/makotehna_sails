@@ -34,6 +34,7 @@ module.exports.routes = {
   /////////////////////////////////////////
 
   '/admin/dashboard': { view: 'pages/admin/dashboard', controller: 'index', action: 'dashboard' },
+  '/proizvodi': {view: 'pages/proizvodi', controller: 'category', action: 'index'},
 
   '/add/category': { controller: 'category', action: 'addCategory' },
   '/destroy/category/:id': { controller: 'category', action: 'destroyCategory' },

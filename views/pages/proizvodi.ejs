@@ -35,19 +35,11 @@
                         <div class="col-12 col-md-3">
                             <div class="itemsCategory">
                                 <h1>КАТЕГОРИИ</h1>
+                                <% categories.forEach(function(category){ %>
                                 <ul>
-                                    <a href="#"><li>Категорија 1</li></a>
+                                    <a href="#"><li><%= category.categoryName %></li></a>
                                     <hr>
-                                    <a href="#"><li>Категорија 2</li></a>
-                                    <hr>
-                                    <a href="#"><li>Категорија 1</li></a>
-                                    <hr>
-                                    <a href="#"><li>Категорија 2</li></a>
-                                    <hr>
-                                    <a href="#"><li>Категорија 1</li></a>
-                                    <hr>
-                                    <a href="#"><li>Категорија 2</li></a>
-                                </ul>
+                                <% }) %>
                             </div>
                         </div>
                         <div class="col-12 col-md-9">
