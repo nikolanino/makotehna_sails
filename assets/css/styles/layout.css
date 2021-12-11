@@ -466,7 +466,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 }
 
 .dropdown a:hover {background-color: #ddd;}
-.show {display: block; position: fixed; margin-left: -88px;}
+.show {display: block; position: fixed; margin-left: -60px;}
 
 .contactInfo { background: white; border-radius: 10px; margin: 5px; padding: 10px; color: green; }
 .contactInfo h1 { text-align: center; margin-bottom: 15px; font-weight: 700; font-family: system-ui; }
@@ -481,10 +481,12 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .itemsCategory ul li i { margin-right: 10px;vertical-align: middle;font-size: 25px; }
 .itemsCategory a { color: green; text-decoration: none; text-transform: uppercase; }
 .itemsCategory a:hover { color: green; font-weight: 600; }
+.itemsCategory img { height: 250px; width: 100%; }
 
 .modal { display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4); }
-.modal-content {background-color: #fefefe; margin: auto;padding: 20px;border: 1px solid #888;width: 80%; }
-.close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; }
+.modal-content {background-color: #fefefe; margin: auto;padding: 20px;border: 1px solid #888;width: 50%!important; color: black; }
+.modal-content h1 { text-align: center; margin-bottom: 15px; font-weight: 700; font-family: system-ui; font-size: 18px; color: green; }
+.close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; text-align: right; }
 .close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
 
 
@@ -587,6 +589,7 @@ table a, #comments a{background-color:inherit;}
 	.overlay{ height: 595px!important; }
 	.overlay2{ height: auto!important; min-height: 725px!important; }
 	#header { padding: 0!important; padding-top: 30px!important;}
+	.modal-content { width: 90%!important; }
 }
 
 
