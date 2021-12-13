@@ -42,20 +42,17 @@ module.exports = {
         });
     },
 
-    destroyProduct: function(req, res) {
-
-        Product.findOne(req.param('id'), function productFounded(err, product){
+    destroy: function(req, res, next) {
+        Product.findOne(req.param('id'), function bookFounded(err, product){
             var path = 'assets/images/products/';
             fs.unlink(path + product.productImageID, function (err) {
                 if (err) throw err;
             });
-
             Product.destroy(req.param('id')) .exec(function(err, result) {
                 if(err) return (err);
                 res.redirect('/admin/dashboard');
             });
         });
     },
-
 };
 

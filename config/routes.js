@@ -39,7 +39,7 @@ module.exports.routes = {
   '/destroy/category/:id': { controller: 'category', action: 'destroyCategory' },
 
   '/add/product': { controller: 'product', action: 'addProduct' },
-  '/destroy/product/:id': { controller: 'product', action: 'destroyProduct' },
+  '/destroy/product/:id': { controller: 'product', action: 'destroy' },
 
 
 };
