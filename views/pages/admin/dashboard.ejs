@@ -105,6 +105,23 @@
                                 <button type="submit" name="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ДОДАДИ ПРОИЗВОД</button>
                             </form>
                         </div>
+                        
+                        <div class="formBox" style="margin-top: 10px; display: none;">
+                            <form action="/edit/product" enctype="multipart/form-data" method="POST" onsubmit="required()">
+                                <input type="text" name="productName" placeholder="Име на производ">
+                                <input type="text" name="productCode" placeholder="Шифра">
+                                <select type="text" name="productCategory">
+                                    <option value="">- Одбери категорија</option>
+                                    <% categories.forEach(function(category){ %>
+                                    <option value="<%= category.categoryName %>"><%= category.categoryName %></option>
+                                    <% }) %>
+                                </select>
+                                <textarea type="text" name="productDescription" placeholder="Опис на производ" style="min-height: 80px; height: 80px; max-height: 150px;"></textarea>
+                                <input type="file" name="productImage_Name" id="productImageID">
+                                <br>
+                                <button type="submit" name="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ДОДАДИ ПРОИЗВОД</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div style="overflow-x: auto;">
@@ -122,6 +139,7 @@
                                     <td><%= product.productCategory %></td>
                                     <td>
                                         <a href="/product/destroy/<%= product.id %>"><button type="button" class="btn btn-danger" style="font-size: 14px;">ИЗБРИШИ</button></a>
+                                        <!-- <a onclick="edit('<%= product.id %>', '<%= product.productName %>', '<%= product.productCode %>', '<%= product.productCategory  %>', '<%= product.productDeskription %>', '<%= product.productImageID %>';)"><button type="button" class="btn btn-danger" style="font-size: 14px; text-align: center;">Едитирај</button></a> -->
                                     </td>
                                 </tr>
                                 <% }) %>

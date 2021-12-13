@@ -33,4 +33,10 @@ function hideShow(type) {
 		document.getElementById("categoriesButton").classList.remove("active");
 		document.getElementById("productsButton").classList.remove("active");
 	}
+	
+}
+
+/////////////////////////////
+function edit(id, productName, productCode, productCategory, productDeskription,  productImageID){
+	alert("radi");
 }
