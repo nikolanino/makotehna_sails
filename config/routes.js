@@ -41,6 +41,7 @@ module.exports.routes = {
   '/add/product': { controller: 'product', action: 'addProduct' },
   '/edit/product': { controller: 'product', action: 'editProduct' },
   '/destroy/product/:id': { controller: 'product', action: 'destroy' },
+  '/contact/sendmail': { controller: 'index', action: 'sendMail'},
 
 
 };

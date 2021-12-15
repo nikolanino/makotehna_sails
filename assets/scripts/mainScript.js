@@ -8,11 +8,40 @@ function openDropDown() {
 
 function sendMail()
 {
-    var fullName = $("#inputFullName").val();
+    var email = $("#emailInput").val();
+    var subject = $("#subjectInput").val();
     var message = $("#messageInput").val();
-    var subject = $("#subjectOfMail").val();
-    document.location.href = "mailto:test@yahoo.com?subject="+ encodeURIComponent(subject)+ "&body=" + encodeURIComponent(message) + encodeURIComponent(fullName);
-
+    if(email == "" || subject == "" || message == ""){
+        $('#modalText').html('<strong>ups</strong> asdasdasdasdas е успешно пратена.');
+        $('#errorModal').css('background', 'red');
+            $('#errorModal').show('slow');
+            setTimeout(function () {
+                $('#errorModal').hide('slow'); 
+            }, 3000);
+            return false;
+    }else{
+        $.ajax({
+            url: '/contact/sendmail', 
+            type : "POST", 
+            dataType : 'json', 
+            data : {
+                emailFrom: $('#emailInput').val(),
+                subject: $('#subjectInput').val(),
+                message: $('#messageInput').val()
+            }
+        }).done(function(data){   
+            $('#modalText').html('<strong>Fala</strong> Пораката е успешно пратена.');  
+            $('#errorModal').css('background', 'green');  
+            $('#errorModal').show('slow');
+            setTimeout(function () {
+                $('#errorModal').hide('slow'); 
+            }, 3000);
+            $("#emailInput").val(' ');
+            $("#subjectInput").val(' ');
+            $("#messageInput").val(' ');
+        })
+        
+    }
     return false;
 }
 
