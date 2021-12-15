@@ -12,7 +12,7 @@ function sendMail()
     var subject = $("#subjectInput").val();
     var message = $("#messageInput").val();
     if(email == "" || subject == "" || message == ""){
-        $('#modalText').html('<strong>ups</strong> asdasdasdasdas е успешно пратена.');
+        $('#modalText').html('<strong>Упс.</strong> Сите полиња во формата не се пополнети.');
         $('#errorModal').css('background', 'red');
             $('#errorModal').show('slow');
             setTimeout(function () {
@@ -30,7 +30,7 @@ function sendMail()
                 message: $('#messageInput').val()
             }
         }).done(function(data){   
-            $('#modalText').html('<strong>Fala</strong> Пораката е успешно пратена.');  
+            $('#modalText').html('<strong>Ви Благодариме.</strong> Пораката е успешно пратена.');  
             $('#errorModal').css('background', 'green');  
             $('#errorModal').show('slow');
             setTimeout(function () {
