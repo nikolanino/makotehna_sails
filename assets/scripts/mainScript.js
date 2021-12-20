@@ -63,3 +63,6 @@ function openModal(productID) {
 function closeModal(productID) {
     $("#productModal"+productID).hide();
 }
+function openDropDown() {
+	document.getElementById("myDropdown").classList.toggle("show");
+}
