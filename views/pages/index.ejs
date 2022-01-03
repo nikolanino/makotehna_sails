@@ -2,11 +2,11 @@
 <html lang="">
     <%- partial('../partials/head.ejs'); %>
     <body id="top">
-        <div class="bgded" style="background-image:url('images/leaf.jpeg');">
+        <div id="bck-image" class="bgded" style="background-image:url('images/pozadina-slika.jpeg');">
             <div class="wrapper row1">
                 <header id="header" class="hoc clear">
                     <div id="logo" class="fl_left">
-                        <img style="width: 150px; height: 100px; margin-top: -7px;" src="images/logo.png">
+                        <img style="width: 150px; height: 110px; margin-top: -7px;" src="images/logo.png">
                     </div>
                     <nav id="mainav" class="fl_right">
                         <ul class="clear">
@@ -45,5 +45,19 @@
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/jquery.backtotop.js"></script>
     <script src="scripts/mainScript.js"></script>
+    <script>
+    
+    setTimeout(alertFunc, 3000);
+    var niza=[
+       'url("images/pozadina-slika.jpeg")',
+       'url("images/pozadina-slika1.jpeg")',
+       'url("images/pozadina-slika2.jpeg")'
+    ]; 
+    function alertFunc() {
+      $('#bck-image').css('background-image', niza[Math.floor(Math.random()*niza.length)]);
+      setTimeout(alertFunc, 5000);
+    } 
+    
+    </script>
     
 </html>

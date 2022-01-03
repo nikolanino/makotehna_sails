@@ -54,19 +54,27 @@
                                             <%  products.forEach(function(product){ 
                                             if(category.categoryName == product.productCategory){ %>
                                                 <div class="col-12 col-md-4">
-                                                    <div class="itemsCategory">
+                                                    <div class="itemsCategory"onclick="openModal('<%= product.id %>');" style="cursor: pointer;">
                                                         <img src="../images/products/<%= product.productImageID %>">
                                                         <hr>
                                                         <a onclick="openModal('<%= product.id %>');" style="cursor: pointer;"><h1 style="font-size: 15px;"><%= product.productName %></h1></a>
                                                     </div>
-
+                                                    
                                                     <div id="productModal<%= product.id %>" class="modal">
                                                         <div class="modal-content">
                                                             <span class="close" onclick="closeModal('<%= product.id %>');">&times;</span>
                                                             <hr>
-                                                            <img src="../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
-                                                            <h1 style="font-size: 15px;"><%= product.productName %></h1>
-                                                            <p><%= product.productDescription %></p>
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-6">
+                                                                <img src="../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
+                                                                </div>
+                                                                <div class="col-12 col-md-6">
+                                                                <h1 style="font-size: 20px;"><%= product.productName %></h1>
+                                                                <hr>
+                                                                <h1 style="font-size: 15px; text-align: left;">Опис</h1>
+                                                                <p style="white-space: break-spaces;"><%= product.productDescription %></p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div> 
