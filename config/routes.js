@@ -39,8 +39,10 @@ module.exports.routes = {
   '/destroy/category/:id': { controller: 'category', action: 'destroyCategory' },
 
   '/add/product': { controller: 'product', action: 'addProduct' },
-  '/edit/product': { controller: 'product', action: 'editProduct' },
+  '/get/infoProduct/:id': { controller: 'product', action: 'getProduct' },
   '/destroy/product/:id': { controller: 'product', action: 'destroy' },
+  '/update/product/:id': { controller: 'product', action: 'update' },
+  
   '/contact/sendmail': { controller: 'index', action: 'sendMail'},
 
 

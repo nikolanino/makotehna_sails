@@ -37,6 +37,19 @@ function hideShow(type) {
 }
 
 /////////////////////////////
-function edit(id, productName, productCode, productCategory, productDeskription,  productImageID){
-	alert("radi");
+function openEditForm(id) {
+	$.ajax({
+
+		url: '/get/infoProduct/'+id,
+		type : "POST",
+		dataType : 'json',
+		data: { },
+
+	}).done(function(data) {  
+		console.log(data.product)
+	})
 }
+
+// function edit(id, productName, productCode, productCategory, productDeskription,  productImageID){
+	
+// }
