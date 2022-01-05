@@ -43,12 +43,20 @@ function openEditForm(id) {
 		url: '/get/infoProduct/'+id,
 		type : "POST",
 		dataType : 'json',
-		data: { },
+		data: { id: id },
 
 	}).done(function(data) {  
-		console.log(data.product)
-	})
+		console.log(data.data)
+		$('#editForm').attr('id', 'editForm' + id);
+		$('#editForm' + id).show();
+		$('#productName').val(data.data.productName);
+		$('#productCode').val(data.data.productCode);
+		$('#productCategory').val(data.data.productCategory);
+		$('#productDescription').val(data.data.productDescription);
+		
+	});
 }
+
 
 // function edit(id, productName, productCode, productCategory, productDeskription,  productImageID){
 	

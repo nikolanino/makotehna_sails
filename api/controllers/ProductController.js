@@ -6,7 +6,6 @@
  */
 
 var fs = require('fs');
-const Product = require('../models/Product');
 
 module.exports = {
   
@@ -43,26 +42,13 @@ module.exports = {
         });
     },
 
-    
-
     getProduct: function(req, res) {
         Product.findOne(req.param('id'), function productFound(err, product){
-            if(err) { console.log(err); }
-            else{
+            if(err) { 
+                console.log(err); 
+            }else{
                 res.status(200).json({ status: 'OK', data: { productName: product.productName, productCode: product.productCode, productDescription: product.productDescription, productCategory: product.productCategory, productImageID: product.productImageID  }});
             }
-        });
-    },
-
-   
-
-    update: function(req, res, next){
-        Product.update(req.param('id'), req.allParams(), function productUpdated(err){
-            if(err) {
-                // return res.redirect('/');
-            }
-            
-            // res.redirect('/holiday/index');
         });
     },
 
