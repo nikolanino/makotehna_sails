@@ -66,3 +66,20 @@ function closeModal(productID) {
 function openDropDown() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }
+
+//Index image background dynamic change
+setTimeout(alertFunc, 3000);
+    var niza=[
+       'url("images/pozadina-slika.jpeg")',
+       'url("images/pozadina-slika1.jpeg")',
+       'url("images/pozadina-slika2.jpeg")'
+    ]; 
+    var i = 0;
+    function alertFunc() {
+        i++;
+        if(i == 3){
+        i=0;
+        }
+      $('#bck-image').css('background-image', niza[i]);
+      setTimeout(alertFunc, 3000);
+    } 
