@@ -3,6 +3,11 @@ document.getElementById("dashboardButton").onclick = function() { hideShow("dash
 document.getElementById("categoriesButton").onclick = function() { hideShow("categories"); };
 document.getElementById("productsButton").onclick = function() { hideShow("products"); };
 
+function required()
+{
+	$('#overlay').show();
+}
+
 /////////////////////////////
 
 function hideShow(type) {
@@ -38,6 +43,7 @@ function hideShow(type) {
 
 /////////////////////////////
 function openEditForm(id) {
+	var idProduct = '"'+id+'"';
 	$.ajax({
 
 		url: '/get/infoProduct/'+id,
@@ -46,8 +52,9 @@ function openEditForm(id) {
 		data: { id: id },
 
 	}).done(function(data) {  
-		console.log(data.data)
+		// console.log(data.data)
 		$('#editForm').attr('id', 'editForm' + id);
+		$('#formTag').attr('onsubmit', 'editProduct('+idProduct+'); return false;');
 		$('#editForm' + id).show();
 		$('#productName').val(data.data.productName);
 		$('#productCode').val(data.data.productCode);
@@ -56,6 +63,47 @@ function openEditForm(id) {
 		
 	});
 }
+
+function editProduct(id)
+{
+	var imageIDProduct;
+	if($('#productImageIDEdit').val() != ""){
+		imageIDProduct = $('#productImageIDEdit')[0].files[0];
+
+		// imageIDProduct = $('#productImageIDEdit').prop('files');
+		console.log("NOVA: ",imageIDProduct);
+	}else{
+		imageIDProduct = "current";
+		// imageIDProduct = $('#tableImageID').val();
+		// console.log("SEGASHNA: ",imageIDProduct);
+	}
+	$.ajax({
+
+		url: '/update/product/'+id,
+		type : "POST",
+		dataType : 'json',
+		data: { 
+			productName: $('#productName').val(),
+			productCode: $('#productCode').val(),
+			productCategory: $('#productCategory').val(),
+			productDescription: $('#productDescription').val(),
+			productImageID: imageIDProduct,
+		},
+
+	}).done(function(data) {  
+		// console.log(data.data)
+		$('#editForm' + id).hide();
+		$('#editForm' + id).attr('id', 'editForm');
+		$('#formTag').attr('onsubmit', 'editProduct()');
+
+		$('#tablePN' + id).text($('#productName').val());
+		$('#tablePCategory' + id).text($('#productCategory').val());
+		
+	});
+
+	return false;
+}
+
 
 
 // function edit(id, productName, productCode, productCategory, productDeskription,  productImageID){
