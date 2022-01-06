@@ -68,7 +68,7 @@ function editProduct(id)
 {
 	var imageIDProduct;
 	if($('#productImageIDEdit').val() != ""){
-		imageIDProduct = $('#productImageIDEdit')[0].files[0];
+		imageIDProduct = $('#editForm'+id)[0].files;
 
 		// imageIDProduct = $('#productImageIDEdit').prop('files');
 		console.log("NOVA: ",imageIDProduct);
@@ -77,6 +77,7 @@ function editProduct(id)
 		// imageIDProduct = $('#tableImageID').val();
 		// console.log("SEGASHNA: ",imageIDProduct);
 	}
+
 	$.ajax({
 
 		url: '/update/product/'+id,
