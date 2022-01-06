@@ -66,17 +66,15 @@ function openEditForm(id) {
 
 function editProduct(id)
 {
-	var imageIDProduct;
-	if($('#productImageIDEdit').val() != ""){
-		imageIDProduct = $('#editForm'+id)[0].files;
+	// var imageIDProduct;
+	// if($('#productImageIDEdit').val() != ""){
 
-		// imageIDProduct = $('#productImageIDEdit').prop('files');
-		console.log("NOVA: ",imageIDProduct);
-	}else{
-		imageIDProduct = "current";
-		// imageIDProduct = $('#tableImageID').val();
-		// console.log("SEGASHNA: ",imageIDProduct);
-	}
+	// 	// imageIDProduct = $('input[name="updateproductImage_Name"]')[0].files[0].name;
+	// 	imageIDProduct = $('input[name="updateproductImage_Name"]').prop('files')[0];
+	// 	console.log("NOVA: ",imageIDProduct);
+	// }else{
+	// 	imageIDProduct = "current";
+	// }
 
 	$.ajax({
 
@@ -88,7 +86,7 @@ function editProduct(id)
 			productCode: $('#productCode').val(),
 			productCategory: $('#productCategory').val(),
 			productDescription: $('#productDescription').val(),
-			productImageID: imageIDProduct,
+			productImageID: "current",
 		},
 
 	}).done(function(data) {  
@@ -107,6 +105,21 @@ function editProduct(id)
 
 
 
-// function edit(id, productName, productCode, productCategory, productDeskription,  productImageID){
+function destroyProduct(id){
 	
-// }
+	$.ajax({
+
+		url: '/destroy/product/'+id,
+		type : "POST",
+		dataType : 'json',
+		data: { },
+
+	}).done(function(data) {  
+		// console.log(data.data)
+		$('#productRow' + id).hide();
+		
+	});
+
+	return false;
+
+}

@@ -12,7 +12,7 @@ module.exports = {
     addProduct: function(req, res, next) {
 
         var params = req.allParams();
-
+        // console.log("params: ",params);
         req.file('productImage_Name').upload({
             dirname: '../../assets/images/products',
             maxBytes: 10000000
@@ -55,11 +55,12 @@ module.exports = {
     updateProduct: function(req, res, next) {
 
         var params = req.allParams();
+        // console.log("params: ",params);
 
         Product.findOne(req.param('id'), function foundProduct(err, fProduct){
 
             if(req.body.productImageID != 'current'){
-                console.log("Vlegov vo funkcija 2");
+                // console.log("Vlegov vo funkcija 2");
                 req.file(req.body.productImageID).upload({
                     dirname: '../../assets/images/products',
                     maxBytes: 10000000
@@ -77,6 +78,7 @@ module.exports = {
                     var fileName = uploadedFile[0].filename;
                     var fileUID = uploadedFile[0].fd.replace(/^.*[\\\/]/, '');
         
+                    console.log("uploadedFile: ", uploadedFile);
                     // params.productImageName = fileName;
                     // params.productImageID = fileUID;
         
@@ -88,7 +90,7 @@ module.exports = {
                     });
                 });
             }else{
-                console.log("Vlegov vo funkcija 3");
+                // console.log("Vlegov vo funkcija 3");
                 Product.update(req.param('id'), { productName: req.body.productName, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription }, function productUpdated(err, product){
                     if(err) return next(err);
 
@@ -107,7 +109,9 @@ module.exports = {
             });
             Product.destroy(req.param('id')) .exec(function(err, result) {
                 if(err) return (err);
-                res.redirect('/admin/dashboard');
+
+                res.status(200).json({info: "OK"});
+                // res.redirect('/admin/dashboard');
             });
         });
     },
