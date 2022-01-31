@@ -15,7 +15,7 @@ module.exports = {
 
         req.file('productImage_Name').upload({
             dirname: '../../assets/images/products',
-            maxBytes: 10000000
+            maxBytes: 50000000
         },function (err, uploadedFile) {
             if (err) {
                 return res.serverError("Error"); 
