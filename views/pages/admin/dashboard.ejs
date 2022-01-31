@@ -110,7 +110,8 @@
                         </div>
                         
                         <div id="editForm" class="formBox" style="margin-top: 10px; display: none;">
-                            <form enctype="multipart/form-data" method="POST" onsubmit="required()">
+                            <h1 style="font-size: 25px; font-weight: 600; padding: 10px;">ИЗМЕНИ ПРОИЗВОД</h1>
+                            <form id="formTag" enctype="multipart/form-data" method="POST" onsubmit="editProduct()">
                                 <input id="productName" type="text" name="productName" placeholder="Име на производ">
                                 <input id="productCode" type="text" name="productCode" placeholder="Шифра">
                                 <select id="productCategory" type="text" name="productCategory">
@@ -120,9 +121,9 @@
                                     <% }) %>
                                 </select>
                                 <textarea id="productDescription" type="text" name="productDescription" placeholder="Опис на производ" style="min-height: 80px; height: 80px; max-height: 150px; text-align: left; float: left;"></textarea>
-                                <input type="file" name="productImage_Name" id="productImageID">
+                                <!-- <input type="file" name="updateproductImage_Name" id="productImageIDEdit"> -->
                                 <br>
-                                <button type="submit" name="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ДОДАДИ ПРОИЗВОД</button>
+                                <button type="submit" name="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ИЗМЕНИ ПРОИЗВОД</button>
                             </form>
                         </div>
                     </div>
@@ -136,17 +137,18 @@
                                     <th style="width: 90px;">#</th>
                                 </tr>
                                 <% products.forEach(function(product){ %>
-                                <tr>
+                                <tr id="productRow<%= product.id %>">
+                                    <input type="hidden" id="tableImageID<%= product.id %>" value="<%= product.productImageID %>">
                                     <td><img src="../../images/products/<%= product.productImageID %>" style="width: 50px;" ></td>
-                                    <td><%= product.productName %></td>
-                                    <td><%= product.productCategory %></td>
+                                    <td id="tablePN<%= product.id %>"><%= product.productName %></td>
+                                    <td id="tablePCategory<%= product.id %>"><%= product.productCategory %></td>
                                     <td class='select' style="text-align: center;">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i style="font-size:24px; color: white;" class="fa">&#xf013;</i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right" style="background: grey; padding: 5px;">
-                                                <a href="/product/destroy/<%= product.id %>"><button type="button" class="btn btn-danger dropBtn" style="font-size: 14px;">ИЗБРИШИ</button></a>
+                                                <a onclick="destroyProduct('<%= product.id %>');"><button type="button" class="btn btn-danger dropBtn" style="font-size: 14px;">ИЗБРИШИ</button></a>
                                                 <a onclick="openEditForm('<%= product.id %>');"><button type="button" class="btn btn-danger dropBtn" style="font-size: 14px;">ИЗМЕНИ</button></a>
                                             </div>
                                           </div>
@@ -163,11 +165,4 @@
 
     <script src="../../scripts/jquery.min.js"></script>
     <script src="../../scripts/adminScript.js"></script>
-    <script type="text/javascript">
-    function required()
-    {
-        $('#overlay').show();
-    }
-      
-    </script>
 </html>

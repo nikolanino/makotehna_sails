@@ -3,6 +3,11 @@ document.getElementById("dashboardButton").onclick = function() { hideShow("dash
 document.getElementById("categoriesButton").onclick = function() { hideShow("categories"); };
 document.getElementById("productsButton").onclick = function() { hideShow("products"); };
 
+function required()
+{
+	$('#overlay').show();
+}
+
 /////////////////////////////
 
 function hideShow(type) {
@@ -38,6 +43,7 @@ function hideShow(type) {
 
 /////////////////////////////
 function openEditForm(id) {
+	var idProduct = '"'+id+'"';
 	$.ajax({
 
 		url: '/get/infoProduct/'+id,
@@ -46,8 +52,9 @@ function openEditForm(id) {
 		data: { id: id },
 
 	}).done(function(data) {  
-		console.log(data.data)
+		// console.log(data.data)
 		$('#editForm').attr('id', 'editForm' + id);
+		$('#formTag').attr('onsubmit', 'editProduct('+idProduct+'); return false;');
 		$('#editForm' + id).show();
 		$('#productName').val(data.data.productName);
 		$('#productCode').val(data.data.productCode);
@@ -57,7 +64,62 @@ function openEditForm(id) {
 	});
 }
 
+function editProduct(id)
+{
+	// var imageIDProduct;
+	// if($('#productImageIDEdit').val() != ""){
 
-// function edit(id, productName, productCode, productCategory, productDeskription,  productImageID){
+	// 	// imageIDProduct = $('input[name="updateproductImage_Name"]')[0].files[0].name;
+	// 	imageIDProduct = $('input[name="updateproductImage_Name"]').prop('files')[0];
+	// 	console.log("NOVA: ",imageIDProduct);
+	// }else{
+	// 	imageIDProduct = "current";
+	// }
+
+	$.ajax({
+
+		url: '/update/product/'+id,
+		type : "POST",
+		dataType : 'json',
+		data: { 
+			productName: $('#productName').val(),
+			productCode: $('#productCode').val(),
+			productCategory: $('#productCategory').val(),
+			productDescription: $('#productDescription').val(),
+			productImageID: "current",
+		},
+
+	}).done(function(data) {  
+		// console.log(data.data)
+		$('#editForm' + id).hide();
+		$('#editForm' + id).attr('id', 'editForm');
+		$('#formTag').attr('onsubmit', 'editProduct()');
+
+		$('#tablePN' + id).text($('#productName').val());
+		$('#tablePCategory' + id).text($('#productCategory').val());
+		
+	});
+
+	return false;
+}
+
+
+
+function destroyProduct(id){
 	
-// }
+	$.ajax({
+
+		url: '/destroy/product/'+id,
+		type : "POST",
+		dataType : 'json',
+		data: { },
+
+	}).done(function(data) {  
+		// console.log(data.data)
+		$('#productRow' + id).hide();
+		
+	});
+
+	return false;
+
+}

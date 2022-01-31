@@ -12,7 +12,7 @@ module.exports = {
     addProduct: function(req, res, next) {
 
         var params = req.allParams();
-
+        // console.log("params: ",params);
         req.file('productImage_Name').upload({
             dirname: '../../assets/images/products',
             maxBytes: 50000000
@@ -52,6 +52,55 @@ module.exports = {
         });
     },
 
+    updateProduct: function(req, res, next) {
+
+        var params = req.allParams();
+        // console.log("params: ",params);
+
+        Product.findOne(req.param('id'), function foundProduct(err, fProduct){
+
+            if(req.body.productImageID != 'current'){
+                // console.log("Vlegov vo funkcija 2");
+                req.file(req.body.productImageID).upload({
+                    dirname: '../../assets/images/products',
+                    maxBytes: 10000000
+                },function (err, uploadedFile) {
+                    if (err) {
+                        return res.serverError("Error"); 
+                    }
+                    // console.log(uploadedFile);
+        
+                    if (uploadedFile.length === 0){
+                        console.log('No image attached');
+                        return res.redirect('/admin/dashboard');
+                    }
+        
+                    var fileName = uploadedFile[0].filename;
+                    var fileUID = uploadedFile[0].fd.replace(/^.*[\\\/]/, '');
+        
+                    console.log("uploadedFile: ", uploadedFile);
+                    // params.productImageName = fileName;
+                    // params.productImageID = fileUID;
+        
+                    Product.update(req.param('id'), { productName: req.body.productName, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription, productImageName: fileName, productImageID: fileUID }, function productUpdated(err, product){
+                        if(err) return next(err);
+                        setTimeout(function() {
+                            res.status(200).json({ data: { info: "OK", productImageID: product.productImageID } });
+                        }, 3000)
+                    });
+                });
+            }else{
+                // console.log("Vlegov vo funkcija 3");
+                Product.update(req.param('id'), { productName: req.body.productName, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription }, function productUpdated(err, product){
+                    if(err) return next(err);
+
+                    res.status(200).json({ data: { info: "OK" } });
+                });
+            }
+        });
+        
+    },
+
     destroy: function(req, res, next) {
         Product.findOne(req.param('id'), function bookFounded(err, product){
             var path = 'assets/images/products/';
@@ -60,7 +109,9 @@ module.exports = {
             });
             Product.destroy(req.param('id')) .exec(function(err, result) {
                 if(err) return (err);
-                res.redirect('/admin/dashboard');
+
+                res.status(200).json({info: "OK"});
+                // res.redirect('/admin/dashboard');
             });
         });
     },
