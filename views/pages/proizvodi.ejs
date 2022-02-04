@@ -34,56 +34,43 @@
             <div class="overlay2" style="height: auto; min-height: 750px;">
                 <div id="pageintro2" class="hoc clear" style="padding: 15px 0;">
                     <div class="row">
-                        <div class="col-12 col-md-3">
-                            <div class="itemsCategory">
-                                <h1>КАТЕГОРИИ</h1>
-                                <ul>
-                                <% categories.forEach(function(category){ %>
-                                    <a style="cursor: pointer;" onclick="showProducts('<%= category.id %>');"><li><%= category.categoryName %></li></a>
-                                    <hr>
-                                <% }); %>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <div class="row" id="productsCategory">
-                                <% categories.forEach(function(category){ %>
-                                
-                                    <div id="category<%= category.id %>" style="display: none;">
-                                        <div class="row">
-                                            <%  products.forEach(function(product){ 
-                                            if(category.categoryName == product.productCategory){ %>
-                                                <div class="col-12 col-md-4">
-                                                    <div class="itemsCategory"onclick="openModal('<%= product.id %>');" style="cursor: pointer;">
-                                                        <img src="../images/products/<%= product.productImageID %>">
+                        <div class="col-12 col-md-12">
+                            <% categories.forEach(function(category){ %>
+                            <button class="accordion" onclick="showProducts('<%= category.id %>');"><%= category.categoryName %></button>
+                            <div class="panel">
+                                <div class="row">
+                                <%  products.forEach(function(product){ 
+                                    if(category.categoryName == product.productCategory){ %>
+                                        <div class="col-12 col-md-3">
+                                            <div class="itemsCategory"onclick="openModal('<%= product.id %>');" style="cursor: pointer;">
+                                                <img src="../images/products/<%= product.productImageID %>">
+                                                <hr>
+                                                <a onclick="openModal('<%= product.id %>');" style="cursor: pointer;"><h1 style="font-size: 15px;"><%= product.productName %></h1></a>
+                                            </div>
+                                            
+                                            <div id="productModal<%= product.id %>" class="modal">
+                                                <div class="modal-content">
+                                                    <span class="close" onclick="closeModal('<%= product.id %>');">&times;</span>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-6">
+                                                        <img src="../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
+                                                        </div>
+                                                        <div class="col-12 col-md-6">
+                                                        <h1 style="font-size: 20px;"><%= product.productName %></h1>
                                                         <hr>
-                                                        <a onclick="openModal('<%= product.id %>');" style="cursor: pointer;"><h1 style="font-size: 15px;"><%= product.productName %></h1></a>
-                                                    </div>
-                                                    
-                                                    <div id="productModal<%= product.id %>" class="modal">
-                                                        <div class="modal-content">
-                                                            <span class="close" onclick="closeModal('<%= product.id %>');">&times;</span>
-                                                            <hr>
-                                                            <div class="row">
-                                                                <div class="col-12 col-md-6">
-                                                                <img src="../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
-                                                                </div>
-                                                                <div class="col-12 col-md-6">
-                                                                <h1 style="font-size: 20px;"><%= product.productName %></h1>
-                                                                <hr>
-                                                                <h1 style="font-size: 15px; text-align: left;">Опис</h1>
-                                                                <p style="white-space: break-spaces;"><%= product.productDescription %></p>
-                                                                </div>
-                                                            </div>
+                                                        <h1 style="font-size: 15px; text-align: left;">Опис</h1>
+                                                        <p style="white-space: break-spaces;"><%= product.productDescription %></p>
                                                         </div>
                                                     </div>
-                                                </div> 
-                                            <%  }
-                                            }); %> 
-                                        </div>
-                                    </div>
-                                <% }); %>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    <%  }
+                                    }); %>
+                                </div>
                             </div>
+                            <% }); %>
                         </div>
                     </div>
                 </div>
@@ -97,5 +84,22 @@
     <script src="/scripts/jquery.min.js"></script>
     <script src="/scripts/jquery.backtotop.js"></script>
     <script src="/scripts/mainScript.js"></script>
+
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
   
 </html>

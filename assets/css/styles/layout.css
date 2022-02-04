@@ -468,13 +468,13 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .dropdown a:hover {background-color: #ddd;}
 .show {display: block; position: fixed; margin-left: -60px;}
 
-.contactInfo { background: white; border-radius: 10px; margin: 5px; padding: 10px; color: green; }
+.contactInfo { background: white; border-radius: 6px; margin: 5px; padding: 10px; color: green; }
 .contactInfo h1 { text-align: center; margin-bottom: 15px; font-weight: 700; font-family: system-ui; }
 .contactInfo ul { list-style: none; display: contents; margin: 0; text-align: center; }
 .contactInfo ul li { margin: 0px 10px; }
 .contactInfo ul li i { margin-right: 10px;vertical-align: middle;font-size: 25px; }
 
-.itemsCategory { background: white; border-radius: 10px; margin: 5px; padding: 10px; color: green; }
+.itemsCategory { background: #f9f9f9; border-radius: 6px; margin: 10px 5px; padding: 10px; color: green; }
 .itemsCategory h1 { text-align: center; margin-bottom: 15px; font-weight: 700; font-family: system-ui; font-size: 18px; }
 .itemsCategory ul { list-style: none; display: contents; margin: 0; text-align: left; }
 .itemsCategory ul li { margin: 0px 10px; }
@@ -482,6 +482,49 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .itemsCategory a { color: green; text-decoration: none; text-transform: uppercase; }
 .itemsCategory a:hover { color: green; font-weight: 600; }
 .itemsCategory img { height: 250px; width: 100%; }
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  text-transform: uppercase;
+  color: green;
+  font-weight: 600;
+}
+
+.active2, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\21E9';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active2:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 10px;
+}
+
 
 .modal { display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4); }
 .modal-content {background-color: #fefefe; margin: auto;padding: 20px;border: 1px solid #888;width: 50%!important; color: black; }
