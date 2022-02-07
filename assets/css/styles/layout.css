@@ -592,8 +592,8 @@ table a, #comments a{background-color:inherit;}
 
 	#pageintro { padding: 220px 0!important; } 
 	#pageintro2 { padding: 20px 0!important; } /* 180px 0 */
-	.overlay{ height: 650px!important; }
-	.overlay2{ height: auto!important; } /* 220px 0 */
+	.overlay{ height: 650px!important; min-height: 693px!important;}
+	.overlay2{ height: auto!important; min-height: 693px!important;} /* 220px 0 */
 	.smallDisplay{ display: block!important; }
 }
 
@@ -645,7 +645,7 @@ table a, #comments a{background-color:inherit;}
 	#latest article footer{text-align:left;}
 	#pageintro { padding: 180px 0!important; }
 	#pageintro2 { padding: 50px 0!important; }
-	.overlay{ height: 495px!important; }
+	.overlay{ height: 495px!important; min-height: 600px!important; }
 	.smallDisplay{ margin-top: 15px!important; }
 }
 
