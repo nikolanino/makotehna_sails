@@ -31,13 +31,13 @@
             		</nav>
                 </header>
             </div>
-            <div class="overlay2" style="height: auto; min-height: 750px;">
+            <div class="overlay2" style="height: auto; min-height: 800px;">
                 <div id="pageintro2" class="hoc clear" style="padding: 15px 0;">
                     <div class="row">
                         <div class="col-12 col-md-12">
                             <% categories.forEach(function(category){ %>
-                            <button class="accordion" onclick="showProducts('<%= category.id %>');"><%= category.categoryName %></button>
-                            <div class="panel">
+                            <button id="btnCategory<%= category.id %>" class="accordion" onclick="showProducts('<%= category.id %>');"><%= category.categoryName %></button>
+                            <div id="ctgPanel<%= category.id %>" class="panel">
                                 <div class="row">
                                 <%  products.forEach(function(product){ 
                                     if(category.categoryName == product.productCategory){ %>

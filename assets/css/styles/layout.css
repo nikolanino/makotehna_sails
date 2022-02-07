@@ -498,6 +498,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
   text-transform: uppercase;
   color: green;
   font-weight: 600;
+  border-radius: 6px;
 }
 
 .active2, .accordion:hover {
@@ -518,7 +519,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 
 .panel {
   padding: 0 18px;
-  background-color: white;
+  background-color: #ffffff7a;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;

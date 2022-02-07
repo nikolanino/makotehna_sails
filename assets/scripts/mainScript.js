@@ -53,6 +53,12 @@ function showProducts(categoryID){
 
     $( "*[id^='category']" ).hide();
     $("#category"+categoryID).show();
+    //document.getElementById("footerBox").style.position = "inherit";
+    $('#footerBox').css('position', 'inherit');
+    $('#btnCategory' + categoryID).css('border-bottom-left-radius', '0px');
+    $('#btnCategory' + categoryID).css('border-bottom-right-radius', '0px');
+    $('#ctgPanel' + categoryID).css('border-bottom-right-radius', '6px');
+    $('#ctgPanel' + categoryID).css('border-bottom-left-radius', '6px');
 
 }
 
