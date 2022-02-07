@@ -648,6 +648,10 @@ table a, #comments a{background-color:inherit;}
 	.overlay{ height: 495px!important; min-height: 600px!important; }
 	.smallDisplay{ margin-top: 15px!important; }
 }
+@media screen and (max-width: 400px) {
+	.overlay{ height: 495px!important; min-height: 500px!important; }
+	
+}
 
 /* Other
 --------------------------------------------------------------------------------------------------------------- */
