@@ -200,7 +200,7 @@ File: Layout CSS
 #footer .latestimg > li a.imgover{display:block;}
 
 .socialMedia a { margin: 0px 5px!important; }
-.socialMedia a i { color: green; font-size: 20px; vertical-align: middle; }
+.socialMedia a i { color: white; background-color: black; font-size: 30px; vertical-align: middle; }
 
 
 /* Copyright
@@ -686,3 +686,21 @@ table a, #comments a{background-color:inherit;}
 	.font-x2{font-size:1.6rem;}
 	.font-x3{font-size:1.8rem;}
 }
+#pageintro {
+	position: relative;
+	animation: mymove 5s 1;
+  }
+  
+  @keyframes mymove {
+	from {left: -1300px;}
+	to {left: 0px;}
+  }
+  #pageintro2 {
+	position: relative;
+	animation: mymove 5s 1;
+  }
+  
+  @keyframes mymove {
+	from {left: -1300px;}
+	to {left: 0px;}
+  }
