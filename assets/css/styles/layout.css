@@ -484,6 +484,21 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .itemsCategory img { height: 250px; width: 100%; }
 
 
+.categoryBox{ 
+	background-color: #f1f1f1; 
+	padding: 25px; 
+	margin-bottom: 10px; 
+	text-align: center; 
+	height: 130px; 
+	cursor: pointer; 
+	border-radius: 6px; 
+	display: flex;
+ 	align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .accordion {
   background-color: #eee;
   color: #444;
@@ -688,7 +703,7 @@ table a, #comments a{background-color:inherit;}
 }
 #pageintro {
 	position: relative;
-	animation: mymove 5s 1;
+	animation: mymove 3s 1;
   }
   
   @keyframes mymove {
@@ -697,7 +712,7 @@ table a, #comments a{background-color:inherit;}
   }
   #pageintro2 {
 	position: relative;
-	animation: mymove 5s 1;
+	animation: mymove 3s 1;
   }
   
   @keyframes mymove {

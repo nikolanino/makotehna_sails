@@ -37,6 +37,7 @@ module.exports.routes = {
 
   '/add/category': { controller: 'category', action: 'addCategory' },
   '/destroy/category/:id': { controller: 'category', action: 'destroyCategory' },
+  '/category/show/:id': { view: 'pages/category/show', controller: 'category', action: 'getCategory' },
 
   '/add/product': { controller: 'product', action: 'addProduct' },
   '/get/infoProduct/:id': { controller: 'product', action: 'getProduct' },

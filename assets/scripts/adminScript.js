@@ -42,7 +42,9 @@ function hideShow(type) {
 }
 
 /////////////////////////////
+var idProductGlobal;
 function openEditForm(id) {
+	idProductGlobal;
 	var idProduct = '"'+id+'"';
 	$.ajax({
 
@@ -55,6 +57,7 @@ function openEditForm(id) {
 		// console.log(data.data)
 		$('#editForm').attr('id', 'editForm' + id);
 		$('#formTag').attr('onsubmit', 'editProduct('+idProduct+'); return false;');
+		$(".close").attr('onclick', 'closeEditModal('+idProduct+'); return false;');
 		$('#editForm' + id).show();
 		$('#productName').val(data.data.productName);
 		$('#productCode').val(data.data.productCode);
@@ -122,4 +125,8 @@ function destroyProduct(id){
 
 	return false;
 
+}
+
+function closeEditModal(id){
+	$("#editForm"+id).hide();
 }
