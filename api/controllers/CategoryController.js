@@ -9,10 +9,34 @@ module.exports = {
   
 
     addCategory: function(req, res) {
-        Category.create(req.allParams(), function categoryCreated(err, category) {
-            if(err) return next(err);
+        var params = req.allParams();
+        
+        req.file('categoryBg_Name').upload({
+            dirname: '../../assets/images/category',
+            maxBytes: 50000000
+        },function (err, uploadedFile) {
+            if (err) {
+                return res.serverError("Error"); 
+            }
+            // console.log(uploadedFile);
 
-            res.redirect('/admin/dashboard');
+            if (uploadedFile.length === 0){
+                return res.redirect('/admin/dashboard');
+                return console.log('Category is not created');
+            }
+
+            var fileName = uploadedFile[0].filename;
+            var fileUID = uploadedFile[0].fd.replace(/^.*[\\\/]/, '');
+
+            params.categoryImageName = fileName;
+            params.categoryImageID = fileUID;
+
+            Category.create(params, function categoryCreated(err, category) {
+                if(err) return next(err);
+                setTimeout(function() {
+                    res.redirect('/admin/dashboard');
+                }, 3000)
+            });
         });
     },
 

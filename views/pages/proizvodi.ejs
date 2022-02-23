@@ -37,7 +37,12 @@
                         <div class="row">
                             <% categories.forEach(function(category){ %>
                             <div class="col-12 col-md-4">
-                                <div class="categoryBox" onclick="openCategory('<%= category.id %>')" style="background: green;">
+                                <%  if(!category.categoryImageID) 
+                                        backgroundStyle = "background: green";
+                                    else
+                                        backgroundStyle = "background: url('images/category/"+category.categoryImageID+"') no-repeat center center; background-size: cover; "; 
+                                %>
+                                <div class="categoryBox" onclick="openCategory('<%= category.id %>')" style="<%= backgroundStyle %>">
                                     <p style="color:white!important;"><%= category.categoryName %></p>
                                 </div>
                             </div>

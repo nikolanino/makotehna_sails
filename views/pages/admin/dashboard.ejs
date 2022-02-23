@@ -58,8 +58,9 @@
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="formBox">
-                            <form action="/add/category" method="POST">
+                            <form action="/add/category" enctype="multipart/form-data" method="POST" onsubmit="required()">
                                 <input type="text" name="categoryName" placeholder="Име на категоријата">
+                                <input type="file" name="categoryBg_Name" id="categoryImageID">
                                 <br>
                                 <button type="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ДОДАДИ КАТЕГОРИЈА</button>
                             </form>
