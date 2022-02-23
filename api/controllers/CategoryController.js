@@ -24,5 +24,21 @@ module.exports = {
         });
     },
 
+    getCategory: function(req, res){
+        Category.findOne(req.param("id")).exec(function(err, category) {
+            if (err) return console.log(err);
+
+            Product.find(productFound);
+  
+            function productFound(err, products) {
+                if(err) return console.trace(err);
+
+                return res.view({
+                    category:category, products: products
+                });            
+            }
+        });
+    }
+
 };
 

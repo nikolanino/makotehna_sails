@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="">
+    <%- partial('../../partials/head.ejs'); %>
+    <link href="../../css/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <body id="top" style="background-color: black;">
+        
+
+        <!-- <div class="bgded" style="background-image:url('images/pozadina-slika.jpeg');"> -->
+            <div class="wrapper row1">
+                <header id="header" class="hoc clear">
+                    <div id="logo" class="fl_left">
+                        <img style="width: 120px; height: 90px; margin-top: -7px;" src="../../images/logo1.png">
+                    </div>
+                    <nav id="mainav" class="fl_right">
+                        <ul class="clear">
+                            <li class="active"><a href="/">Почетна</a></li>
+                            <li class="active"><a href="/proizvodi">КАТАЛОГ</a></li>
+                            <li class="active"><a href="/about">За Нас</a></li>
+                            <li class="active"><a href="/contact">КОНТАКТ</a></li>
+                        </ul>
+                        <div class="smallDisplay" style="text-align: right;">
+							<div class="dropdown">
+								<button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
+								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
+									<a href="/">ПОЧЕТНА</a>
+									<a href="/proizvodi">КАТАЛОГ</a>
+									<a href="/about">ЗА НАС</a>
+                                    <a href="/contact">КОНТАКТ</a>
+								</div>
+							</div>
+						</div>
+            		</nav>
+                </header>
+            </div>
+            <div class="overlay2" style="height: auto; min-height: 800px;">
+                <div id="pageintro2" class="hoc clear" style="padding: 15px 0;">
+                    <div class="container">
+                        <div class="row">
+                            <% products.forEach(function(product){ 
+                                if(product.productCategory == category.categoryName){ %>
+                                <div class="col-12 col-md-3">
+                                    <div class="itemsCategory"onclick="openModal('<%= product.id %>');" style="cursor: pointer;">
+                                        <img src="../../images/products/<%= product.productImageID %>">
+                                        <hr>
+                                        <a onclick="openModal('<%= product.id %>');" style="cursor: pointer;"><h1 style="font-size: 15px;"><%= product.productName %></h1></a>
+                                    </div>
+                                </div>
+                                    
+                                <div id="productModal<%= product.id %>" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close" onclick="closeModal('<%= product.id %>');">&times;</span>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                            <img src="../../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                            <h1 style="font-size: 20px;"><%= product.productName %></h1>
+                                            <hr>
+                                            <h1 style="font-size: 15px; text-align: left;">Опис</h1>
+                                            <p style="white-space: break-spaces;"><%= product.productDescription %></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <%  }
+                            }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- partial('../../partials/footer.ejs'); %>
+        <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
+    </body>
+    <!-- JAVASCRIPTS -->
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery.backtotop.js"></script>
+    <script src="../../scripts/mainScript.js"></script>
+
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                document.getElementById("footerBox").style.position = "fixed";
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                document.getElementById("footerBox").style.position = "inherit";
+            } 
+        });
+    }
+    </script>
+  
+</html>
+
+

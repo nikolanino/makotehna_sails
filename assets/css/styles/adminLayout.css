@@ -1,184 +1,253 @@
 body {
-                margin: 0;
-                font-family: "Lato", sans-serif;
-                background-color: #343434;
-                color: #f1f1f1;
-            }
-            .sidebar {
-                margin: 0;
-                padding: 0;
-                width: 200px;
-                background-color: #212121;
-                position: fixed;
-                height: 100%;
-                overflow: auto;
-                text-align: center;
-            }
-            .sidebar a {
-                display: block;
-                color: white;
-                padding: 16px;
-                text-decoration: none;
-                text-align: left;
-                cursor: pointer;
-            }
-            .sidebar a.active {
-                background-color: #04AA6D;
-                color: white;
-            }
-            .sidebar i {
-                vertical-align: baseline;
-                font-size: 20px;
-                margin-right: 10px;
-            }
-            .sidebar a:hover:not(.active) {
-                background-color: #555;
-                color: white;
-            }
-            div.content {
-                margin-left: 200px;
-                padding: 15px 30px;
-            }
-            @media screen and (max-width: 700px) {
-                .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .sidebar a {float: left;}
-            div.content {margin-left: 0;}
-            }
-            @media screen and (max-width: 400px) {
-                .sidebar a {
-                    text-align: center;
-                    float: none;
-                }
-            }
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    background-color: #343434;
+    color: #f1f1f1;
+}
 
-            .tableDesign {
-              font-family: Arial, Helvetica, sans-serif;
-              border-collapse: collapse;
-              width: 100%;
-              margin-top: 10px;
-            }
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #212121;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+}
 
-            .tableDesign td, .tableDesign th {
-                border: 1px solid #585858;
-                padding: 8px;
-                background: #212121;
-            }
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+}
 
-            .tableDesign tr:nth-child(even){}
+.sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
 
-            .tableDesign tr:hover {background-color: #595959;}
+.sidebar i {
+    vertical-align: baseline;
+    font-size: 20px;
+    margin-right: 10px;
+}
 
-            .tableDesign th {
-              padding-top: 12px;
-              padding-bottom: 12px;
-              text-align: left;
-              background-color: #04AA6D;
-              color: white;
-            }
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
 
-            .formBox{
-                padding: 10px;
-                background-color: #212121;
-                text-align: center;
-            }
+div.content {
+    margin-left: 200px;
+    padding: 15px 30px;
+}
 
-            .formBox input,textarea,select{
-                padding: 10px;
-                margin-top: 10px;
-                background-color: #282828;
-                text-align: center;
-                border: 0;
-                width: 100%;
-                color: white;
-            }
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+}
 
-            .dashboardBox{
-                padding: 10px;
-                margin-top: 10px;
-                background-color: #212121;
-                border-radius: 8px;
-                display: flex;
-            }
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
 
-            .dashboardBox p {
-                margin-bottom: 0;
-                margin: auto;
-                font-weight: 600;
-            }
+.tableDesign {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
 
-            .iconDashboard{
-                font-size: 40px;
-            }
-            #overlay {
-              position: fixed;
-              display: none;
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              background-color: rgba(0,0,0,0.5);
-              z-index: 2;
-              cursor: default;
-            }
-            @-webkit-keyframes rotating {
-              from { 
-                -webkit-transform: rotate(0deg);
-                -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-              }
-              to {
-                -webkit-transform: rotate(359deg);
-                -o-transform: rotate(359deg);
-                transform: rotate(359deg);
-              }
-            }
-            @keyframes rotating {
-              from {
-                -ms-transform: rotate(0deg);
-                -moz-transform: rotate(0deg);
-                -webkit-transform: rotate(0deg);
-                -o-transform: rotate(0deg);
-                transform: rotate(0deg);
-              }
-              to {
-                -ms-transform: rotate(360deg);
-                -moz-transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -o-transform: rotate(360deg);
-                transform: rotate(360deg);
-              }
-            }
-            .loader {
-              display: block;
-              border: 10px solid #0000FF;
-              border-top: 10px solid #00FFFF;
-              border-radius: 50%;
-              width: 120px;
-              height: 120px;
-              -webkit-animation: rotating 2s linear infinite;
-              -moz-animation: rotating 2s linear infinite;
-              -ms-animation: rotating 2s linear infinite;
-              -o-animation: rotatin 2s linear infinite;
-              animation: rotating 2s linear infinite;
-              position: relative;
-              margin-left: auto;
-              margin-right: auto;
-              top: 40%;
-            }
-            .dropBtn {
-              margin-bottom: 5px;
-              width: 100%;
-              background-color: #585858;
-              border-color: #585858;
-              
-            }
-            .dropBtn:hover {
-              background-color: green;
-              border-color: green;
-            }
+.tableDesign td,
+.tableDesign th {
+    border: 1px solid #585858;
+    padding: 8px;
+    background: #212121;
+}
+
+.tableDesign tr:nth-child(even) {}
+
+.tableDesign tr:hover {
+    background-color: #595959;
+}
+
+.tableDesign th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.formBox {
+    padding: 10px;
+    background-color: #212121;
+    text-align: center;
+}
+
+.formBox input,
+textarea,
+select {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #282828;
+    text-align: center;
+    border: 0;
+    width: 100%;
+    color: white;
+}
+
+.dashboardBox {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #212121;
+    border-radius: 8px;
+    display: flex;
+}
+
+.dashboardBox p {
+    margin-bottom: 0;
+    margin: auto;
+    font-weight: 600;
+}
+
+.iconDashboard {
+    font-size: 40px;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: default;
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+        -o-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    display: block;
+    border: 10px solid #0000FF;
+    border-top: 10px solid #00FFFF;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotatin 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40%;
+}
+
+.dropBtn {
+    margin-bottom: 5px;
+    width: 100%;
+    background-color: #585858;
+    border-color: #585858;
+}
+
+.dropBtn:hover {
+    background-color: green;
+    border-color: green;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #212121;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #2e2e2e;
+    width: 50%!important;
+    color: black;
+}
+
+.modal-content h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-family: system-ui;
+    font-size: 18px;
+    color: green;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
