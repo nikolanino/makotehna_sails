@@ -2,5 +2,6 @@ package-lock.json
 node_modules/*
 assets/images/products/*
 **/node_modules
+assets/images/category/*
 .tmp
 **.DS_Store
