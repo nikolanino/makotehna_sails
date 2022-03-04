@@ -659,7 +659,7 @@ table a, #comments a{background-color:inherit;}
 	#latest article .excerpt time{display:none;}
 	#latest article footer{text-align:left;}
 	#pageintro { padding: 180px 0!important; }
-	#pageintro2 { padding: 50px 0!important; }
+	#pageintro2 { padding: 50px 0!important; margin-top: 90px; }
 	/*.overlay{ height: 495px!important; min-height: 600px!important; }*/
 	.smallDisplay{ margin-top: 15px!important; }
 	#footerBox{ position: inherit!important; }
