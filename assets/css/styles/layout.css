@@ -701,3 +701,21 @@ table a, #comments a{background-color:inherit;}
 	.font-x2{font-size:1.6rem;}
 	.font-x3{font-size:1.8rem;}
 }
+/* #pageintroSlide {
+	position: relative;
+	animation: mymove 3s 1;
+  }
+  
+  @keyframes mymove {
+	from {left: -1300px;}
+	to {left: 0px;}
+  }
+  #pageintro2 {
+	position: relative;
+	animation: mymove 3s 1;
+  }
+  
+  @keyframes mymove {
+	from {left: -1300px;}
+	to {left: 0px;}
+  } */
