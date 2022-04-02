@@ -63,6 +63,7 @@ function openEditForm(id) {
 		$('#productCode').val(data.data.productCode);
 		$('#productCategory').val(data.data.productCategory);
 		$('#productDescription').val(data.data.productDescription);
+		$('#productPurpose').val(data.data.productPurpose);
 		
 	});
 }
@@ -89,6 +90,7 @@ function editProduct(id)
 			productCode: $('#productCode').val(),
 			productCategory: $('#productCategory').val(),
 			productDescription: $('#productDescription').val(),
+			productPurpose: $('#productPurpose').val(),
 			productImageID: "current",
 		},
 
