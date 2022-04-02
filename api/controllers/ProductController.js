@@ -47,7 +47,17 @@ module.exports = {
             if(err) { 
                 console.log(err); 
             }else{
-                res.status(200).json({ status: 'OK', data: { productName: product.productName, productCode: product.productCode, productDescription: product.productDescription, productCategory: product.productCategory, productImageID: product.productImageID  }});
+                res.status(200).json({ 
+                                        status: 'OK', 
+                                        data: { 
+                                            productName: product.productName,
+                                            productCode: product.productCode,
+                                            productDescription: product.productDescription,
+                                            productCategory: product.productCategory,
+                                            productImageID: product.productImageID,
+                                            productPurpose: product.productPurpose
+                                        }
+                                    });
             }
         });
     },
@@ -82,7 +92,7 @@ module.exports = {
                     // params.productImageName = fileName;
                     // params.productImageID = fileUID;
         
-                    Product.update(req.param('id'), { productName: req.body.productName, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription, productImageName: fileName, productImageID: fileUID }, function productUpdated(err, product){
+                    Product.update(req.param('id'), { productName: req.body.productName, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription, productPurpose: req.body.productPurpose, productImageName: fileName, productImageID: fileUID }, function productUpdated(err, product){
                         if(err) return next(err);
                         setTimeout(function() {
                             res.status(200).json({ data: { info: "OK", productImageID: product.productImageID } });
@@ -91,7 +101,7 @@ module.exports = {
                 });
             }else{
                 // console.log("Vlegov vo funkcija 3");
-                Product.update(req.param('id'), { productName: req.body.productName, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription }, function productUpdated(err, product){
+                Product.update(req.param('id'), { productName: req.body.productName, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription, productPurpose: req.body.productPurpose }, function productUpdated(err, product){
                     if(err) return next(err);
 
                     res.status(200).json({ data: { info: "OK" } });

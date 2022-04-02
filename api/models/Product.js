@@ -15,6 +15,7 @@ module.exports = {
         productDescription: { type: 'string' }, 
         productImageID: { type: 'string' },
         productImageName: { type: 'string' }, 
+        productPurpose: { type: 'string' }
 
     },
 
