@@ -17,14 +17,14 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sails": "^1.2.3",
-    "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
     "sails-mongo": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "5.16.0",
-    "grunt-sync": "0.8.2"
+    "grunt-sync": "0.8.2",
+    "sails-hook-grunt": "git+https://github.com/dannysuryadi/sails-hook-grunt.git"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",

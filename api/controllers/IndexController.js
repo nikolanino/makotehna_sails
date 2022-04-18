@@ -12,8 +12,8 @@
      secure: false,
      port: 25,
      auth: {
-         user: 'nikolavnikolovski@gmail.com',
-         pass: 'nikolovski1234'
+         user: 'makotehnapage@gmail.com',
+         pass: 'm@kotEhn@!'
      },
      tls: {
          rejectUnauthorized: false
@@ -60,7 +60,7 @@ module.exports = {
             <p style="white-space: break-spaces; text-align: left;">${req.body.message}</p>
         </div>`;
         var mailOptions = {
-            to: 'nikolavnikolovski@gmail.com',
+            to: 'makotehna.info@gmail.com',
             from: req.body.emailFrom,
             subject: req.body.subject,
             html: output
