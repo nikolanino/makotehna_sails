@@ -54,7 +54,7 @@ File: Layout CSS
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro, #pageintro2{padding: 200px 0 273px;}/* 400px => 200px for #introblocks negative margin */
+#pageintro, #pageintro2{padding: 120px 0 273px;}/* 400px => 200px for #introblocks negative margin */
 
 #pageintro article, #pageintro article p{display:block; max-width:75%; margin:0 auto; text-align:center;}
 #pageintro2 article, #pageintro2 article p{ display: block; margin: 0; text-align: center; }
@@ -548,6 +548,24 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; text-align: right; }
 .close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
 
+.aboutUsPage{ display: flex; flex-direction: row; align-content: center; align-items: center; }
+.textSide, .buttonSide{ width: 50%; }
+
+.buttonSide button{
+	margin: 0 auto;
+    padding: 100px;
+    background: transparent;
+    border-color: green;
+    font-size: 24px;
+    font-weight: 600;
+    border-style: dashed;
+}
+
+.buttonSide button:hover{
+	background-color: #0e0e0e;
+}
+
+
 
 /* Tables + Comments */
 table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}
@@ -610,6 +628,18 @@ table a, #comments a{background-color:inherit;}
 	/*.overlay{ height: 650px!important; min-height: 693px!important;}*/
 	.overlay2{ height: auto!important; min-height: 693px!important;} /* 220px 0 */
 	.smallDisplay{ display: block!important; }
+}
+
+@media screen and (max-width:776px){
+	.aboutUsPage{
+		flex-direction: column-reverse!important;
+	}
+	.textSide, .buttonSide{
+		width: 100%!important;
+	}
+	#footerBox{
+		position: inherit!important;
+	}
 }
 
 @media screen and (max-width:750px){
