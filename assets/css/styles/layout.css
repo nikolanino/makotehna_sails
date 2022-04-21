@@ -549,21 +549,162 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
 
 .aboutUsPage{ display: flex; flex-direction: row; align-content: center; align-items: center; }
-.textSide, .buttonSide{ width: 50%; }
+.textSide, .rightSide{ width: 50%; }
+
+.buttonSide{
+	transition: .7s all;
+    overflow: hidden;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.buttonSide a{
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+.buttonSide a:hover{
+	color: white!important;
+}
 
 .buttonSide button{
 	margin: 0 auto;
     padding: 100px;
     background: transparent;
-    border-color: green;
+    /*border-color: green;*/
     font-size: 24px;
     font-weight: 600;
-    border-style: dashed;
+    /*border-style: dashed;*/
+    border: 0;
+    width: 100%;
 }
 
 .buttonSide button:hover{
 	background-color: #0e0e0e;
 }
+
+.buttonSide span{
+	position: absolute;
+}
+
+.buttonSide span:nth-of-type(1) {
+    transform: scaleX(0);
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #429222, #429222);
+    animation: firstSpan 600ms linear;
+    animation-fill-mode: forwards;
+}
+
+.buttonSide span:nth-of-type(2) {
+    transform: scaleY(0);
+    top: 0px;
+    right: 0px;
+    width: 2px;
+    height: 100%;
+    transform-origin: top;
+    background: linear-gradient(to bottom, #429222, #429222);
+    animation: secondSpan 600ms linear;
+    animation-fill-mode: forwards;
+    animation-delay: 300ms;
+}
+
+.buttonSide span:nth-of-type(3) {
+    transform: scaleX(0);
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, #429222, #429222);
+    transform-origin: right;
+    animation: thirdSpan 600ms linear;
+    animation-fill-mode: forwards;
+    animation-delay: 900ms;
+}
+
+.buttonSide span:nth-of-type(4) {
+    transform: scaleY(0);
+    bottom: 0px;
+    left: 0px;
+    width: 2px;
+    height: 100%;
+    transform-origin: bottom;
+    background: linear-gradient(to top, #429222, #429222);
+    animation: fourthSpan 600ms linear;
+    animation-fill-mode: forwards;
+    animation-delay: 1200ms;
+}
+
+@-webkit-keyframes firstSpan {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0%) scaleX(1); } }
+@-moz-keyframes firstSpan {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0%) scaleX(1); } }
+@keyframes firstSpan {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0%) scaleX(1); } }
+
+    @-webkit-keyframes secondSpan {
+  0% {
+    transform: translateY(-100%) scaleY(0); }
+  100% {
+    transform: translateY(0%) scaleY(1); } }
+@-moz-keyframes secondSpan {
+  0% {
+    transform: translateY(-100%) scaleY(0); }
+  100% {
+    transform: translateY(0%) scaleY(1); } }
+@keyframes secondSpan {
+  0% {
+    transform: translateY(-100%) scaleY(0); }
+  100% {
+    transform: translateY(0%) scaleY(1); } }
+
+    @-webkit-keyframes thirdSpan {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 1; } }
+@-moz-keyframes thirdSpan {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 1; } }
+@keyframes thirdSpan {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 1; } }
+
+    @-webkit-keyframes fourthSpan {
+  0% {
+    transform: translateY(100%) scaleY(0); }
+  100% {
+    transform: translateY(0%) scaleY(1); } }
+@-moz-keyframes fourthSpan {
+  0% {
+    transform: translateY(100%) scaleY(0); }
+  100% {
+    transform: translateY(0%) scaleY(1); } }
+@keyframes fourthSpan {
+  0% {
+    transform: translateY(100%) scaleY(0); }
+  100% {
+    transform: translateY(0%) scaleY(1); } }
 
 
 
@@ -634,7 +775,10 @@ table a, #comments a{background-color:inherit;}
 	.aboutUsPage{
 		flex-direction: column-reverse!important;
 	}
-	.textSide, .buttonSide{
+	.textSide, .rightSide{
+		width: 100%!important;
+	}
+	.buttonSide{
 		width: 100%!important;
 	}
 	#footerBox{
