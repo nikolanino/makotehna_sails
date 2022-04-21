@@ -67,7 +67,11 @@ File: Layout CSS
 
 /* Content Area
 --------------------------------------------------------------------------------------------------------------- */
-.container{padding:80px 0;}
+.container{
+	padding:100px 0;
+	margin-top: -200px;
+
+}
 
 /* Content */
 .container .content{}
@@ -548,7 +552,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#B946AD !important;}
 .close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; text-align: right; }
 .close:hover, .close:focus { color: #000; text-decoration: none; cursor: pointer; }
 
-.aboutUsPage{ display: flex; flex-direction: row; align-content: center; align-items: center; }
+.aboutUsPage{ display: flex; flex-direction: row; align-content: center; align-items: center; padding-top: 150px;}
 .textSide, .rightSide{ width: 50%; }
 
 .buttonSide{
