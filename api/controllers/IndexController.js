@@ -13,7 +13,8 @@
      port: 25,
      auth: {
          user: 'makotehnapage@gmail.com',
-         pass: 'm@kotEhn@!'
+         //pass: 'm@kotEhn@!'
+	   pass: 'rwearkcytjglzsld'
      },
      tls: {
          rejectUnauthorized: false
