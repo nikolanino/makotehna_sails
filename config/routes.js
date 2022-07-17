@@ -45,6 +45,7 @@ module.exports.routes = {
   '/update/product/:id': { controller: 'product', action: 'updateProduct' },
 
   '/contact/sendmail': { controller: 'index', action: 'sendMail'},
+  '/callLocale': { controller: 'index', action: 'changeLocale'},
 
 
 };

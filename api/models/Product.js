@@ -10,9 +10,11 @@ module.exports = {
     attributes: {
 
         productName: { type: 'string' },
+        productNameEN: { type: 'string' },
         productCode: { type: 'string' }, 
         productCategory: { type: 'string' },
         productDescription: { type: 'string' }, 
+        productDescriptionEN: { type: 'string' }, 
         productImageID: { type: 'string' },
         productImageName: { type: 'string' }, 
         productPurpose: { type: 'string' }

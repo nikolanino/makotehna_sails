@@ -1,41 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Макотехна</title>
-
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Макотехна</title>
+<html lang="mk">
+    <head>
+        <title>Макотехна</title>
+        <!-- Viewport mobile tag for sensible mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Макотехна</title>
         <meta name="title" content="Макотехна">
         <meta name="description" content="Комплетни хигиенски решенија во сите области.">
-
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://makotehna.mk/">
         <meta property="og:title" content="Макотехна">
         <meta property="og:description" content="Комплетни хигиенски решенија во сите области.">
         <meta property="og:image" content="https://makotehna.mk/images/leaf_meta.jpeg">
-
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://store.karabat.online/">
         <meta property="twitter:title" content="Макотехна">
         <meta property="twitter:description" content="Комплетни хигиенски решенија во сите области.">
         <meta property="twitter:image" content="https://store.karabat.online/images/leaf_meta.jpeg">
-    <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
-    <%/* <meta name="robots" content="noindex"> */%>
-
-
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-  </head>
-
-  <body>
-    <%- body %>
-
-
-    <!--SCRIPTS-->
-    <script src="/dependencies/sails.io.js"></script>
-    <!--SCRIPTS END-->
-  </body>
+        <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
+        <%/* <meta name="robots" content="noindex"> */%>
+        <%- partial('../partials/head.ejs'); %>
+        <link rel="stylesheet" href="/styles/importer.css">
+    </head>
+    <body id="top" style="background-color: black;">
+        <%- body %>
+        <script src="/dependencies/sails.io.js"></script>
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/jquery.backtotop.js"></script>
+        <script src="scripts/mainScript.js"></script>
+    </body>
 </html>

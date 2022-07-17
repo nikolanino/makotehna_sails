@@ -75,6 +75,11 @@ module.exports = {
                 
             }
         });
+    },
+
+    changeLocale: function(req,res) {
+        req.setLocale('en');
+        return res.view('pages/about');
     }
 
 };

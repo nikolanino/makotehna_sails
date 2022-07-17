@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="">
+
     <%- partial('../../partials/head.ejs'); %>
     <link href="../../css/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-    <body id="top" style="background-color: black;">
         <div style="z-index: 100;" id="loadingDiv"><div class="loader">Loading...</div></div>
         
 
@@ -10,23 +8,41 @@
             <div class="wrapper row1">
                 <header id="header" class="hoc clear">
                     <div id="logo" class="fl_left">
-                    <a href="/proizvodi"><img style="width: 120px; height: 100px; margin-top: -7px;" src="/images/logoT.png"></a>
-		    </div>
+                        <a href="/proizvodi"><img style="width: 120px; height: 100px; margin-top: -7px;" src="/images/logoT.png"></a>
+		            </div>
                     <nav id="mainav" class="fl_right">
                         <ul class="clear">
-                            <li class="active"><a href="/">Почетна</a></li>
-                            <!-- <li class="active"><a href="/proizvodi">КАТАЛОГ</a></li> -->
-                            <li class="active"><a href="/contact">КОНТАКТ</a></li>
-                            <a style="text-decoration: none; color: white; cursor: pointer;" href="/images/KATALOG.pdf" target="_blank">КАТАЛОГ</a>
+                            <span class="mkCat" style="margin-right: 15px; display: none;">
+                                <li class="active"><a href="/">Почетна</a></li>
+                                <li class="active"><a href="/contact">КОНТАКТ</a></li>
+                                <li class="active"><a style="text-decoration: none; color: white; cursor: pointer;" href="/images/KATALOG.pdf" target="_blank">КАТАЛОГ</a></li>
+                            </span>
+                            <span class="enCat" style="margin-right: 15px; display: none;">
+                                <li class="active"><a href="/">Home</a></li>
+                                <li class="active"><a href="/contact">Contact</a></li>
+                                <li class="active"><a style="text-decoration: none; color: white; cursor: pointer;" href="/images/KATALOG.pdf" target="_blank">Catalog</a></li>
+                            </span>
+                            <li class="active">
+                                <a href="#" id="enLang" onclick="callLocale('en');" style="display: none;"><img src="/images/usFlag.png" style="width: 35px;"></a>
+                                <a href="#" id="mkLang" onclick="callLocale('mk');" style="display: none;"><img src="/images/mkFlag.png" style="width: 35px;"></a>
+                            </li>
                         </ul>
                         <div class="smallDisplay" style="text-align: right;">
 							<div class="dropdown">
 								<button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
 								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
-									<a href="/">ПОЧЕТНА</a>
-									<!-- <a href="/proizvodi">КАТАЛОГ</a> -->
-                                    <a href="/contact">КОНТАКТ</a>
-                                    <a style="text-decoration: none; color: white; cursor: pointer;" href="/images/KATALOG.pdf" target="_blank">КАТАЛОГ</a>
+									<span class="mkCat" style=" display: none;">
+                                        <a href="/">ПОЧЕТНА</a>
+                                        <a href="/contact">КОНТАКТ</a>
+                                        <a style="text-decoration: none; color: white; cursor: pointer;" href="/images/KATALOG.pdf" target="_blank">КАТАЛОГ</a>
+                                    </span>
+                                    <span class="enCat" style=" display: none;">
+                                        <a href="/">HOME</a>
+                                        <a href="/contact">CONTACT</a>
+                                        <a style="text-decoration: none; color: white; cursor: pointer;" href="/images/KATALOG.pdf" target="_blank">CATALOG</a>
+                                    </span>
+                                    <a href="#" id="enLang2" onclick="callLocale('en');" style="display: none;"><img src="/images/usFlag.png" style="width: 35px;"></a>
+                                    <a href="#" id="mkLang2" onclick="callLocale('mk');" style="display: none;"><img src="/images/mkFlag.png" style="width: 35px;"></a>
 								</div>
 							</div>
 						</div>
@@ -39,42 +55,82 @@
                         <div class="row">
                             <% products.forEach(function(product){ 
                                 if(product.productCategory == category.categoryName){ %>
-                                <div class="col-12 col-md-3">
-                                    <div class="itemsCategory"onclick="openModal('<%= product.id %>');" style="cursor: pointer;">
-                                        <img src="../../images/products/<%= product.productImageID %>">
-                                        <hr>
-                                        <a onclick="openModal('<%= product.id %>');" style="cursor: pointer;"><h1 style="font-size: 15px;"><%= product.productName %></h1></a>
+                                <span class="mkCat" style=" display: none;">
+                                    <div class="col-12 col-md-3">
+                                        <div class="itemsCategory"onclick="openModal('<%= product.id %>');" style="cursor: pointer;">
+                                            <img src="../../images/products/<%= product.productImageID %>">
+                                            <hr>
+                                            <a onclick="openModal('<%= product.id %>');" style="cursor: pointer;"><h1 style="font-size: 15px;"><%= product.productName %></h1></a>
+                                        </div>
                                     </div>
-                                </div>
-                                    
-                                <div id="productModal<%= product.id %>" class="modal">
-                                    <div class="modal-content">
-                                        <span class="close" onclick="closeModal('<%= product.id %>');">&times;</span>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-12 col-md-6">
-                                            <img src="../../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
-                                            </div>
-                                            <div class="col-12 col-md-6">
-                                                <h1 style="font-size: 20px;"><%= product.productName %></h1>
-                                                <hr>
-                                                <h1 style="font-size: 15px; text-align: left;">Опис</h1>
-                                                <p style="white-space: break-spaces;"><%= product.productDescription %></p>
-                                                <% if(product.productPurpose != ""){ %>
-                                                    <h1 style="font-size: 15px; text-align: left;">Начин на употреба/дозирање</h1>
-                                                    <p style="white-space: break-spaces;"><%= product.productPurpose %></p>
-                                                <% } %>
-                                                <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
-                                                    <i class="fas fa-ban" style="font-size: 50px; color: red; margin-right: 10px;"></i>
-                                                    <div style="display: flex; flex-direction: column; align-items: center;">
-                                                        <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Само за професионална употреба !</h1>
-                                                        <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Подалеку од дофат на деца !!</h1>
+                                        
+                                    <div id="productModalMK<%= product.id %>" class="modal">
+                                        <div class="modal-content">
+                                            <span class="close" onclick="closeModal('<%= product.id %>');">&times;</span>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-12 col-md-6">
+                                                <img src="../../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <h1 style="font-size: 20px;"><%= product.productName %></h1>
+                                                    <hr>
+                                                    <h1 style="font-size: 15px; text-align: left;">Опис</h1>
+                                                    <p style="white-space: break-spaces;"><%= product.productDescription %></p>
+                                                    <% if(product.productPurpose != ""){ %>
+                                                        <h1 style="font-size: 15px; text-align: left;">Начин на употреба/дозирање</h1>
+                                                        <p style="white-space: break-spaces;"><%= product.productPurpose %></p>
+                                                    <% } %>
+                                                    <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+                                                        <i class="fas fa-ban" style="font-size: 50px; color: red; margin-right: 10px;"></i>
+                                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                                            <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Само за професионална употреба !</h1>
+                                                            <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Подалеку од дофат на деца !!</h1>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </span>
+                                <span class="enCat" style=" display: none;">
+                                    <div class="col-12 col-md-3">
+                                        <div class="itemsCategory"onclick="openModal('<%= product.id %>');" style="cursor: pointer;">
+                                            <img src="../../images/products/<%= product.productImageID %>">
+                                            <hr>
+                                            <a onclick="openModal('<%= product.id %>');" style="cursor: pointer;"><h1 style="font-size: 15px;"><%= product.productNameEN %></h1></a>
+                                        </div>
+                                    </div>
+                                        
+                                    <div id="productModal<%= product.id %>" class="modal">
+                                        <div class="modal-content">
+                                            <span class="close" onclick="closeModal('<%= product.id %>');">&times;</span>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-12 col-md-6">
+                                                <img src="../../images/products/<%= product.productImageID %>" style='width: 400px; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <h1 style="font-size: 20px;"><%= product.productNameEN %></h1>
+                                                    <hr>
+                                                    <h1 style="font-size: 15px; text-align: left;">Description</h1>
+                                                    <p style="white-space: break-spaces;"><%= product.productDescriptionEN %></p>
+                                                    <% if(product.productPurpose != ""){ %>
+                                                        <h1 style="font-size: 15px; text-align: left;">Method of use/dosage</h1>
+                                                        <p style="white-space: break-spaces;"><%= product.productPurpose %></p>
+                                                    <% } %>
+                                                    <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+                                                        <i class="fas fa-ban" style="font-size: 50px; color: red; margin-right: 10px;"></i>
+                                                        <div style="display: flex; flex-direction: column; align-items: center;">
+                                                            <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">For professional use only !</h1>
+                                                            <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Keep out of reach of children !!</h1>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
                             <%  }
                             }); %>
                         </div>
@@ -85,7 +141,6 @@
 
         <%- partial('../../partials/footer.ejs'); %>
         <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
-    </body>
     <!-- JAVASCRIPTS -->
     <script src="../../scripts/jquery.min.js"></script>
     <script src="../../scripts/jquery.backtotop.js"></script>
@@ -120,7 +175,6 @@ function removeLoader(){
         });
     }
     </script>
-  
-</html>
+
 
 

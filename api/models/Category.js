@@ -10,6 +10,7 @@ module.exports = {
     attributes: {
 
       categoryName: { type: 'string' },
+      categoryNameEN: { type: 'string' },
       categoryImageID: { type: 'string' },
       categoryImageName: { type: 'string' }, 
 

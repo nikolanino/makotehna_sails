@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="">
-    <%- partial('../partials/head.ejs'); %>
-    <body id="top" style="background-color: black;">
+
         <!-- <div class="bgded" style="background-image:url('images/pozadina-slika.jpeg');"> -->
             <div class="wrapper row1">
                 <header id="header" class="hoc clear">
                     <div id="logo" class="fl_left">
                     <!-- <a href="/proizvodi"><img style="width: 120px; height: 100px; margin-top: -7px;" src="images/logo.png"></a> -->
-		    </div>
                     <!-- <nav id="mainav" class="fl_right">
                         <ul class="clear">
                             <li class="active"><a href="/">Почетна</a></li>
@@ -27,6 +23,9 @@
 							</div>
 						</div>
             		</nav> -->
+                        <a href="#" id="enLang" onclick="callLocale('en');" style="display: none;"><img src="images/usFlag.png" style="width: 35px;"></a>
+                        <a href="#" id="mkLang"onclick="callLocale('mk');" style="display: none;"><img src="images/mkFlag.png" style="width: 35px;"></a>
+                    </div>
                 </header>
             </div>
             <div class="overlay2" style="height: auto; min-height: 800px;">
@@ -37,13 +36,25 @@
                         <!-- </h3> -->
                         <div class="aboutUsPage">
                             <div class="textSide">
-                                <p style="font-family: Arial, Helvetica, sans-serif; margin-top: 30px; font-size: 18px; text-align: left;"> <span style="color: green; font-weight: bold;">МАКОТЕХНА</span> Дооел е формирана во Септември 1996 година.<br><br> Главна дејност е производство на професионални средства за Хигиена, Дезинфекција, Одмастувачи за прехранбена индустрија, Одмастувачи за машинска индустрија, Автокозметика, Парфеми, Санитарни Течности, Брисачи за раце, Тоалет хартија, Најлонски вреќи.<br><br>
-                                <span style="color: green; font-weight: bold;">МАКОТЕХНА</span> во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
+                                <span class="mkCat" style=" display: none;">
+                                    <p style="font-family: Arial, Helvetica, sans-serif; margin-top: 30px; font-size: 18px; text-align: left;"> <span style="color: green; font-weight: bold;">МАКОТЕХНА</span> Дооел е формирана во Септември 1996 година.<br><br> Главна дејност е производство на професионални средства за Хигиена, Дезинфекција, Одмастувачи за прехранбена индустрија, Одмастувачи за машинска индустрија, Автокозметика, Парфеми, Санитарни Течности, Брисачи за раце, Тоалет хартија, Најлонски вреќи.<br><br>
+                                    <span style="color: green; font-weight: bold;">МАКОТЕХНА</span> во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
+                                </span>
+                                <span class="enCat" style=" display: none;">
+                                    <p style="font-family: Arial, Helvetica, sans-serif; margin-top: 30px; font-size: 18px; text-align: left;"><span style="color: green; font-weight: bold;">MAKOTEHNA</span> DOOEL was established in September 1996.<br><br>
+                                    The main activity is the production of professional products for Hygiene, Disinfection, Degreasers for the food industry, Degreasers for the machine industry, Autocosmetics, Perfumes, Sanitary Liquids, Hand wipes, Toilet paper, Nylon bags.<br><br>
+                                    <span style="color: green; font-weight: bold;">MAKOTEHNA</span> has been a flexible company over the years, which was able to easily reorient itself to the market and produce assets according to its needs with all the standards required by the consumer.</p>
+                                </span>
                             </div>
                             <div class="rightSide">
                                 <div class="buttonSide">
                                     <a href="/proizvodi">
-                                        <button>ИСТРАЖИ</button>
+                                        <div class="enCat" style="display: none;">
+                                            <button>EXPLORE</button>
+                                        </div>
+                                        <div class="mkCat" style=" display: none;">
+                                            <button>ИСТРАЖИ</button>
+                                        </div>
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -60,10 +71,4 @@
 
         <%- partial('../partials/footer.ejs'); %>
         <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
-    </body>
-    <!-- JAVASCRIPTS -->
-    <script src="scripts/jquery.min.js"></script>
-    <script src="scripts/jquery.backtotop.js"></script>
-    <script src="scripts/mainScript.js"></script>
-  
-</html>
+

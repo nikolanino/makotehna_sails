@@ -87,9 +87,11 @@ function editProduct(id)
 		dataType : 'json',
 		data: { 
 			productName: $('#productName').val(),
+			productNameEN: $('#productNameEN').val(),
 			productCode: $('#productCode').val(),
 			productCategory: $('#productCategory').val(),
 			productDescription: $('#productDescription').val(),
+			productDescriptionEN: $('#productDescriptionEN').val(),
 			productPurpose: $('#productPurpose').val(),
 			productImageID: "current",
 		},

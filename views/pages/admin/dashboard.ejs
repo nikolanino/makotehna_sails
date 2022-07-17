@@ -60,6 +60,7 @@
                         <div class="formBox">
                             <form action="/add/category" enctype="multipart/form-data" method="POST" onsubmit="required()">
                                 <input type="text" name="categoryName" placeholder="Име на категоријата">
+                                <input type="text" name="categoryNameEN" placeholder="Име на категоријата ( Англиски )">
                                 <input type="file" name="categoryBg_Name" id="categoryImageID">
                                 <br>
                                 <button type="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ДОДАДИ КАТЕГОРИЈА</button>
@@ -94,6 +95,7 @@
                         <div class="formBox">
                             <form action="/add/product" enctype="multipart/form-data" method="POST" onsubmit="required()">
                                 <input type="text" name="productName" placeholder="Име на производ">
+                                <input type="text" name="productNameEN" placeholder="Име на производ ( Англиски )">
                                 <input type="text" name="productCode" placeholder="Шифра">
                                 <select type="text" name="productCategory">
                                     <option value="">- Одбери категорија</option>
@@ -102,6 +104,7 @@
                                     <% }) %>
                                 </select>
                                 <textarea type="text" name="productDescription" placeholder="Опис на производ" style="min-height: 80px; height: 80px; max-height: 150px;"></textarea>
+                                <textarea type="text" name="productDescriptionEN" placeholder="Опис на производ ( Англиски )" style="min-height: 80px; height: 80px; max-height: 150px;"></textarea>
                                 <textarea type="text" name="productPurpose" placeholder="Начин на употреба/дозирање" style="min-height: 80px; height: 80px; max-height: 150px;"></textarea>
                                 <input type="file" name="productImage_Name" id="productImageID">
                                 <br>
@@ -117,6 +120,7 @@
                                 <hr>
                                 <form id="formTag" enctype="multipart/form-data" method="POST" onsubmit="editProduct()">
                                     <input id="productName" type="text" name="productName" placeholder="Име на производ">
+                                    <input id="productNameEN" type="text" name="productNameEN" placeholder="Име на производ">
                                     <input id="productCode" type="text" name="productCode" placeholder="Шифра">
                                     <select id="productCategory" type="text" name="productCategory">
                                         <option value="">- Одбери категорија</option>
@@ -125,6 +129,7 @@
                                         <% }) %>
                                     </select>
                                     <textarea id="productDescription" type="text" name="productDescription" placeholder="Опис на производ" style="min-height: 80px; height: 80px; max-height: 150px; text-align: left; float: left;"></textarea>
+                                    <textarea id="productDescriptionEN" type="text" name="productDescriptionEN" placeholder="Опис на производ" style="min-height: 80px; height: 80px; max-height: 150px; text-align: left; float: left;"></textarea>
                                     <textarea id="productPurpose" type="text" name="productPurpose" placeholder="Начин на употреба/дозирање" style="min-height: 80px; height: 80px; max-height: 150px; text-align: left; float: left;"></textarea>
                                     <!-- <input type="file" name="updateproductImage_Name" id="productImageIDEdit"> -->
                                     <br>
