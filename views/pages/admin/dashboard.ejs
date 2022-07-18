@@ -66,6 +66,15 @@
                                 <button type="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ДОДАДИ КАТЕГОРИЈА</button>
                             </form>
                         </div>
+                        <div id="editCatForm" class="formBox">
+                            <form action="/edit/category" enctype="multipart/form-data" method="POST" onsubmit="required()">
+                                <input type="text" name="categoryName" placeholder="Име на категоријата">
+                                <input type="text" name="categoryNameEN" placeholder="Име на категоријата ( Англиски )">
+                                <input type="file" name="categoryBg_Name" id="categoryImageID">
+                                <br>
+                                <button type="submit" class="btn btn-success" style="margin: 10px 0; background: #04AA6D; font-size: 14px;">ДОДАДИ КАТЕГОРИЈА</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div style="overflow-x: auto;">
@@ -79,6 +88,7 @@
                                     <td><%= category.categoryName %></td>
                                     <td>
                                         <a href="/destroy/category/<%= category.id %>"><button type="button" class="btn btn-danger" style="font-size: 14px;">ИЗБРИШИ</button></a>
+                                        <a onclick="openEditCatForm('<%= category.id %>');"><button type="button" class="btn btn-danger dropBtn" style="font-size: 14px;">ИЗМЕНИ</button></a>
                                     </td>
                                 </tr>
                                 <% }) %>

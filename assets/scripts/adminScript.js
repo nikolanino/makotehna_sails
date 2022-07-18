@@ -134,3 +134,10 @@ function destroyProduct(id){
 function closeEditModal(id){
 	$("#editForm"+id).hide();
 }
+
+////////////////////////////////////////
+
+
+function openEditCatForm(id) {
+	$('#editCatForm'+id).show();
+}
