@@ -4,4 +4,5 @@ assets/images/products/*
 **/node_modules
 assets/images/category/*
 .tmp
+config/datastores.js
 **.DS_Store

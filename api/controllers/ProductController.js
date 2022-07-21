@@ -57,7 +57,8 @@ module.exports = {
                         productDescriptionEN: req.body.productDescriptionEN,
                         productCategory: product.productCategory,
                         productImageID: product.productImageID,
-                        productPurpose: product.productPurpose
+                        productPurpose: product.productPurpose,
+                        productPurposeEN: req.body.productPurposeEN
                     }
                 });
             }
@@ -95,7 +96,7 @@ module.exports = {
                     // params.productImageID = fileUID;
         
                     Product.update(req.param('id'), { productName: req.body.productName, productNameEN: req.body.productNameEN, productCategory: req.body.productCategory, productCode: req.body.productCode, 
-                        productDescription: req.body.productDescription, productDescriptionEN: req.body.productDescriptionEN, productPurpose: req.body.productPurpose, productImageName: fileName, productImageID: fileUID }, function productUpdated(err, product){
+                        productDescription: req.body.productDescription, productDescriptionEN: req.body.productDescriptionEN, productPurpose: req.body.productPurpose, productPurposeEN: req.body.productPurposeEN, productImageName: fileName, productImageID: fileUID }, function productUpdated(err, product){
                         if(err) return next(err);
                         setTimeout(function() {
                             res.status(200).json({ data: { info: "OK", productImageID: product.productImageID } });
@@ -104,7 +105,7 @@ module.exports = {
                 });
             }else{
                 // console.log("Vlegov vo funkcija 3");
-                Product.update(req.param('id'), { productName: req.body.productName, productNameEN: req.body.productNameEN, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription,productDescriptionEN: req.body.productDescriptionEN, productPurpose: req.body.productPurpose }, function productUpdated(err, product){
+                Product.update(req.param('id'), { productName: req.body.productName, productNameEN: req.body.productNameEN, productCategory: req.body.productCategory, productCode: req.body.productCode, productDescription: req.body.productDescription,productDescriptionEN: req.body.productDescriptionEN, productPurpose: req.body.productPurpose, productPurposeEN: req.body.productPurposeEN, }, function productUpdated(err, product){
                     if(err) return next(err);
 
                     res.status(200).json({ data: { info: "OK" } });
