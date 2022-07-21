@@ -138,6 +138,9 @@ function closeEditModal(id){
 ////////////////////////////////////////
 
 
-function openEditCatForm(id) {
-	$('#editCatForm'+id).show();
+function openEditCatForm(id, categoryName, categoryNameEN) {
+	$('#editCatForm').show();
+	$('#editCatForm form').attr('action', '/category/edit/'+id);
+	$('#categoryName').val(categoryName);
+	$('#categoryNameEN').val(categoryNameEN);
 }
