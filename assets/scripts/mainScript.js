@@ -98,23 +98,11 @@
     }
 
     function openModal(productID) {
-        var lang = sessionStorage.getItem("lang");
-        if(lang == 'mk'){
-            $("#productModalMK"+productID).show();
-            
-        }else{
-            $("#productModal"+productID).show();
-        }
+        $("#productModal"+productID).show();
     }
 
     function closeModal(productID) {
-        var lang = sessionStorage.getItem("lang");
-        if(lang == 'mk'){
-            $("#productModalMK"+productID).hide();
-            
-        }else{
-            $("#productModal"+productID).hide();
-        }
+        $("#productModal"+productID).hide();
     }
     function openDropDown() {
     	document.getElementById("myDropdown").classList.toggle("show");
