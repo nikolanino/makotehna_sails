@@ -60,10 +60,13 @@ function openEditForm(id) {
 		$(".close").attr('onclick', 'closeEditModal('+idProduct+'); return false;');
 		$('#editForm' + id).show();
 		$('#productName').val(data.data.productName);
+		$('#productNameEN').val(data.data.productNameEN);
 		$('#productCode').val(data.data.productCode);
 		$('#productCategory').val(data.data.productCategory);
 		$('#productDescription').val(data.data.productDescription);
+		$('#productDescriptionEN').val(data.data.productDescriptionEN);
 		$('#productPurpose').val(data.data.productPurpose);
+		$('#productPurposeEN').val(data.data.productPurposeEN);
 		
 	});
 }
@@ -93,6 +96,7 @@ function editProduct(id)
 			productDescription: $('#productDescription').val(),
 			productDescriptionEN: $('#productDescriptionEN').val(),
 			productPurpose: $('#productPurpose').val(),
+			productPurposeEN: $('#productPurposeEN').val(),
 			productImageID: "current",
 		},
 
