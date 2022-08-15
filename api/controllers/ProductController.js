@@ -54,11 +54,11 @@ module.exports = {
                         productNameEN: product.productNameEN,
                         productCode: product.productCode,
                         productDescription: product.productDescription,
-                        productDescriptionEN: req.body.productDescriptionEN,
+                        productDescriptionEN: product.productDescriptionEN,
                         productCategory: product.productCategory,
                         productImageID: product.productImageID,
                         productPurpose: product.productPurpose,
-                        productPurposeEN: req.body.productPurposeEN
+                        productPurposeEN: product.productPurposeEN
                     }
                 });
             }
