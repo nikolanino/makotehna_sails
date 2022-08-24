@@ -22,38 +22,42 @@
                         <a href="/proizvodi"><img style="width: 120px; height: 100px; margin-top: -7px;" src="images/logoT.png"></a>
                     </div>
                     <nav id="mainav" class="fl_right">
-                        <ul class="clear">
-                            <span class="mkCat" style="margin-right: 15px; display: none;">
-                                <li class="active"><a href="/">Почетна</a></li>
-                                <li class="active"><a href="/contact">КОНТАКТ</a></li>
-                                <li class="active"><a style="text-decoration: none; color: white; cursor: pointer;" href="images/katalog.pdf" target="_blank">КАТАЛОГ</a></li>
+                <ul class="clear">
+                    <span class="mkCat" style="margin-right: 15px; display: none;">
+                        <li class="active"><a href="/">Почетна</a></li>
+                        <li class="active"><a href="/proizvodi">Категори</a></li>
+                        <li class="active"><a style="text-decoration: none; color: white; cursor: pointer;" href="images/catalogMK.pdf" target="_blank">КАТАЛОГ</a></li>
+                    </span>
+                    <span class="enCat" style="margin-right: 15px; display: none;">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li class="active"><a href="/proizvodi">Categories</a></li>
+                        <li class="active"><a style="text-decoration: none; color: white; cursor: pointer;" href="images/catalogEN.pdf" target="_blank">Catalog</a></li>
+                    </span>
+                    <li class="active">
+                        <a href="#" id="enLang" onclick="callLocale('en');" style="display: none;"><img src="images/usFlag.png" style="width: 35px;"></a>
+                        <a href="#" id="mkLang" onclick="callLocale('mk');" style="display: none;"><img src="images/mkFlag.png" style="width: 35px;"></a>
+                    </li>
+                </ul>
+                <div class="smallDisplay" style="text-align: right;">
+                    <div class="dropdown">
+                        <button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
+                        <div id="myDropdown" class="dropdown-content dropdown-menu-right">
+                            <span class="mkCat" style=" display: none;">
+                                <a href="/">ПОЧЕТНА</a>
+                                <a href="/proizvodi">Категории</a>
+                                <a style="text-decoration: none; color: white; cursor: pointer;" href="images/catalogMK.pdf" target="_blank">КАТАЛОГ</a>
                             </span>
-                            <span class="enCat" style="margin-right: 15px; display: none;">
-                                <li class="active"><a href="/">Home</a></li>
-                                <li class="active"><a href="/contact">Contact</a></li>
-                                <li class="active"><a style="text-decoration: none; color: white; cursor: pointer;" href="images/catalog.pdf" target="_blank">Catalog</a></li>
+                            <span class="enCat" style=" display: none;">
+                                <a href="/">HOME</a>
+                                <a href="/proizvodi">Categories</a>
+                                <a style="text-decoration: none; color: white; cursor: pointer;" href="images/catalogEN.pdf" target="_blank">CATALOG</a>
                             </span>
-                            <li class="active">
-                                <a href="#" id="enLang2" onclick="callLocale('en');" style="display: none;"><img src="images/usFlag.png" style="width: 35px;"></a>
-                                <a href="#" id="mkLang2" onclick="callLocale('mk');" style="display: none;"><img src="images/mkFlag.png" style="width: 35px;"></a>
-                            </li>
-
-                            <!-- <li class="active"><a href="/contact">КОНТАКТ</a></li> -->
-                        </ul>
-                        <div class="smallDisplay" style="text-align: right;">
-							<div class="dropdown">
-								<button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
-								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
-									<a href="/">ПОЧЕТНА</a>
-									<a href="/proizvodi">ПРОИЗВОДИ</a>
-									<a style="text-decoration: none; color: white; cursor: pointer;" href="images/KATALOG.pdf" target="_blank">КАТАЛОГ</a>
-                                    <a href="#" id="enLang2" onclick="callLocale('en');" style="display: none;"><img src="images/usFlag.png" style="width: 35px;"></a>
-                                    <a href="#" id="mkLang2" onclick="callLocale('mk');" style="display: none;"><img src="images/mkFlag.png" style="width: 35px;"></a>
-                                    <!-- <a href="/contact">КОНТАКТ</a> -->
-								</div>
-							</div>
-						</div>
-            		</nav>
+                            <a href="#" id="enLang2" onclick="callLocale('en');" style="display: none;"><img src="images/usFlag.png" style="width: 35px;"></a>
+                            <a href="#" id="mkLang2" onclick="callLocale('mk');" style="display: none;"><img src="images/mkFlag.png" style="width: 35px;"></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
                 </header>
             </div>
             <div class="overlay2" style="height: auto; min-height: 800px;">
