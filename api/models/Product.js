@@ -18,7 +18,8 @@ module.exports = {
         productImageID: { type: 'string' },
         productImageName: { type: 'string' }, 
         productPurpose: { type: 'string' },
-        productPurposeEN: { type: 'string' }
+        productPurposeEN: { type: 'string' },
+        productPopular: { type: 'boolean', defaultsTo: false },
 
     },
 

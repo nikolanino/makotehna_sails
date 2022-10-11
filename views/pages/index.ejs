@@ -12,7 +12,7 @@
 			<div><img src="images/flags/usFlag.png" style="width: 35px;"></div>
 		</div>
 	</div>
-	<div class="headerBg">
+	<div class="headerBg" v-for="i in currentIndex" :key="i" v-bind:style="{ background: 'url(' + currentImg + ')'  }">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
