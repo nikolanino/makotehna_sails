@@ -20,11 +20,9 @@ module.exports.bootstrap = async function() {
   //   return;
   // }
   //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
-  //   // etc.
-  // ]);
+  await User.createEach([
+    { email: 'zlatko@m.com', username: 'zlatko', password: 'zlatko12' },
+  ]);
   // ```
 
 };

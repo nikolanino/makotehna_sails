@@ -1,74 +1,34 @@
-
-        <!-- <div class="bgded" style="background-image:url('images/pozadina-slika.jpeg');"> -->
-            <div class="wrapper row1">
-                <header id="header" class="hoc clear">
-                    <div id="logo" class="fl_left">
-                    <!-- <a href="/proizvodi"><img style="width: 120px; height: 100px; margin-top: -7px;" src="images/logo.png"></a> -->
-                    <!-- <nav id="mainav" class="fl_right">
-                        <ul class="clear">
-                            <li class="active"><a href="/">Почетна</a></li>
-                            <li class="active"><a href="/proizvodi">КАТАЛОГ</a></li>
-                            <li class="active"><a href="/about">За Нас</a></li>
-                            <li class="active"><a href="/contact">КОНТАКТ</a></li>
-                        </ul>
-                        <div class="smallDisplay" style="text-align: right;">
-							<div class="dropdown">
-								<button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
-								<div id="myDropdown" class="dropdown-content dropdown-menu-right">
-									<a href="/">ПОЧЕТНА</a>
-									<a href="/proizvodi">КАТАЛОГ</a>
-									<a href="/about">ЗА НАС</a>
-                                    <a href="/contact">КОНТАКТ</a>
-								</div>
-							</div>
-						</div>
-            		</nav> -->
-                        <a href="#" id="enLang" onclick="callLocale('en');" style="display: none;"><img src="images/usFlag.png" style="width: 35px;"></a>
-                        <a href="#" id="mkLang"onclick="callLocale('mk');" style="display: none;"><img src="images/mkFlag.png" style="width: 35px;"></a>
-                    </div>
-                </header>
-            </div>
-            <div class="overlay2" style="height: auto; min-height: 800px;">
-                <div id="pageintro2 aboutUsPageintro" class="hoc clear">
-                    <article style="margin-top: -100px;">
-                        <!-- <h3 style="position: center; font-weight: bold; font-size: 30px; color: green; font-family: Arial, Helvetica, sans-serif;"> -->
-                            <!-- Макотехна -->
-                        <!-- </h3> -->
-                        <div class="aboutUsPage">
-                            <div class="textSide">
-                                <span class="mkCat" style=" display: none;">
-                                    <p style="font-family: Arial, Helvetica, sans-serif; margin-top: 30px; font-size: 18px; text-align: left;"> <span style="color: green; font-weight: bold;">МАКОТЕХНА</span> Дооел е формирана во Септември 1996 година.<br><br> Главна дејност е производство на професионални средства за Хигиена, Дезинфекција, Одмастувачи за прехранбена индустрија, Одмастувачи за машинска индустрија, Автокозметика, Парфеми, Санитарни Течности, Брисачи за раце, Тоалет хартија, Најлонски вреќи.<br><br>
-                                    <span style="color: green; font-weight: bold;">МАКОТЕХНА</span> во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
-                                </span>
-                                <span class="enCat" style=" display: none;">
-                                    <p style="font-family: Arial, Helvetica, sans-serif; margin-top: 30px; font-size: 18px; text-align: left;"><span style="color: green; font-weight: bold;">MAKOTEHNA</span> DOOEL was established in September 1996.<br><br>
-                                    The main activity is the production of professional products for Hygiene, Disinfection, Degreasers for the food industry, Degreasers for the machine industry, Autocosmetics, Perfumes, Sanitary Liquids, Hand wipes, Toilet paper, Nylon bags.<br><br>
-                                    <span style="color: green; font-weight: bold;">MAKOTEHNA</span> has been a flexible company over the years, which was able to easily reorient itself to the market and produce assets according to its needs with all the standards required by the consumer.</p>
-                                </span>
-                            </div>
-                            <div class="rightSide">
-                                <div class="buttonSide">
-                                    <a href="/proizvodi">
-                                        <div class="enCat" style="display: none;">
-                                            <button>EXPLORE</button>
-                                        </div>
-                                        <div class="mkCat" style=" display: none;">
-                                            <button>ИСТРАЖИ</button>
-                                        </div>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-
-        <%- partial('../partials/footer.ejs'); %>
-        <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
-
+<div class="header">
+	<div class="container">
+		<a href="/"><img src="images/logo.png"></a>
+		<hr>
+		<div class="headerButtons">
+			<div class="navbar">
+				<a href="/proizvodi" class="bigButton">Производи</a>
+				<a href="/about">За нас</a>
+				<a href="">Каталог</a>
+				<a href="/contact">Контакт</a>
+			</div>
+			<div><img src="images/flags/usFlag.png" style="height: 35px;"></div>
+		</div>
+	</div>
+	<div class="headerBg" style="height: 150px!important;">
+	</div>
+</div>
+<div class="main">
+	<div class="container">
+		<div class="row about">
+			<h1>За Макотехна</h1>
+			<hr>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+				<p><b style="color: green;">МАКОТЕХНА</b> Дооел е формирана во Септември 1996 година.<br><br>Главна дејност е производство на професионални средства за Хигиена, Дезинфекција, Одмастувачи за прехранбена индустрија, Одмастувачи за машинска индустрија, Автокозметика, Парфеми, Санитарни Течности, Брисачи за раце, Тоалет хартија, Најлонски вреќи.
+				<br><br>
+				<b style="color: green;">МАКОТЕХНА</b> во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
+				<a href="#" class="bigButton">Прочитај повеќе</a>
+			</div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+				<img src="images/about.png">
+			</div>
+		</div>
+	</div>
+</div>

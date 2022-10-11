@@ -19,9 +19,18 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/about' },
-  '/about': {view: 'pages/about'},
-  '/contact': {view: 'pages/contact'},
+  // '/': { view: 'pages/about' },
+  // '/about': {view: 'pages/about'},
+  // '/contact': {view: 'pages/contact'},
+
+  /////////////////////////////////////////
+
+  //newTemplate
+
+  '/': { view: 'pages/index', locals: { layout: 'layouts/layoutMain' } },
+  '/about': { view: 'pages/about', locals: { layout: 'layouts/layoutMain' }  },
+  '/contact': { view: 'pages/contact', locals: { layout: 'layouts/layoutMain' }  },
+  '/proizvodi': { view: 'pages/products', controller: 'index', action: 'index', locals: { layout: 'layouts/layoutMain' }  },
 
   /////////////////////////////////////////
 
@@ -30,10 +39,12 @@ module.exports.routes = {
   '/logout': 'AuthController.logout',
   /*'GET /register': { view: 'pages/register' },*/
 
+  'GET /getData': { controller:'product', action: 'getData' },
+
   /////////////////////////////////////////
 
   '/admin/dashboard': { view: 'pages/admin/dashboard', controller: 'index', action: 'dashboard' },
-  '/proizvodi': { view: 'pages/proizvodi', controller: 'index', action: 'index' },
+  // '/proizvodi': { view: 'pages/proizvodi', controller: 'index', action: 'index' },
 
   '/add/category': { controller: 'category', action: 'addCategory' },
   '/destroy/category/:id': { controller: 'category', action: 'destroyCategory' },

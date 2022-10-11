@@ -65,6 +65,15 @@ module.exports = {
         });
     },
 
+    getData: function(req, res) {
+        Category.find().exec(function(err, categories){
+            Product.find().exec(function(err, products){
+                if(err) return console.log(err);
+                return res.status(200).json({products, categories});
+            });
+        });
+    },
+
     updateProduct: function(req, res, next) {
 
         var params = req.allParams();

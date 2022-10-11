@@ -9,54 +9,34 @@
 				<a href="">Каталог</a>
 				<a href="/contact">Контакт</a>
 			</div>
-			<div><img src="images/flags/usFlag.png" style="width: 35px;"></div>
+			<div><img src="images/usFlag.png" style="width: 35px;"></div>
 		</div>
 	</div>
-	<div class="headerBg">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
-					<p>Макотехна е твојот број еден партнер за чиста и здрава животна средина</p>
-				</div>
-			</div>
-		</div>
+	<div class="headerBg" style="height: 150px!important;">
 	</div>
 </div>
 
 <div class="main" id="mainApp">
 	<div class="container">
-		<div class="row about">
-			<h1>За Макотехна</h1>
-			<hr>
-			<div class="col-12 col-sm-12 col-md-6 col-lg-6">
-				<p><b style="color: green;">МАКОТЕХНА</b> Дооел е формирана во Септември 1996 година.<br><br>Главна дејност е производство на професионални средства за Хигиена, Дезинфекција, Одмастувачи за прехранбена индустрија, Одмастувачи за машинска индустрија, Автокозметика, Парфеми, Санитарни Течности, Брисачи за раце, Тоалет хартија, Најлонски вреќи.
-				<br><br>
-				<b style="color: green;">МАКОТЕХНА</b> во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
-				<a href="#" class="bigButton">Прочитај повеќе</a>
-			</div>
-			<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
-				<img src="images/about.png">
-			</div>
-		</div>
 		<div class="row categories">
-			<h1>Топ најбарани производи</h1>
+			<h1>ПРОИЗВОДИ</h1>
 			<hr>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+				<div class="categoryBox" v-for="category in categories" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="changeCategory(category.categoryName)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+					<p>{{ category.categoryName }}</p>
+				</div>
+			</div>
+			<div class="col-12 col-sm-12 col-md-8 col-lg-8">
 				<div class="row">
-					<div class="col-12 col-sm-12 col-md-3 col-lg-3">
-						<div class="productBox">
-							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
-							<hr>
-							<h2>Герамин АБ 5</h2>
+					<template v-for="product in products">
+						<div class="col-12 col-sm-12 col-md-4 col-lg-4" v-if="categorySelected == product.productCategory">
+							<div class="productBox">
+								<img v-bind:src="'/images/products/' + product.productImageID" :alt="product.productName">
+								<hr>
+								<h2>{{ product.productName }}</h2>
+							</div>
 						</div>
-					</div>
-					<div class="col-12 col-sm-12 col-md-3 col-lg-3">
-						<div class="productBox">
-							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
-							<hr>
-							<h2>Герамин АБ 5</h2>
-						</div>
-					</div>
+					</template>
 				</div>
 			</div>
 			<div id="productModal" class="modal">
