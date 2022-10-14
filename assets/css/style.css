@@ -38,9 +38,9 @@ body{
 .header .headerBg{
 	height: 400px;
     margin-top: 10px;
-	background: url('../images/background.png');
-	background-position: center;
-    background-size: cover;
+	/*background: url('../images/background.png');*/
+	background-position: center!important;
+    background-size: cover!important;
 }
 
 .header .headerBg p{

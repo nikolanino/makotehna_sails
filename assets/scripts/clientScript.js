@@ -20,9 +20,11 @@
                 ],
 
                 timer: null,
-                currentIndex: 0,
+                i: 0,
 
-                categorySelected: ''
+                categorySelected: '',
+                backgroundImage: ''
+
             }   
         },
 
@@ -32,8 +34,7 @@
                 this.categories = response.data.categories;
                 // console.log(response.data)
             });
-
-            this.startSlide();
+            this.changeBG();
         },
 
         methods: {
@@ -41,21 +42,19 @@
             changeCategory(name){
                 this.categorySelected = name;
             },
+    
+            changeBG: function() {
+                this.i++;
+                if(this.i == this.images.length){
+                    this.i = 0;
+                }
 
-            currentImg() {
-                return this.images[Math.abs(this.currentIndex) % this.images.length];
-            },
-            
-            startSlide() {
-                this.timer = setInterval(this.next, 4000);
-            },
-
-            next() {
-                this.currentIndex += 1;
-            },
-            prev() {
-                this.currentIndex -= 1;
-            }
+                this.backgroundImage = this.images[this.i];
+                setTimeout(() => {
+                    this.changeBG()
+                }, 5000)
+                // console.log(this.i)
+            }         
 
         },
     }

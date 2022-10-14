@@ -12,7 +12,7 @@
 			<div><img src="images/flags/usFlag.png" style="width: 35px;"></div>
 		</div>
 	</div>
-	<div class="headerBg" v-for="i in currentIndex" :key="i" v-bind:style="{ background: 'url(' + currentImg + ')'  }">
+	<div class="headerBg" :style="{ background: 'url(' + backgroundImage + ')'  }">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
@@ -23,7 +23,7 @@
 	</div>
 </div>
 
-<div class="main" id="mainApp">
+<div class="main">
 	<div class="container">
 		<div class="row about">
 			<h1>За Макотехна</h1>
@@ -43,14 +43,42 @@
 			<hr>
 			<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="row">
-					<div class="col-12 col-sm-12 col-md-3 col-lg-3">
+					<div class="col-12 col-sm-12 col-md-2 col-lg-2">
 						<div class="productBox">
 							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
 							<hr>
 							<h2>Герамин АБ 5</h2>
 						</div>
 					</div>
-					<div class="col-12 col-sm-12 col-md-3 col-lg-3">
+					<div class="col-12 col-sm-12 col-md-2 col-lg-2">
+						<div class="productBox">
+							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+							<hr>
+							<h2>Герамин АБ 5</h2>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-2 col-lg-2">
+						<div class="productBox">
+							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+							<hr>
+							<h2>Герамин АБ 5</h2>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-2 col-lg-2">
+						<div class="productBox">
+							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+							<hr>
+							<h2>Герамин АБ 5</h2>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-2 col-lg-2">
+						<div class="productBox">
+							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+							<hr>
+							<h2>Герамин АБ 5</h2>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-2 col-lg-2">
 						<div class="productBox">
 							<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
 							<hr>
@@ -59,37 +87,15 @@
 					</div>
 				</div>
 			</div>
-			<div id="productModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <hr>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                        <img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg" style='width: -webkit-fill-available; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
-                        </div>
-                        <div class="col-12 col-md-6">   
-							<h1 style="font-size: 20px;">ГЕРАМИН АБ5 - 10%</h1>
-							<hr>
-							<h1 style="font-size: 15px; text-align: left;">Опис</h1>
-							<p style="white-space: break-spaces;">Концентрат за чистење и дезинфекција на сите површини со продолжено
-							дејство. - 10л
-							100мл раствор содржи 10г бензалкониум хлорид.</p>
-							<h1 style="font-size: 15px; text-align: left;">Начин на употреба/дозирање</h1>
-							<p style="white-space: break-spaces;">0.25% раствор – 25 мл во 975 мл водa
-							0.5% раствор – 50 мл во 950 мл вода
-							1% раствор – 100 мл во 900 мл вода
-							2% раствор – 200 мл во 800 мл вода</p>
-							<div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
-								<i class="fas fa-ban" style="font-size: 50px; color: red; margin-right: 10px;"></i>
-								<div style="display: flex; flex-direction: column; align-items: center;">
-									<h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Само за професионална употреба !</h1>
-									<h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Подалеку од дофат на деца !!</h1>
-								</div>
-							</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<div class="row categories">
+				<h1>ПРОИЗВОДИ</h1>
+				<hr>
+				<div class="col-12 col-sm-12 col-md-4 col-lg-4" v-for="category in categories">
+					<div class="categoryBox" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="changeCategory(category.categoryName)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+						<p>{{ category.categoryName }}</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
