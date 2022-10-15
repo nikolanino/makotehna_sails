@@ -40,6 +40,7 @@ module.exports.routes = {
   /*'GET /register': { view: 'pages/register' },*/
 
   'GET /getData': { controller:'product', action: 'getData' },
+  'GET /category/:id': { view: 'pages/category/show2', controller: 'category', action: 'getCategory', locals: { layout: 'layouts/layoutMain' } },
 
   /////////////////////////////////////////
 
