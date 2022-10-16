@@ -3,13 +3,19 @@
 		<a href="/"><img src="images/logo.png"></a>
 		<hr>
 		<div class="headerButtons">
-			<div class="navbar">
+			<div class="navbar" v-if="language == 'mk'">
 				<a href="/proizvodi" class="bigButton">Производи</a>
 				<a href="/about">За нас</a>
 				<a href="">Каталог</a>
 				<a href="/contact">Контакт</a>
 			</div>
-			<div><img src="images/usFlag.png" style="width: 35px;"></div>
+			<div class="navbar" v-if="language == 'en'">
+				<a href="/proizvodi" class="bigButton">Products</a>
+				<a href="/about">About us</a>
+				<a href="">Catalog</a>
+				<a href="/contact">Contact</a>
+			</div>
+			<div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer;"></div>
 		</div>
 	</div>
 </div>
@@ -17,12 +23,16 @@
 <div class="main" id="mainApp">
 	<div class="categories">
 		<div class="container">
-			<h1>КАТЕГОРИИ</h1>
+			<h1 v-if="language == 'mk'">КАТЕГОРИИ</h1>
+			<h1 v-if="language == 'en'">Categories</h1>
 			<hr class="mainLine">
 			<div class="row">
-				<div class="col-12 col-sm-12 col-md-4 col-lg-4" v-for="category in categories">
-					<div class="categoryBox" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+					<div class="col-12 col-sm-12 col-md-4 col-lg-4" v-for="category in categories">
+					<div class="categoryBox" v-if="language == 'mk'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
 						<p>{{ category.categoryName }}</p>
+					</div>
+					<div class="categoryBox" v-if="language == 'en'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+						<p>{{ category.categoryNameEN }}</p>
 					</div>
 				</div>
 			</div>

@@ -1,53 +1,39 @@
-
-
-        <div class="bgded" style="background-image:url('images/pozadina-slika2.jpeg');">
-            <div class="wrapper row1">
-                <header id="header" class="hoc clear">
-                    <div id="logo" class="fl_left">
-                        <img style="width: 120px; height: 100px; margin-top: -7px;" src="images/logoT.png">
-                    </div>
-                    <nav id="mainav" class="fl_right">
-                        <ul class="clear">
-                            <li class="active"><a href="/">Почетна</a></li>
-                            <li class="active"><a href="/proizvodi">КАТАЛОГ</a></li>
-                            <!-- <li class="active"><a href="/about">За Нас</a></li> -->
-                        </ul>
-                        <div class="smallDisplay" style="text-align: right;">
-              <div class="dropdown">
-                <button onclick="openDropDown()" class="dropbtn"><i class="fa fa-bars"></i></button>
-                <div id="myDropdown" class="dropdown-content dropdown-menu-right">
-                  <a href="/">ПОЧЕТНА</a>
-                  <a href="/proizvodi">КАТАЛОГ</a>
-                  <!-- <a href="/about">ЗА НАС</a> -->
-                </div>
-              </div>
+<div class="header">
+    <div class="container">
+        <a href="/"><img src="images/logo.png"></a>
+        <hr>
+        <div class="headerButtons">
+            <div class="navbar">
+                <a href="/proizvodi" class="bigButton">Производи</a>
+                <a href="/about">За нас</a>
+                <a href="">Каталог</a>
+                <a href="/contact">Контакт</a>
             </div>
-                </nav>
-                </header>
-            </div>
-            <div class="overlay2" style="height: auto; min-height: 800px;">
-                <div id="pageintro2" class="hoc clear" style="padding: 150px 0;">
-                    <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-12 col-md-4">
-                            <div style="background: white; border-radius: 10px; margin: 5px; width: 100%;">
-                                <form method="POST" action="/login" style="padding: 10px 25px; color: black; text-align: center;">
-                                    <div class="form-group">
-                                        <label for="inputFullName"></label>
-                                        <input type="text" class="form-control" id="inputFullName" aria-describedby="emailHelp" name="username" placeholder="Корисничко име">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="subjectOfMail"></label>
-                                        <input type="password" class="form-control" id="subjectOfMail" aria-describedby="emailHelp" name="password" placeholder="Лозинка">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" style="margin-top: 15px; background: green; border-color: green;">Најава</button>
-                                </form>
-                            </div>
+            <div><img src="images/flags/usFlag.png" style="height: 35px;"></div>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="about" style="background: rgb(248, 248, 248); padding: 30px 0px;">
+        <div class="container">
+            <h1>Најава</h1>
+            <hr>
+            <div class="row">
+                <div class="col-md-4 col-lg-4"></div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <form method="POST" action="/login" style="padding: 10px 25px; color: black; text-align: center;">
+                        <div class="form-group">
+                            <label for="inputFullName"></label>
+                            <input type="text" class="form-control" id="inputFullName" aria-describedby="emailHelp" name="username" placeholder="Корисничко име">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="subjectOfMail"></label>
+                            <input type="password" class="form-control" id="subjectOfMail" aria-describedby="emailHelp" name="password" placeholder="Лозинка">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 15px; background: green; border-color: green;">Најава</button>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <%- partial('../partials/footer.ejs'); %>
-        <!-- <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a> -->
+    </div>
+</div>

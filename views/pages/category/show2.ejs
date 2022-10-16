@@ -3,13 +3,19 @@
 		<a href="/"><img src="../images/logo.png"></a>
 		<hr>
 		<div class="headerButtons">
-			<div class="navbar">
+			<div class="navbar" v-if="language == 'mk'">
 				<a href="/proizvodi" class="bigButton">Производи</a>
 				<a href="/about">За нас</a>
 				<a href="">Каталог</a>
 				<a href="/contact">Контакт</a>
 			</div>
-			<div><img src="../images/usFlag.png" style="width: 35px;"></div>
+			<div class="navbar" v-if="language == 'en'">
+				<a href="/proizvodi" class="bigButton">Products</a>
+				<a href="/about">About us</a>
+				<a href="">Catalog</a>
+				<a href="/contact">Contact</a>
+			</div>
+			<div><img src="../images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer;"><img src="../images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer;"></div>
 		</div>
 	</div>
 </div>
@@ -17,9 +23,10 @@
 <div class="main" id="mainApp">
 	<div class="categories" style="background: rgb(248, 248, 248); padding: 30px 0px;">
 		<div class="container">
-			<h1><%= category.categoryName %></h1>
+			<h1 v-if="language == 'mk'"><%= category.categoryName %></h1>
+			<h1 v-if="language == 'en'"><%= category.categoryNameEN %></h1>
 			<hr class="mainLine">
-			<div class="row">
+			<div class="row" v-if="language == 'mk'">
 
 				<% products.forEach(function(product){ 
                    if(product.productCategory == category.categoryName){ %>
@@ -54,6 +61,50 @@
                                     <div style="display: flex; flex-direction: column; align-items: center;">
                                         <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Само за професионална употреба !</h1>
                                         <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Подалеку од дофат на деца !!</h1>
+                                    </div>
+                                </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <%  }
+                    }); %>
+	            </div>
+			</div>
+			<div class="row" v-if="language == 'en'">
+
+				<% products.forEach(function(product){ 
+                   if(product.productCategory == category.categoryName){ %>
+
+				<div class="col-12 col-sm-12 col-md-3 col-lg-3" onclick="document.getElementById('productModal'+'<%= product.id %>').style.display = 'block';" style='cursor: pointer;'>
+					<div class="productBox">
+						<img src="../../images/products/<%= product.productImageID %>">
+						<hr>
+						<h2><%= product.productNameEN %></h2>
+					</div>
+				</div>
+
+				<div id="productModal<%= product.id %>" class="modal">
+	                <div class="modal-content">
+	                    <span class="close" onclick="document.getElementById('productModal'+'<%= product.id %>').style.display = 'none';">&times;</span>
+	                    <hr>
+	                    <div class="row">
+	                        <div class="col-12 col-md-6">
+	                        <img src="../../images/products/<%= product.productImageID %>" style='width: -webkit-fill-available; margin: auto; border: 1px solid #ccc; margin-bottom: 10px;'>
+	                        </div>
+	                        <div class="col-12 col-md-6">   
+								<h1 style="font-size: 20px;"><%= product.productNameEN %></h1>
+                                <hr>
+                                <h1 style="font-size: 15px; text-align: left;">Description</h1>
+                                <p style="white-space: break-spaces;"><%= product.productDescriptionEN %></p>
+                                <% if(product.productPurposeEN != ""){ %>
+                                    <h1 style="font-size: 15px; text-align: left;">Method of use/dosage</h1>
+                                    <p style="white-space: break-spaces;"><%= product.productPurposeEN %></p>
+                                <% } %>
+                                <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+                                    <i class="fas fa-ban" style="font-size: 50px; color: red; margin-right: 10px;"></i>
+                                    <div style="display: flex; flex-direction: column; align-items: center;">
+                                        <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">For professional use only !</h1>
+										<h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Keep out of reach of children !!</h1>
                                     </div>
                                 </div>
 	                        </div>

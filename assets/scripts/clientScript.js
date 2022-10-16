@@ -21,6 +21,8 @@
                 timer: null,
                 i: 0,
 
+                language: '',
+
                 categorySelected: '',
                 backgroundImage: ''
 
@@ -34,6 +36,17 @@
                 // console.log(response.data)
             });
             this.changeBG();
+
+            console.log(document.querySelector("html").getAttribute('lang'));
+
+            var lang = sessionStorage.getItem("lang");
+            document.querySelector("html").setAttribute('lang', lang);
+            this.language = lang;
+
+            if(lang == null){
+                sessionStorage.setItem("lang", 'mk');
+                this.language = 'mk';
+            }
         },
 
         methods: {
@@ -57,6 +70,20 @@
 
             redirectToCategory(id){
                 window.location.replace('/category/'+id);
+            },
+
+            changeLanguage(){
+                var lang = sessionStorage.getItem("lang");
+
+                if(lang == 'mk'){
+                    sessionStorage.setItem("lang", "en");
+                    document.querySelector("html").setAttribute('lang', 'en');
+                    this.language = 'en';
+                } else if(lang == 'en'){
+                    sessionStorage.setItem("lang", "mk");
+                    document.querySelector("html").setAttribute('lang', 'mk');
+                    this.language = 'mk';
+                }
             }     
 
         },

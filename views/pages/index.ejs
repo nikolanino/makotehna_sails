@@ -3,13 +3,19 @@
 		<a href="/"><img src="images/logo.png"></a>
 		<hr>
 		<div class="headerButtons">
-			<div class="navbar">
+			<div class="navbar" v-if="language == 'mk'">
 				<a href="/proizvodi" class="bigButton">Производи</a>
 				<a href="/about">За нас</a>
 				<a href="">Каталог</a>
 				<a href="/contact">Контакт</a>
 			</div>
-			<div><img src="images/flags/usFlag.png" style="width: 35px;"></div>
+			<div class="navbar" v-if="language == 'en'">
+				<a href="/proizvodi" class="bigButton">Products</a>
+				<a href="/about">About us</a>
+				<a href="">Catalog</a>
+				<a href="/contact">Contact</a>
+			</div>
+			<div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer;"></div>
 		</div>
 	</div>
 	<div class="headerBg" :style="{ background: 'url(' + backgroundImage + ')'  }" data-aos="zoom-out">
@@ -26,14 +32,21 @@
 <div class="main">
 	<div class="about">
 		<div class="container">
-			<h1>За Макотехна</h1>
+			<h1 v-if="language == 'mk'">За Макотехна</h1>
+			<h1 v-if="language == 'en'">About Makotehna</h1>
 			<hr class="mainLine">
 			<div class="row">
-				<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6" v-if="language == 'mk'">
 					<p><b style="color: green;">МАКОТЕХНА</b> Дооел е формирана во Септември 1996 година.<br><br>Главна дејност е производство на професионални средства за Хигиена, Дезинфекција, Одмастувачи за прехранбена индустрија, Одмастувачи за машинска индустрија, Автокозметика, Парфеми, Санитарни Течности, Брисачи за раце, Тоалет хартија, Најлонски вреќи.
 					<br><br>
 					<b style="color: green;">МАКОТЕХНА</b> во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
-					<a href="#" class="bigButton">Прочитај повеќе</a>
+					<a href="/about" class="bigButton">Прочитај повеќе</a>
+				</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6" v-if="language == 'en'">
+					<p><b style="color: green;">MAKOTEHNA</b> DOOEL was established in September 1996.<br><br>
+					The main activity is the production of professional products for Hygiene, Disinfection, Degreasers for the food industry, Degreasers for the machine industry, Autocosmetics, Perfumes, Sanitary Liquids, Hand wipes, Toilet paper, Nylon bags.<br><br>
+					<span style="color: green; font-weight: bold;">MAKOTEHNA</span> has been a flexible company over the years, which was able to easily reorient itself to the market and produce assets according to its needs with all the standards required by the consumer.</p>
+					<a href="/about" class="bigButton">Прочитај повеќе</a>
 				</div>
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
 					<img src="images/about.png">
@@ -44,51 +57,144 @@
 	<div class="categories" style="background:#f8f8f8; padding: 30px 0;">
 		<div class="container">
 			<div class="row">
-				<h1>Топ најбарани производи</h1>
+				<h1 v-if="language == 'mk'">Топ најбарани производи</h1>
+				<h1 v-if="language == 'en'">Top trending products</h1>
 				<hr class="mainLine">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="row">
-						<div class="col-12 col-sm-12 col-md-3 col-lg-3">
-							<div class="productBox" style="background:#ffffff;">
-								<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
-								<hr>
-								<h2>Герамин АБ 1</h2>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-3 col-lg-3">
-							<div class="productBox"  style="background:#ffffff;">
-								<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
-								<hr>
-								<h2>Герамин АБ 2</h2>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-3 col-lg-3">
-							<div class="productBox" style="background:#ffffff;">
-								<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
-								<hr>
-								<h2>Герамин АБ 3</h2>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-3 col-lg-3">
-							<div class="productBox" style="background:#ffffff;">
-								<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
-								<hr>
-								<h2>Герамин АБ 4</h2>
-							</div>
-						</div>
-					</div>
+
+
+					<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+				        <!-- Carousel indicators -->
+				        <ol class="carousel-indicators" style="bottom: -25px;">
+				            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" style="background: #a6a6a6; border: none;"></li>
+				            <li data-bs-target="#myCarousel" data-bs-slide-to="1" style="background: #a6a6a6; border: none;"></li>
+				            <li data-bs-target="#myCarousel" data-bs-slide-to="2" style="background: #a6a6a6; border: none;"></li>
+				        </ol>
+				        
+				        <!-- Wrapper for carousel items -->
+				        <div class="carousel-inner">
+				            <div class="carousel-item active">
+				                <div class="row">
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 1</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox"  style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 2</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 3</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 4</h2>
+										</div>
+									</div>
+								</div>
+				            </div>
+				            <div class="carousel-item">
+				                <div class="row">
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 1</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox"  style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 2</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 3</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 4</h2>
+										</div>
+									</div>
+								</div>
+				            </div>
+				            <div class="carousel-item">
+				                <div class="row">
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 1</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox"  style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 2</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 3</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox" style="background:#ffffff;">
+											<img src="https://makotehna.mk/images/products/6ac348af-a61a-4925-8412-a8059ac84601.jpg">
+											<hr>
+											<h2>Герамин АБ 4</h2>
+										</div>
+									</div>
+								</div>
+				            </div>
+				        </div>
+
+				        <!-- Carousel controls -->
+				        <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev" style="bottom: -26px; align-items: flex-end;">
+				            <span class="carousel-control-prev-icon" style="width: 1.8rem;"></span>
+				        </a>
+				        <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next" style="bottom: -26px; align-items: flex-end;">
+				            <span class="carousel-control-next-icon" style="width: 1.8rem;"></span>
+				        </a>
+				    </div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="categories">
 		<div class="container">
-			<h1>КАТЕГОРИИ</h1>
+			<h1 v-if="language == 'mk'">КАТЕГОРИИ</h1>
+			<h1 v-if="language == 'en'">Categories</h1>
 			<hr class="mainLine">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-4 col-lg-4" v-for="category in categories">
-					<div class="categoryBox" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="changeCategory(category.categoryName)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+					<div class="categoryBox" v-if="language == 'mk'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
 						<p>{{ category.categoryName }}</p>
+					</div>
+					<div class="categoryBox" v-if="language == 'en'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+						<p>{{ category.categoryNameEN }}</p>
 					</div>
 				</div>
 			</div>

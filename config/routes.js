@@ -34,7 +34,7 @@ module.exports.routes = {
 
   /////////////////////////////////////////
 
-  'GET /login': { view: 'pages/login' },
+  'GET /login': { view: 'pages/login', locals: { layout: 'layouts/layoutMain' }  },
   'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
   /*'GET /register': { view: 'pages/register' },*/
