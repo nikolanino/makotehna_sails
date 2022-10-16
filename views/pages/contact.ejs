@@ -33,20 +33,21 @@
 						<li><i class="fa fa-mobile"></i>+389 75 327 399</li>
 						<li><i class="far fa-envelope"></i>makotehna.info@gmail.com</li>
 					</ul>
-					<form onsubmit="return sendMail();" id="contactForm" style="padding: 10px 25px; color: black;">
+					<form ref="contactForm" v-on:submit.prevent="submitCForm"  style="padding: 10px 25px; color: black;">
+						<span v-if='showMessage === true' style="color: green;">{{ messageText }}</span>
 	                    <div class="form-group">
 	                        <label for="inputFullName"></label>
-	                        <input type="text" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email адреса">
+	                        <input type="text" class="form-control" id="emailInput" ref="emailInput" aria-describedby="emailHelp" placeholder="Email адреса *" required>
 	                    </div>
 	                    <div class="form-group">
 	                        <label for="subjectOfMail"></label>
-	                        <input type="text" class="form-control" id="subjectInput" aria-describedby="emailHelp" placeholder="Наслов">
+	                        <input type="text" class="form-control" id="subjectInput" ref="subjectInput" aria-describedby="emailHelp" placeholder="Наслов *" required>
 	                    </div>
 	                    <div class="form-group">
 	                        <label for="exampleInputPassword1"></label>
-	                        <textarea name="message" class="form-control" id="messageInput" style="min-height: 180px; max-height: 180px;" placeholder="Порака"></textarea>
+	                        <textarea name="message" class="form-control" id="messageInput" ref="messageInput" style="min-height: 180px; max-height: 180px;" placeholder="Порака *" required></textarea>
 	                    </div>
-	                    <button type="submit" class="btn btn-primary" style="margin-top: 15px; background: green; border-color: green;">ИСПРАТИ</button>
+	                    <button type="submit" class="btn btn-primary" name="submit" :disabled='showMessage == true' style="margin-top: 15px; background: green; border-color: green;">ИСПРАТИ</button>
 	                </form>
 				</div>
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6" v-if="language == 'en'">
@@ -55,20 +56,21 @@
 						<li><i class="fa fa-mobile"></i>+389 75 327 399</li>
 						<li><i class="far fa-envelope"></i>makotehna.info@gmail.com</li>
 					</ul>
-					<form onsubmit="return sendMail();" id="contactForm" style="padding: 10px 25px; color: black;">
+					<form ref="contactForm" v-on:submit.prevent="submitCForm"  style="padding: 10px 25px; color: black;">
+						<span v-if='showMessage === true' style="color: green;">{{ messageText }}</span>
 	                    <div class="form-group">
 	                        <label for="inputFullName"></label>
-	                        <input type="text" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email address">
+	                        <input type="text" class="form-control" id="emailInput" ref="emailInput" aria-describedby="emailHelp" placeholder="Email address *" required>
 	                    </div>
 	                    <div class="form-group">
 	                        <label for="subjectOfMail"></label>
-	                        <input type="text" class="form-control" id="subjectInput" aria-describedby="emailHelp" placeholder="Subject">
+	                        <input type="text" class="form-control" id="subjectInput" ref="subjectInput" aria-describedby="emailHelp" placeholder="Subject *" required>
 	                    </div>
 	                    <div class="form-group">
 	                        <label for="exampleInputPassword1"></label>
-	                        <textarea name="message" class="form-control" id="messageInput" style="min-height: 180px; max-height: 180px;" placeholder="Message"></textarea>
+	                        <textarea name="message" class="form-control" id="messageInput" ref="messageInput" style="min-height: 180px; max-height: 180px;" placeholder="Message *" required></textarea>
 	                    </div>
-	                    <button type="submit" class="btn btn-primary" style="margin-top: 15px; background: green; border-color: green;">SEND</button>
+	                    <button type="submit" class="btn btn-primary" name="submit" :disabled='showMessage == true' style="margin-top: 15px; background: green; border-color: green;">SEND</button>
 	                </form>
 				</div>
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">

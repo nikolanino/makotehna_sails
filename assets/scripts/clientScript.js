@@ -24,7 +24,10 @@
                 language: '',
 
                 categorySelected: '',
-                backgroundImage: ''
+                backgroundImage: '',
+
+                showMessage: false,
+                messageText: '',
 
             }   
         },
@@ -84,7 +87,25 @@
                     document.querySelector("html").setAttribute('lang', 'mk');
                     this.language = 'mk';
                 }
-            }     
+            },
+
+            submitCForm(){
+
+                axios.post('/contact/sendmail', { 
+                        emailFrom: this.$refs.emailInput.value, 
+                        subject: this.$refs.subjectInput.value, 
+                        message: this.$refs.messageInput.value 
+                    }).then(response => {
+                        if(response.message == 'Вашата порака не е испратена, пратете повторно.'){
+                            this.showMessage = true;
+                            this.messageText = response.data.message;
+                        }else{
+                            this.showMessage = true;
+                            this.messageText = response.data.message;
+                        }
+
+                })
+            },    
 
         },
     }

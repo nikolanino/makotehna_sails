@@ -12,9 +12,9 @@
      secure: false,
      port: 25,
      auth: {
-         user: 'makotehnapage@gmail.com',
+        user: 'makotehnamk@gmail.com',
          //pass: 'm@kotEhn@!'
-	   pass: 'rwearkcytjglzsld'
+	    pass: 'hghvnpvwyaxilkvj'
      },
      tls: {
          rejectUnauthorized: false
@@ -61,17 +61,18 @@ module.exports = {
             <p style="white-space: break-spaces; text-align: left;">${req.body.message}</p>
         </div>`;
         var mailOptions = {
-            to: 'makotehna.info@gmail.com',
-            from: req.body.emailFrom,
-            subject: req.body.subject,
+            to: 'makotehnamk@gmail.com',
+            from: 'МАКОТЕХНА - Контакт (' + req.body.emailFrom + ')',
+            subject: 'МАКОТЕХНА - Контакт',
             html: output
         };
         console.log(mailOptions.from);
         smtpTransport.sendMail(mailOptions, function(error) {
             if (error) {
                 console.log(error);
+                res.status(200).json({message:'Вашата порака не е испратена, пратете повторно'});
             } else {
-                res.status(200).json({info:'OK'});
+                res.status(200).json({message:'Вашата порака е успешно испратена'});
                 
             }
         });
