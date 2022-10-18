@@ -255,8 +255,8 @@ body.modal-open {
 }
 
 .footerTop h2{
-    font-size: larger;
     color: green;
+    font-size: 22px;
 }
 
 .footerTop ul{
@@ -272,6 +272,7 @@ body.modal-open {
 
 .footerTop ul li i{
 	color: green;
+	font-size: 17px;
 }
 
 .footerTop ul li a:hover{
@@ -289,6 +290,7 @@ body.modal-open {
     font-weight: 500;
     padding: 5px 15px;
     border: 0;
+    font-size: 18px;
 }
 
 .footerTop button:hover{
@@ -376,7 +378,8 @@ body.modal-open {
 
 	.footerTop{
 		align-items: center!important;
-		    justify-content: center;
+	    justify-content: center;
+        text-align: center;
 	}
 
 	.footerTop .siteMap{
@@ -393,6 +396,10 @@ body.modal-open {
 
 	.footerTop .aboutPart a img{
 	    margin-bottom: 10px!important;
+	}
+
+	.footerTop button{
+		margin-top: 15px;
 	}
 
 	.footerTop .siteMap{

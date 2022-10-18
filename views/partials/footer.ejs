@@ -1,11 +1,18 @@
 <div class="footer">
     <div class="container">
         <div class="footerTop">
-            <div class="siteMap">
-                <div class="aboutPart" style="margin-right: 50px;">
-                    <a href="/"><img src="../images/logo.png"></a>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="aboutPart" style="text-align: center;">
+                        <a href="/"><img src="../images/logo.png"></a>
+                        <p>
+                            Бул. Александар Македонски 46А<br>
+                            1000 Скопје
+                        </p><br>
+                        <a href="https://www.google.com/maps?ll=41.0357,21.299438&z=13&t=m&hl=en-US&gl=US&mapclient=embed&cid=15043129713296511706" style="color: green;">Види мапа</a>
+                    </div>
                 </div>
-                <div class="contactPart">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4" style="padding-left: 20px; border-left: 1px solid #ccc;">
                     <button onclick="window.location.href = '/contact'" v-if="language == 'mk'">Потребна ви е помош ? <i class="fas fa-angle-right"></i></button>
                     <button onclick="window.location.href = '/contact'" v-if="language == 'en'">Do you need help? <i class="fas fa-angle-right"></i></button>
                     <hr>
@@ -14,19 +21,21 @@
                         <li style="margin-bottom: 5px;"><i class="fa-solid fa-phone" style="margin-right:10px; vertical-align: middle;"></i><a href="tel:+38976000000">+389 70 000 000</a></li>
                     </ul>
                 </div>
-                <div class="infoPart" style="margin-left: 30px;">
-                    <h2 v-if="language == 'mk'">Информации</h2>
-                    <h2 v-if="language == 'en'">Information</h2>
-                    <ul v-if="language == 'mk'">
-                        <li><a href="/about">За нас</a></li>
-                        <li><a href="#">Каталог</a></li>
-                        <li><a href="/proizvodi">Производи</a></li>
-                    </ul>
-                    <ul v-if="language == 'en'">
-                        <li><a href="/about">About</a></li>
-                        <li><a href="#">Catalog</a></li>
-                        <li><a href="/proizvodi">Products</a></li>
-                    </ul>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="infoPart" style="margin-left: 30px;">
+                        <h2 v-if="language == 'mk'">Информации</h2>
+                        <h2 v-if="language == 'en'">Information</h2>
+                        <ul v-if="language == 'mk'">
+                            <li><a href="/about">За нас</a></li>
+                            <li><a href="#">Каталог</a></li>
+                            <li><a href="/proizvodi">Производи</a></li>
+                        </ul>
+                        <ul v-if="language == 'en'">
+                            <li><a href="/about">About</a></li>
+                            <li><a href="#">Catalog</a></li>
+                            <li><a href="/proizvodi">Products</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
