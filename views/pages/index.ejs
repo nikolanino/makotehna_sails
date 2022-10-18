@@ -52,31 +52,7 @@
 </div>
 
 <div class="main">
-	<div class="about">
-		<div class="container">
-			<h1 v-if="language == 'mk'">За Макотехна</h1>
-			<h1 v-if="language == 'en'">About Makotehna</h1>
-			<hr class="mainLine">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-6 col-lg-6" v-if="language == 'mk'">
-					<p><b style="color: green;">МАКОТЕХНА</b> Дооел е формирана во Септември 1996 година.<br><br>Главна дејност е производство на професионални средства за Хигиена, Дезинфекција, Одмастувачи за прехранбена индустрија, Одмастувачи за машинска индустрија, Автокозметика, Парфеми, Санитарни Течности, Брисачи за раце, Тоалет хартија, Најлонски вреќи.
-					<br><br>
-					<b style="color: green;">МАКОТЕХНА</b> во текот на годините беше флексибилна компанија, која беше во можност лесно да се преориентира на пазарот и да произведува средства според потребите на истиот со сите стандарди кои ги бара потрошувачот.</p>
-					<a href="/about" class="bigButton">Прочитај повеќе</a>
-				</div>
-				<div class="col-12 col-sm-12 col-md-6 col-lg-6" v-if="language == 'en'">
-					<p><b style="color: green;">MAKOTEHNA</b> DOOEL was established in September 1996.<br><br>
-					The main activity is the production of professional products for Hygiene, Disinfection, Degreasers for the food industry, Degreasers for the machine industry, Autocosmetics, Perfumes, Sanitary Liquids, Hand wipes, Toilet paper, Nylon bags.<br><br>
-					<span style="color: green; font-weight: bold;">MAKOTEHNA</span> has been a flexible company over the years, which was able to easily reorient itself to the market and produce assets according to its needs with all the standards required by the consumer.</p>
-					<a href="/about" class="bigButton">Прочитај повеќе</a>
-				</div>
-				<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
-					<img src="images/about.png">
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="categories" data-aos="fade-right" style="background:#f8f8f8; padding: 30px 0;">
+	<div class="categories" style="background:#f8f8f8; padding: 30px 0;">
 		<div class="container">
 			<div class="row">
 				<h1 v-if="language == 'mk'">Топ најбарани производи</h1>
@@ -205,13 +181,13 @@
 			</div>
 		</div>
 	</div>
-	<div class="categories" data-aos="fade-left">
+	<div class="categories">
 		<div class="container">
 			<h1 v-if="language == 'mk'">КАТЕГОРИИ</h1>
 			<h1 v-if="language == 'en'">Categories</h1>
 			<hr class="mainLine">
 			<div class="row">
-				<div class="col-12 col-sm-12 col-md-4 col-lg-4" v-for="category in categories">
+				<div class="col-12 col-sm-12 col-md-3 col-lg-3" v-for="category in categories">
 					<div class="categoryBox" v-if="language == 'mk'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
 						<p>{{ category.categoryName }}</p>
 					</div>

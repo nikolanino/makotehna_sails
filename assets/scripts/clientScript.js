@@ -40,8 +40,6 @@
             });
             this.changeBG();
 
-            console.log(document.querySelector("html").getAttribute('lang'));
-
             var lang = sessionStorage.getItem("lang");
             document.querySelector("html").setAttribute('lang', lang);
             this.language = lang;
