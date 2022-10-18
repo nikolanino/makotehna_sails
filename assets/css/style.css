@@ -116,15 +116,29 @@ body{
 }
 
 .main .categories .categoryBox{
+	position: relative;
 	color: white;
     text-align: center;
 	border-radius: 5px;
 	padding: 10px 25px;
 	margin-bottom: 10px;
+	height: 210px;
+	box-shadow: 0 0 4px #ccc;
 }
 
 .main .categories .categoryBox p {
-	margin-bottom: 0;
+	position: absolute;
+    bottom: 0;
+
+    word-break: break-all;
+    margin-left: 0px;
+    text-shadow: 0 0 10px black;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    background: #00000040;
+    padding: 2px 15px;
+    border-radius: 5px;
 }
 
 .main .categories .categoryBox:hover{
@@ -231,13 +245,54 @@ body.modal-open {
     font-size: 15px;
 }
 
-.footer .footerBottom{
-	display: flex;
+.footerBottom, .footerTop{
+    display: flex;
     align-items: center;
     justify-content: space-between;
     font-weight: lighter;
     font-size: 15px;
-    margin-bottom: 25px;
+	margin-bottom: 25px;
+}
+
+.footerTop h2{
+    font-size: larger;
+    color: green;
+}
+
+.footerTop ul{
+    list-style: none;
+    padding-left: 15px;
+}
+
+.footerTop ul li a{
+    color: green;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footerTop ul li i{
+	color: green;
+}
+
+.footerTop ul li a:hover{
+    color: #6c757d!important;
+}
+
+.footerTop .siteMap{
+    display: flex;
+}
+
+.footerTop button{
+	border-radius: 5px;
+    background: green;
+    color: white;
+    font-weight: 500;
+    padding: 5px 15px;
+    border: 0;
+}
+
+.footerTop button:hover{
+	opacity: 0.7;
 }
 
 .footer .footerBottom .socialIcons i {
@@ -318,4 +373,30 @@ body.modal-open {
 	.header .navbar{
 		display: none;
 	}
+
+	.footerTop{
+		align-items: center!important;
+		    justify-content: center;
+	}
+
+	.footerTop .siteMap{
+		flex-direction: column!important;
+	}
+
+	.footerTop .infoPart{
+		margin-left: 0!important;
+	}
+
+	.footerTop .aboutPart{
+	    margin-right: 0!important;
+	}
+
+	.footerTop .aboutPart a img{
+	    margin-bottom: 10px!important;
+	}
+
+	.footerTop .siteMap{
+		align-items: center!important;
+	}
+
 }
