@@ -245,7 +245,7 @@ body.modal-open {
     font-size: 15px;
 }
 
-.footerBottom, .footerTop{
+.footerBottom{
     display: flex;
     align-items: center;
     justify-content: space-between;
