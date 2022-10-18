@@ -5,4 +5,5 @@ assets/images/products/*
 assets/images/category/*
 .tmp
 config/datastores.js
+config/local.js
 **.DS_Store
