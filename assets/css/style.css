@@ -28,6 +28,7 @@ body{
     margin-right: 18px;
     text-transform: uppercase;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .header .navbar .bigButton {
@@ -366,6 +367,7 @@ body.modal-open {
 	.header .headerBg p{
 		width: 100%!important;
 		font-size: 30px!important;
+
 	}
 
 	.header .mobileNavbar{
@@ -374,6 +376,7 @@ body.modal-open {
 
 	.header .navbar{
 		display: none;
+
 	}
 
 	.footerTop{
