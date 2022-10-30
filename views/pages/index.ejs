@@ -6,13 +6,13 @@
 			<div class="navbar" v-if="language == 'mk'">
 				<a href="/proizvodi" class="bigButton">Производи</a>
 				<a href="/about">За нас</a>
-				<a href="">Каталог</a>
+				<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
 				<a href="/contact">Контакт</a>
 			</div>
 			<div class="navbar" v-if="language == 'en'">
 				<a href="/proizvodi" class="bigButton">Products</a>
 				<a href="/about">About us</a>
-				<a href="">Catalog</a>
+				<a href="/pdf/catalogEN.pdf" target="_blank">Catalog</a>
 				<a href="/contact">Contact</a>
 			</div>
 			<div class="mobileNavbar" v-if="language == 'mk'">
@@ -21,7 +21,7 @@
 					<div class="dropdown-content">
 						<a href="/proizvodi">Производи</a>
 						<a href="/about">За нас</a>
-						<a href="/catalog">Каталог</a>
+						<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
 						<a href="/contact">Контакт</a>
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 					<div class="dropdown-content">
 						<a href="/proizvodi">Products</a>
 						<a href="/about">About us</a>
-						<a href="/catalog">Catalog</a>
+						<a href="/pdf/catalogEN.pdf" target="_blank">Catalog</a>
 						<a href="/contact">Contact</a>
 					</div>
 				</div>
@@ -194,6 +194,27 @@
 					<div class="categoryBox" v-if="language == 'en'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
 						<p>{{ category.categoryNameEN }}</p>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="categories" style="background:#f8f8f8; padding: 30px 0;">
+		<div class="container">
+			<h1 v-if="language == 'mk'">Сертификати</h1>
+			<h1 v-if="language == 'en'">Certifications</h1>
+			<hr class="mainLine">
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+					<a href="/pdf/ISO9001.pdf" style="text-decoration: none;" target="_blank">
+						<img src="/images/logoISO.png">
+						<p style="font-weight: bold; color: #136207;">ISO 9001:2015</p>
+					</a>
+				</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+					<a href="/pdf/ISO14001.pdf" style="text-decoration: none;" target="_blank">
+						<img src="/images/logoISO.png">
+						<p style="font-weight: bold; color: #136207;">ISO 14001:2015</p>
+					</a>
 				</div>
 			</div>
 		</div>
