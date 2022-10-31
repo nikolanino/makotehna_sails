@@ -65,7 +65,7 @@
                 this.backgroundImage = this.images[this.i];
                 setTimeout(() => {
                     this.changeBG()
-                    AOS.init();
+                    // AOS.init();
                 }, 5000);
             },
 
