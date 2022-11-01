@@ -195,11 +195,11 @@
 					<hr class="mainLine">
 					<div class="row">
 						<div class="col-12 col-sm-12 col-md-6 col-lg-6" v-for="category in categories">
-							<div class="categoryButton" style="display: inline-flex; align-items: center;" v-if="language == 'mk'" v-on:click="redirectToCategory(category.id)">
+							<div class="categoryButton" style="display: inline-flex; align-items: center; margin: 10px 0;" v-if="language == 'mk'" v-on:click="redirectToCategory(category.id)">
 								<div class="categoryImage" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" style=" background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 								<p style="margin: 0; margin-left: 8px; font-weight: 700; color: green;">{{ category.categoryName }}</p>
 							</div>
-							<div class="categoryButton" style="display: inline-flex; align-items: center;" v-if="language == 'en'" v-on:click="redirectToCategory(category.id)">
+							<div class="categoryButton" style="display: inline-flex; align-items: center; margin: 10px 0;" v-if="language == 'en'" v-on:click="redirectToCategory(category.id)">
 								<div class="categoryImage" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" style=" background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 								<p style="margin: 0; margin-left: 8px; font-weight: 700; color: green;">{{ category.categoryNameEN }}</p>
 							</div>
