@@ -1,44 +1,48 @@
 <div class="header" data-aos="fade-down">
 	<div class="container">
-		<a href="/"><img src="images/logo.png"></a>
-		<hr>
-		<div class="headerButtons">
-			<div class="navbar" v-if="language == 'mk'">
-				<a href="/proizvodi" class="bigButton">Производи</a>
-				<a href="/about">За нас</a>
-				<a href="">Каталог</a>
-				<a href="/contact">Контакт</a>
-			</div>
-			<div class="navbar" v-if="language == 'en'">
-				<a href="/proizvodi" class="bigButton">Products</a>
-				<a href="/about">About us</a>
-				<a href="">Catalog</a>
-				<a href="/contact">Contact</a>
-			</div>
-			<div class="mobileNavbar" v-if="language == 'mk'">
-				<div class="dropdown">
-					<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-					<div class="dropdown-content">
-						<a href="/proizvodi">Производи</a>
-						<a href="/about">За нас</a>
-						<a href="/catalog">Каталог</a>
-						<a href="/contact">Контакт</a>
+		<div style="display: flex; justify-content: space-between;">
+			<a href="/"><img src="images/logo.png"></a>
+
+			<div class="headerButtons">
+				<div class="navbar" v-if="language == 'mk'">
+					<a href="/proizvodi" class="bigButton">Производи</a>
+					<a href="/about">За нас</a>
+					<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
+					<a href="/contact">Контакт</a>
+				</div>
+				<div class="navbar" v-if="language == 'en'">
+					<a href="/proizvodi" class="bigButton">Products</a>
+					<a href="/about">About us</a>
+					<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
+					<a href="/contact">Contact</a>
+				</div>
+				<div class="mobileNavbar" v-if="language == 'mk'">
+					<div class="dropdown">
+						<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+						<div class="dropdown-content">
+							<a href="/proizvodi">Производи</a>
+							<a href="/about">За нас</a>
+							<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
+							<a href="/contact">Контакт</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="mobileNavbar" v-if="language == 'en'">
-				<div class="dropdown">
-					<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-					<div class="dropdown-content">
-						<a href="/proizvodi">Products</a>
-						<a href="/about">About us</a>
-						<a href="/catalog">Catalog</a>
-						<a href="/contact">Contact</a>
+				<div class="mobileNavbar" v-if="language == 'en'">
+					<div class="dropdown">
+						<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+						<div class="dropdown-content">
+							<a href="/proizvodi">Products</a>
+							<a href="/about">About us</a>
+							<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
+							<a href="/contact">Contact</a>
+						</div>
 					</div>
 				</div>
+				<div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer; margin-left: 10px;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer; margin-left: 10px;"></div>
 			</div>
-			<div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer;"></div>
 		</div>
+		
+		<hr>
 	</div>
 </div>
 

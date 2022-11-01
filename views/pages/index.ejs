@@ -1,44 +1,48 @@
 <div class="header" data-aos="fade-down">
 	<div class="container">
-		<a href="/"><img src="images/logo.png"></a>
-		<hr>
-		<div class="headerButtons">
-			<div class="navbar" v-if="language == 'mk'">
-				<a href="/proizvodi" class="bigButton">Производи</a>
-				<a href="/about">За нас</a>
-				<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
-				<a href="/contact">Контакт</a>
-			</div>
-			<div class="navbar" v-if="language == 'en'">
-				<a href="/proizvodi" class="bigButton">Products</a>
-				<a href="/about">About us</a>
-				<a href="/pdf/catalogEN.pdf" target="_blank">Catalog</a>
-				<a href="/contact">Contact</a>
-			</div>
-			<div class="mobileNavbar" v-if="language == 'mk'">
-				<div class="dropdown">
-					<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-					<div class="dropdown-content">
-						<a href="/proizvodi">Производи</a>
-						<a href="/about">За нас</a>
-						<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
-						<a href="/contact">Контакт</a>
+		<div style="display: flex; justify-content: space-between;">
+			<a href="/"><img src="images/logo.png"></a>
+
+			<div class="headerButtons">
+				<div class="navbar" v-if="language == 'mk'">
+					<a href="/proizvodi" class="bigButton">Производи</a>
+					<a href="/about">За нас</a>
+					<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
+					<a href="/contact">Контакт</a>
+				</div>
+				<div class="navbar" v-if="language == 'en'">
+					<a href="/proizvodi" class="bigButton">Products</a>
+					<a href="/about">About us</a>
+					<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
+					<a href="/contact">Contact</a>
+				</div>
+				<div class="mobileNavbar" v-if="language == 'mk'">
+					<div class="dropdown">
+						<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+						<div class="dropdown-content">
+							<a href="/proizvodi">Производи</a>
+							<a href="/about">За нас</a>
+							<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
+							<a href="/contact">Контакт</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="mobileNavbar" v-if="language == 'en'">
-				<div class="dropdown">
-					<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
-					<div class="dropdown-content">
-						<a href="/proizvodi">Products</a>
-						<a href="/about">About us</a>
-						<a href="/pdf/catalogEN.pdf" target="_blank">Catalog</a>
-						<a href="/contact">Contact</a>
+				<div class="mobileNavbar" v-if="language == 'en'">
+					<div class="dropdown">
+						<button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+						<div class="dropdown-content">
+							<a href="/proizvodi">Products</a>
+							<a href="/about">About us</a>
+							<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
+							<a href="/contact">Contact</a>
+						</div>
 					</div>
 				</div>
+				<div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer; margin-left: 10px;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer; margin-left: 10px;"></div>
 			</div>
-			<div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer;"></div>
 		</div>
+		
+		<hr>
 	</div>
 	<div class="headerBg" :style="{ background: 'url(' + backgroundImage + ')'  }" data-aos="zoom-out">
 		<div class="row">
@@ -182,19 +186,26 @@
 		</div>
 	</div>
 	<div class="categories">
-		<div class="container">
-			<h1 v-if="language == 'mk'">КАТЕГОРИИ</h1>
-			<h1 v-if="language == 'en'">Categories</h1>
-			<hr class="mainLine">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-3 col-lg-3" v-for="category in categories">
-					<div class="categoryBox" v-if="language == 'mk'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
-						<p>{{ category.categoryName }}</p>
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6" style="background: url(https://miro.medium.com/max/1400/1*TzaiFDmkiEkOxNU7eG43pw.jpeg) no-repeat center center; background-size: cover;"></div>
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+				<div class="container" style="margin: 30px 0;">
+					<h1 v-if="language == 'mk'">КАТЕГОРИИ</h1>
+					<h1 v-if="language == 'en'">Categories</h1>
+					<hr class="mainLine">
+					<div class="row">
+						<div class="col-12 col-sm-12 col-md-6 col-lg-6" v-for="category in categories">
+							<div class="categoryButton" style="display: inline-flex; align-items: center;" v-if="language == 'mk'" v-on:click="redirectToCategory(category.id)">
+								<div class="categoryImage" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" style=" background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+								<p style="margin: 0; margin-left: 8px; font-weight: 700; color: green;">{{ category.categoryName }}</p>
+							</div>
+							<div class="categoryButton" style="display: inline-flex; align-items: center;" v-if="language == 'en'" v-on:click="redirectToCategory(category.id)">
+								<div class="categoryImage" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" style=" background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+								<p style="margin: 0; margin-left: 8px; font-weight: 700; color: green;">{{ category.categoryNameEN }}</p>
+							</div>
+						</div>
 					</div>
-					<div class="categoryBox" v-if="language == 'en'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
-						<p>{{ category.categoryNameEN }}</p>
-					</div>
-				</div>
+				</div>	
 			</div>
 		</div>
 	</div>
@@ -203,18 +214,18 @@
 			<a v-if="language == 'mk'" href="/pdf/catalogMK.pdf" target="_blank"><img src="/images/mkKatalog.jpg" style="width: 100%; margin-bottom: 50px;"></a>
 			<a v-if="language == 'en'" href="/pdf/catalogEN.pdf" target="_blank"><img src="/images/enKatalog.jpg" style="width: 100%; margin-bottom: 50px;"></a>
 			<h1 v-if="language == 'mk'">Сертификати</h1>
-			<h1 v-if="language == 'en'">Certifications</h1>
+			<h1 v-if="language == 'en'">Certificates</h1>
 			<hr class="mainLine">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
 					<a href="/pdf/ISO9001.pdf" style="text-decoration: none;" target="_blank">
-						<img src="/images/logoISO.png">
+						<img src="/images/certificates/ISO9001.png" style="width:20%;">
 						<p style="font-weight: bold; color: #136207;">ISO 9001:2015</p>
 					</a>
 				</div>
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
 					<a href="/pdf/ISO14001.pdf" style="text-decoration: none;" target="_blank">
-						<img src="/images/logoISO.png">
+						<img src="/images/certificates/ISO14001.png" style="width:20%;">
 						<p style="font-weight: bold; color: #136207;">ISO 14001:2015</p>
 					</a>
 				</div>
