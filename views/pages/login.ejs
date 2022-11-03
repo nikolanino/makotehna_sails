@@ -1,7 +1,10 @@
 <div class="header">
     <div class="container">
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
             <a href="/"><img src="images/logo.png"></a>
+
+            <p class="headerText" v-if="language == 'mk'">Компанија за хемиско производство</p>
+            <p class="headerText" v-if="language == 'en'">Company for Profession Chemical Production</p>
 
             <div class="headerButtons">
                 <div class="navbar" v-if="language == 'mk'">
@@ -18,7 +21,7 @@
                 </div>
                 <div class="mobileNavbar" v-if="language == 'mk'">
                     <div class="dropdown">
-                        <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                        <button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
                         <div class="dropdown-content">
                             <a href="/proizvodi">Производи</a>
                             <a href="/about">За нас</a>
@@ -29,7 +32,7 @@
                 </div>
                 <div class="mobileNavbar" v-if="language == 'en'">
                     <div class="dropdown">
-                        <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+                        <button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
                         <div class="dropdown-content">
                             <a href="/proizvodi">Products</a>
                             <a href="/about">About us</a>
@@ -38,7 +41,9 @@
                         </div>
                     </div>
                 </div>
-                <div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer; margin-left: 10px;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer; margin-left: 10px;"></div>
+                <!-- <div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer; margin-left: 10px;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer; margin-left: 10px;"></div> -->
+
+                <div style="border-left: 2px solid green; padding: 10px;"><a v-on:click="changeLanguage('mk')" class="greenColor" v-bind:style="[language == 'mk' ? {'border-bottom': '2px solid'} : {'border-bottom':'none'}]">MK</a><span class="greenColor"> / </span><a v-on:click="changeLanguage('en')" class="greenColor" v-bind:style="[language == 'en' ? {'border-bottom': '2px solid'} : {'border-bottom':'none'}]">EN</a></div>
             </div>
         </div>
         

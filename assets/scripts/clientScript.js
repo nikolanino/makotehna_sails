@@ -73,7 +73,7 @@
                 window.location.replace('/category/'+id);
             },
 
-            changeLanguage(){
+            changeLanguageOld(){
                 var lang = sessionStorage.getItem("lang");
 
                 if(lang == 'mk'){
@@ -85,6 +85,12 @@
                     document.querySelector("html").setAttribute('lang', 'mk');
                     this.language = 'mk';
                 }
+            },
+
+            changeLanguage(selectedLang){
+                sessionStorage.setItem("lang", selectedLang);
+                document.querySelector("html").setAttribute('lang', selectedLang);
+                this.language = selectedLang;
             },
 
             submitCForm(){
