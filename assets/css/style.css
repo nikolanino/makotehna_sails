@@ -376,6 +376,13 @@ body.modal-open {
 	cursor: pointer;
 }
 
+.headerText{
+	margin-bottom: 0;
+    font-weight: 600;
+    color: #2e611b;
+    font-size: 18px;
+}
+
 
 /* ################ */
 
