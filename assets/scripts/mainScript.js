@@ -113,7 +113,8 @@
     var niza=[
         'url("images/pozadina-slika.jpeg")',
         'url("images/pozadina-slika1.jpeg")',
-        'url("images/pozadina-slika2.jpeg")'
+        'url("images/pozadina-slika2.jpeg")',
+        'url("images/pozadina-slika3.jpeg")'
     ]; 
     var i = 0;
     function alertFunc() {
