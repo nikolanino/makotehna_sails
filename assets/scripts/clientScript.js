@@ -12,10 +12,10 @@
                 categories: {},
 
                 images: [
-                    "../images/background.png",
-                    "../images/slide.jpg",
-                    "../images/slide1.jpg",
-                    "../images/slide2.jpg"
+                    "../images/4.jpeg",
+                    "../images/1.jpeg",
+                    "../images/2.jpeg",
+                    "../images/3.jpeg"
                 ],
 
                 timer: null,
