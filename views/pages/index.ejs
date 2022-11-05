@@ -7,37 +7,41 @@
 			<p class="headerText" v-if="language == 'en'">Company for Profession Chemical Production</p>
 
 			<div class="headerButtons">
-				<div class="navbar" v-if="language == 'mk'">
-					<a href="/proizvodi" class="bigButton">Производи</a>
-					<a href="/about">За нас</a>
-					<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
-					<a href="/contact">Контакт</a>
-				</div>
-				<div class="navbar" v-if="language == 'en'">
-					<a href="/proizvodi" class="bigButton">Products</a>
-					<a href="/about">About us</a>
-					<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
-					<a href="/contact">Contact</a>
-				</div>
-				<div class="mobileNavbar" v-if="language == 'mk'">
-					<div class="dropdown">
-						<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
-						<div class="dropdown-content">
-							<a href="/proizvodi">Производи</a>
-							<a href="/about">За нас</a>
-							<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
-							<a href="/contact">Контакт</a>
-						</div>
+				<div v-if='device == "desktop"'>
+					<div class="navbar" v-if="language == 'mk'">
+						<a href="/proizvodi" class="bigButton">Производи</a>
+						<a href="/about">За нас</a>
+						<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
+						<a href="/contact">Контакт</a>
+					</div>
+					<div class="navbar" v-if="language == 'en'">
+						<a href="/proizvodi" class="bigButton">Products</a>
+						<a href="/about">About us</a>
+						<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
+						<a href="/contact">Contact</a>
 					</div>
 				</div>
-				<div class="mobileNavbar" v-if="language == 'en'">
-					<div class="dropdown">
-						<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
-						<div class="dropdown-content">
-							<a href="/proizvodi">Products</a>
-							<a href="/about">About us</a>
-							<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
-							<a href="/contact">Contact</a>
+				<div v-if='device == "mobile"'>
+					<div class="mobileNavbar" v-if="language == 'mk'">
+						<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
+							<div class="dropdown-content">
+								<a href="/proizvodi">Производи</a>
+								<a href="/about">За нас</a>
+								<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
+								<a href="/contact">Контакт</a>
+							</div>
+						</div>
+					</div>
+					<div class="mobileNavbar" v-if="language == 'en'">
+						<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
+							<div class="dropdown-content">
+								<a href="/proizvodi">Products</a>
+								<a href="/about">About us</a>
+								<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
+								<a href="/contact">Contact</a>
+							</div>
 						</div>
 					</div>
 				</div>

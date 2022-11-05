@@ -29,6 +29,8 @@
                 showMessage: false,
                 messageText: '',
 
+                device: '',
+
             }   
         },
 
@@ -47,6 +49,12 @@
             if(lang == null){
                 sessionStorage.setItem("lang", 'mk');
                 this.language = 'mk';
+            }
+
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                this.device = 'mobile';
+            }else{
+                this.device = 'desktop';
             }
         },
 

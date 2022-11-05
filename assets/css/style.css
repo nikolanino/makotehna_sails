@@ -395,20 +395,23 @@ a.greenColor:hover{
 
 /* ################ */
 
-@media screen and (max-width: 700px){
-
-	.header .headerBg p{
-		width: 100%!important;
-		font-size: 30px!important;
-
-	}
-
+@media screen and (max-width: 1000px) {
+	
 	.header .mobileNavbar{
 		display: block!important;
 	}
 
 	.header .navbar{
 		display: none;
+
+	}
+}
+
+@media screen and (max-width: 700px){
+
+	.header .headerBg p{
+		width: 100%!important;
+		font-size: 30px!important;
 
 	}
 
