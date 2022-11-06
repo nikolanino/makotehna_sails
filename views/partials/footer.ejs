@@ -34,7 +34,8 @@
                     <button onclick="window.location.href = '/contact'" v-if="language == 'en'">Do you need help? <i class="fas fa-angle-right"></i></button>
                     <hr>
                     <ul>
-                        <li style="margin-bottom: 5px; color: green;"><i class="fa-solid fa-user" style="margin-right:10px; vertical-align: middle;"></i><a>Кристијан Николовски - Менаџер</a></li>
+                        <li v-if="language == 'mk'" style="margin-bottom: 5px; color: green;"><i class="fa-solid fa-user" style="margin-right:10px; vertical-align: middle;"></i><a>Кристијан Николовски - Менаџер</a></li>
+                        <li v-if="language == 'en'" style="margin-bottom: 5px; color: green;"><i class="fa-solid fa-user" style="margin-right:10px; vertical-align: middle;"></i><a>Kristijan Nikolovski - Manager</a></li>
                         <li style="margin-bottom: 5px;"><i class="fa-solid fa-envelope" style="margin-right:10px; vertical-align: middle;"></i><a href="mailto:makotehna.info@gmail.com">makotehna.info@gmail.com</a></li>
                         <li style="margin-bottom: 5px;"><i class="fa-solid fa-phone" style="margin-right:10px; vertical-align: middle;"></i><a href="tel:+38976000000">+389 75 327 399</a></li>
                     </ul>
