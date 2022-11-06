@@ -57,7 +57,8 @@
 		<div class="row">
 			<div class="col-12 col-sm-12 col-md-8 col-lg-8 leftSide">
 				<div class="container">
-					<p>Макотехна е твојот број еден партнер за чиста и здрава животна средина</p>
+					<p v-if="language == 'mk'">Макотехна е твојот број еден партнер за чиста и здрава животна средина</p>
+					<p v-if="language == 'en'">Makotehna is your number one partner for clean and healthy enviorment</p>
 				</div>
 			</div>
 		</div>
@@ -201,7 +202,8 @@
 					<h1 v-if="language == 'mk'" style="color: white">Сертификати</h1>
 					<h1 v-if="language == 'en'" style="color: white">Certificates</h1>
 					<!-- <hr class="mainLine"> -->
-					<p style="color: white; margin-bottom: 30px; text-align: center;">Сертификација so ISO 9001:2015 и ISO 14001:2015 се само дел од факторите кои обезбедуваат високa квалитетнa услугa на Макотехна. </p>	
+					<p v-if="language == 'mk'" style="color: white; margin-bottom: 30px; text-align: center;">Сертификација so ISO 9001:2015 и ISO 14001:2015 се само дел од факторите кои обезбедуваат високa квалитетнa услугa на Макотехна. </p>
+					<p v-if="language == 'en'" style="color: white; margin-bottom: 30px; text-align: center;">Our Certificates ISO 9001:2015 and ISO 14001:2015 are only part of the factors that ensure the high quality service for Makotehna. </p>
 				</div>
 			</div>
 			<div class="col-12 col-sm-12 col-md-6 col-lg-6">
