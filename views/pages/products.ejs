@@ -59,10 +59,10 @@
 			<hr class="mainLine">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-3 col-lg-3" v-for="category in categories">
-					<div class="categoryBox" v-if="language == 'mk'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+					<div class="categoryBox" v-if="language == 'mk'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat; background-size: 100% 120%;">
 						<p>{{ category.categoryName }}</p>
 					</div>
-					<div class="categoryBox" v-if="language == 'en'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat;">
+					<div class="categoryBox" v-if="language == 'en'" v-bind:style="{ background: 'url(images/category/' + category.categoryImageID + ')'  }" v-on:click="redirectToCategory(category.id)" style=" background-size: cover; background-position: center; background-repeat: no-repeat; background-size: 100% 120%;">
 						<p>{{ category.categoryNameEN }}</p>
 					</div>
 				</div>
