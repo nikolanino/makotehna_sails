@@ -98,11 +98,11 @@
     }
 
     function openModal(productID) {
-        $("#productModal"+productID).show();
+        $("#productModal_"+productID).show();
     }
 
     function closeModal(productID) {
-        $("#productModal"+productID).hide();
+        $("#productModal_"+productID).hide();
     }
     function openDropDown() {
     	document.getElementById("myDropdown").classList.toggle("show");
