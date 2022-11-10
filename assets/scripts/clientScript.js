@@ -56,6 +56,24 @@
             }else{
                 this.device = 'desktop';
             }
+
+            var url = window.location.pathname;
+            var category_id = sessionStorage.getItem("categoryID");
+            if(url == '/category/'+category_id){
+                var product_id = sessionStorage.getItem("productID");
+                setTimeout(() => {
+                    var element = document.getElementById("productModal_"+product_id);
+                    element.style.display = "block";
+
+                    document.getElementById("button_"+product_id).style.background = "#2e611b";
+                    document.getElementById("button_text_"+product_id).style.background = "#2e611b";
+                    document.getElementById("button_text_"+product_id).style.color = "#fff";
+
+                    sessionStorage.setItem("productID", '');
+                    sessionStorage.setItem("categoryID", '');
+                }, 500);
+
+            }
         },
 
         methods: {
@@ -117,7 +135,13 @@
                         }
 
                 })
-            },    
+            }, 
+
+            openModal(productID, categoryID){
+                sessionStorage.setItem('productID', productID);
+                sessionStorage.setItem('categoryID', categoryID);
+                window.location.href = "/category/"+categoryID;
+            }   
 
         },
     }

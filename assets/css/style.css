@@ -180,6 +180,14 @@ body{
     color: #136207;
 }
 
+.main .categories .productBox{
+	cursor: pointer;
+}
+
+.main .categories .productBox:hover{
+	opacity: 0.7;
+}
+
 .modal {
 	display: none;
 	position: fixed;

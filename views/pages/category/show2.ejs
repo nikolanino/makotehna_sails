@@ -64,8 +64,8 @@
 						<h2>ПРОИЗВОДИ</h2>
 						<% products.forEach(function(product){ 
                    			if(product.productCategory == category.categoryName){ %>
-                   			<div class="productButton" onclick="showProduct('<%= product.id %>')">
-                   				<a href="#" onclick="showProduct('<%= product.id %>')"><%= product.productName %></a>
+                   			<div class="productButton" id="button_<%= product.id %>" onclick="showProduct('<%= product.id %>')">
+                   				<a href="#" id="button_text_<%= product.id %>" onclick="showProduct('<%= product.id %>')" style='background: transparent!important;'><%= product.productName %></a>
                    			</div>
 						<%  }
                     	}); %>
@@ -156,6 +156,13 @@
 
         $( "*[id^='productModal_']" ).hide();
         $("#productModal_"+id).show();
+
+        $( "*[id^='button_']" ).css('background', '#fff');
+        $("*[id^='button_text_']").css('background', '#fff');
+        $( "*[id^='button_text_']" ).css('color', '#2e611b');
+        $("#button_"+id).css('background', '#2e611b');
+        $("#button_text_"+id).css('background', '#2e611b');
+        $("#button_text_"+id).css('color', '#fff');
 
     }
 </script>
