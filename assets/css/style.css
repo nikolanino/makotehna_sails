@@ -165,6 +165,7 @@ body{
 .main .categories .productBox {
 	padding: 10px;
 	background: #fff;
+	height: 390px;
 	border-radius: 5px;
 	margin-bottom: 10px;
 	box-shadow: 0 0 3px #ccc;
@@ -172,6 +173,7 @@ body{
 
 .main .categories .productBox img{
 	width: -webkit-fill-available;
+	height: 286px;
 }
 
 .main .categories .productBox h2{
