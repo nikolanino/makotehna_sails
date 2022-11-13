@@ -119,8 +119,8 @@
 						<div class="productsButtons">
 							<% products.forEach(function(product){ 
 	                   			if(product.productCategory == category.categoryName){ %>
-	                   			<div class="productButton" onclick="showProduct('<%= product.id %>')">
-	                   				<a href="#"><%= product.productNameEN %></a>
+	                   			<div class="productButton" id="button_<%= product.id %>" onclick="showProduct('<%= product.id %>')">
+	                   				<a href="#" id="button_text_<%= product.id %>" onclick="showProduct('<%= product.id %>')" style='background: transparent!important;'><%= product.productNameEN %></a>
 	                   			</div>
 							<%  }
 	                    	}); %>
