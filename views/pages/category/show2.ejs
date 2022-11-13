@@ -62,13 +62,22 @@
 				<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 					<div class="productsList">
 						<h2>ПРОИЗВОДИ</h2>
-						<% products.forEach(function(product){ 
-                   			if(product.productCategory == category.categoryName){ %>
-                   			<div class="productButton" id="button_<%= product.id %>" onclick="showProduct('<%= product.id %>')">
-                   				<a href="#" id="button_text_<%= product.id %>" onclick="showProduct('<%= product.id %>')" style='background: transparent!important;'><%= product.productName %></a>
-                   			</div>
-						<%  }
-                    	}); %>
+						<div class="productsButtons">
+							<% products.forEach(function(product){ 
+	                   			if(product.productCategory == category.categoryName){ %>
+	                   			<div class="productButton" id="button_<%= product.id %>" onclick="showProduct('<%= product.id %>')">
+	                   				<a href="#" id="button_text_<%= product.id %>" onclick="showProduct('<%= product.id %>')" style='background: transparent!important;'><%= product.productName %></a>
+	                   			</div>
+							<%  }
+	                    	}); %>
+                    	</div>
+                    	<select onchange="showProduct(this.value)">
+               				<% products.forEach(function(product){ 
+               					if(product.productCategory == category.categoryName){ %>
+               					<option value="<%= product.id %>"><%= product.productName %></option>
+               				<%  }
+                			}); %>
+               			</select>
 					</div>
 				</div>
 				<div class="col-12 col-sm-12 col-md-8 col-lg-8">
@@ -107,13 +116,22 @@
 				<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 					<div class="productsList">
 						<h2>PRODUCTS</h2>
-						<% products.forEach(function(product){ 
-                   			if(product.productCategory == category.categoryName){ %>
-                   			<div class="productButton" onclick="showProduct('<%= product.id %>')">
-                   				<a href="#"><%= product.productNameEN %></a>
-                   			</div>
-						<%  }
-                    	}); %>
+						<div class="productsButtons">
+							<% products.forEach(function(product){ 
+	                   			if(product.productCategory == category.categoryName){ %>
+	                   			<div class="productButton" onclick="showProduct('<%= product.id %>')">
+	                   				<a href="#"><%= product.productNameEN %></a>
+	                   			</div>
+							<%  }
+	                    	}); %>
+	                    </div>
+	                    <select onchange="showProduct(this.value)">
+               				<% products.forEach(function(product){ 
+               					if(product.productCategory == category.categoryName){ %>
+               					<option value="<%= product.id %>"><%= product.productNameEN %></option>
+               				<%  }
+                			}); %>
+               			</select>
 					</div>
 				</div>
 				<div class="col-12 col-sm-12 col-md-8 col-lg-8">
