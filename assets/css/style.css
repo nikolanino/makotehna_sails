@@ -513,8 +513,16 @@ a.greenColor:hover{
 		display: block;
 	}
 
-	.productsButtons {
+	/*.productsButtons {
 		display: none;
+	}*/
+
+	.main .categories .productBoxMain{
+		height: 320px!important;
+	}
+
+	.main .categories .productBoxMain img{
+		height: 200px!important;
 	}
 
 }

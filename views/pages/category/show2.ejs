@@ -56,8 +56,8 @@
 		<div class="container">
 			<h1 v-if="language == 'mk'"><%= category.categoryName %></h1>
 			<h1 v-if="language == 'en'"><%= category.categoryNameEN %></h1>
-			<a v-if="language == 'mk'" href="http://test.makotehna.mk/proizvodi" class="btn btn-info" role="button" style="background-color: #2e611b; color: white;">Назад</a>
-			<a v-if="language == 'en'" href="http://test.makotehna.mk/proizvodi" class="btn btn-info" role="button" style="background-color: #2e611b; color: white;">Back</a>
+			<a v-if="language == 'mk'" href="/proizvodi" class="btn btn-info" role="button" style="background-color: #2e611b; color: white; border: none;text-transform: uppercase; font-weight: 600;"> < Назад</a>
+			<a v-if="language == 'en'" href="/proizvodi" class="btn btn-info" role="button" style="background-color: #2e611b; color: white; border: none;text-transform: uppercase; font-weight: 600;">< Back</a>
 			<hr class="mainLine">
 			<div class="row" v-if="language == 'mk'">
 				<div class="col-12 col-sm-12 col-md-4 col-lg-4">
@@ -69,25 +69,43 @@
 	                   			<div class="productButton" id="button_<%= product.id %>" onclick="showProduct('<%= product.id %>')">
 	                   				<a href="#" id="button_text_<%= product.id %>" onclick="showProduct('<%= product.id %>')" style='background: transparent!important;'><%= product.productName %></a>
 	                   			</div>
+
+	                   			<div id="productModal_<%= product.id %>" class="productBox" v-if='device == "mobile"' style='display: none; height: auto!important; position: sticky; top: 10px; margin-top: 10px;'>
+									<div class="row">
+										<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+											<img src="../../images/products/<%= product.productImageID %>" style="width: 100%!important;">
+										</div>
+										<div class="col-12 col-sm-12 col-md-8 col-lg-8">
+											<h2 style="font-size: 20px; margin: 0; text-align: left; text-transform: none; color:#2e611b; background: transparent; border:none;"><%= product.productName %></h2>
+											<hr>
+											<h3 style="font-size: 15px; text-align: left;">Опис</h3>
+				                            <p style="white-space: break-spaces;"><%= product.productDescription %></p>
+				                            <% if(product.productPurpose != ""){ %>
+				                                <h3 style="font-size: 15px; text-align: left;">Начин на употреба/дозирање</h3>
+				                                <p style="white-space: break-spaces;" id="productPurpose"><%= product.productPurpose %></p>
+				                            <% } %>
+				                            <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+				                                <i class="fas fa-ban" style="font-size: 50px; color: red; margin-right: 10px;"></i>
+				                                <div style="display: flex; flex-direction: column; align-items: center;">
+				                                    <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Само за професионална употреба !</h1>
+				                                    <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Подалеку од дофат на деца !!</h1>
+				                                </div>
+				                            </div>
+										</div>
+									</div>
+								</div>
 							<%  }
 	                    	}); %>
                     	</div>
-                    	<select onchange="showProduct(this.value)">
-               				<% products.forEach(function(product){ 
-               					if(product.productCategory == category.categoryName){ %>
-               					<option value="<%= product.id %>"><%= product.productName %></option>
-               				<%  }
-                			}); %>
-               			</select>
 					</div>
 				</div>
 				<div class="col-12 col-sm-12 col-md-8 col-lg-8">
 					<% products.forEach(function(product){ 
                    		if(product.productCategory == category.categoryName){ %>
-					<div id="productModal_<%= product.id %>" class="productBox" style='display: none; height: auto; position: sticky; top: 10px;'>
+					<div id="productModal_<%= product.id %>" class="productBox" v-if='device == "desktop"' style='display: none; height: auto!important; position: sticky; top: 10px;'>
 						<div class="row">
 							<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-								<img src="../../images/products/<%= product.productImageID %>" style="width: 100%;">
+								<img src="../../images/products/<%= product.productImageID %>" style="width: 100%!important;">
 							</div>
 							<div class="col-12 col-sm-12 col-md-8 col-lg-8">
 								<h2 style="font-size: 20px; margin: 0; text-align: left; text-transform: none; color:#2e611b;"><%= product.productName %></h2>
@@ -123,25 +141,43 @@
 	                   			<div class="productButton" id="button_<%= product.id %>" onclick="showProduct('<%= product.id %>')">
 	                   				<a href="#" id="button_text_<%= product.id %>" onclick="showProduct('<%= product.id %>')" style='background: transparent!important;'><%= product.productNameEN %></a>
 	                   			</div>
+
+	                   			<div id="productModal_<%= product.id %>" class="productBox" v-if='device == "mobile"' style='display: none; height: auto!important; position: sticky; top: 10px; margin-top: 10px;'>
+									<div class="row">
+										<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+											<img src="../../images/products/<%= product.productImageID %>" style="width: 100%!important;">
+										</div>
+										<div class="col-12 col-sm-12 col-md-8 col-lg-8">
+											<h2 style="font-size: 20px; margin: 0; text-align: left; text-transform: none; color:#2e611b; background: transparent; border:none;"><%= product.productNameEN %></h2>
+											<hr>
+											<h3 style="font-size: 15px; text-align: left;">Description</h3>
+				                            <p style="white-space: break-spaces;"><%= product.productDescriptionEN %></p>
+				                            <% if(product.productPurpose != ""){ %>
+				                                <h3 style="font-size: 15px; text-align: left;">Method of use/dosage</h3>
+				                                <p style="white-space: break-spaces;" id="productPurpose"><%= product.productPurposeEN %></p>
+				                            <% } %>
+			                                <div style="display: flex; align-items: center; justify-content: center; margin-top: 50px;">
+			                                    <i class="fas fa-ban" style="font-size: 50px; color: red; margin-right: 10px;"></i>
+			                                    <div style="display: flex; flex-direction: column; align-items: center;">
+			                                        <h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">For professional use only !</h1>
+													<h1 style="font-size: 14px; text-align: left; text-transform: uppercase; margin-bottom: 0;">Keep out of reach of children !!</h1>
+			                                    </div>
+			                                </div>
+										</div>
+									</div>
+								</div>
 							<%  }
 	                    	}); %>
 	                    </div>
-	                    <select onchange="showProduct(this.value)">
-               				<% products.forEach(function(product){ 
-               					if(product.productCategory == category.categoryName){ %>
-               					<option value="<%= product.id %>"><%= product.productNameEN %></option>
-               				<%  }
-                			}); %>
-               			</select>
 					</div>
 				</div>
 				<div class="col-12 col-sm-12 col-md-8 col-lg-8">
 					<% products.forEach(function(product){ 
                    		if(product.productCategory == category.categoryName){ %>
-					<div id="productModal_<%= product.id %>" class="productBox" style='display: none; height: auto; position: sticky; top: 10px;'>
+					<div id="productModal_<%= product.id %>" class="productBox lgBox" v-if='device == "desktop"' style='display: none; height: auto!important; position: sticky; top: 10px;'>
 						<div class="row">
 							<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-								<img src="../../images/products/<%= product.productImageID %>" style="width: 100%;">
+								<img src="../../images/products/<%= product.productImageID %>" style="width: 100%!important;">
 							</div>
 							<div class="col-12 col-sm-12 col-md-8 col-lg-8">
 								<h2 style="font-size: 20px; margin: 0; text-align: left; text-transform: none; color:#2e611b;"><%= product.productNameEN %></h2>
