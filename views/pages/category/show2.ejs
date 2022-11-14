@@ -56,8 +56,9 @@
 		<div class="container">
 			<h1 v-if="language == 'mk'"><%= category.categoryName %></h1>
 			<h1 v-if="language == 'en'"><%= category.categoryNameEN %></h1>
+			<a v-if="language == 'mk'" href="https://test.makotehna.com/category" class="btn btn-info" role="button" style="background-color: #2e611b; color: white;">Назад</a>
+			<a v-if="language == 'en'" href="https://test.makotehna.com/category" class="btn btn-info" role="button" style="background-color: #2e611b; color: white;">Back</a>
 			<hr class="mainLine">
-
 			<div class="row" v-if="language == 'mk'">
 				<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 					<div class="productsList">
