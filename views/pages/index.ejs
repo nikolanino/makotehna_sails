@@ -2,14 +2,25 @@
 	<div class="container">
 		<div style="display: flex; justify-content: space-between; align-items: center;">
 			<a href="/"><img src="images/logo.png"></a>
-
 			<p class="headerText" v-if="language == 'mk'">Компанија за Производство на<br> Професионални Хемиски Препарати</p>
 			<p class="headerText" v-if="language == 'en'">Company for Profession Chemical Production</p>
-
 			<div class="headerButtons">
 				<div v-if='device == "desktop"'>
 					<div class="navbar" v-if="language == 'mk'">
-						<a href="/proizvodi" class="bigButton">Производи</a>
+				  <div class="dropdown show">
+				  <a style="background-color: #2e611b; color: white" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Производи
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				    <a class="dropdown-item" href="/category/622298b37f3a20037a380f95">ЛИЧНА ЗАШТИТНА ОПРЕМА ЗА ЕДНОКРАТНА УПОТРЕБА</a>
+				    <a class="dropdown-item" href="/category/62224d357f3a20037a380f61">ОДМАСТВАЧИ ЗА ВО МАШИНСКАТА ИНДУСТРИЈА</a>
+				    <a class="dropdown-item" href="/category/62224cfe7f3a20037a380f60">НАЈЛОНСКИ ВРЕЌИ И ХАРТИЈА ЗА ПРОФЕСИОНАЛНА УПОТРЕБА</a>
+				    <a class="dropdown-item" href="/category/62224cd97f3a20037a380f5f">ХИГИЕНА ЗА ХОТЕЛИ РЕСТОРАНИ И ГРАДИНКИ</a>
+				    <a class="dropdown-item" href="/category/62224cb67f3a20037a380f5e">ДЕЗИНФЕКЦИЈА</a>
+				    <a class="dropdown-item" href="/category/62224d627f3a20037a380f62">ОДМАСТУВАЧИ ЗА ВО ПРЕХРАМБЕНАТА ИНДУСТРИЈА</a>
+				    <a class="dropdown-item" href="/category/62224ca37f3a20037a380f5d">АВТОКОЗМЕТИКА</a>
+				  </div>
+				</div>
 						<a href="/about">За нас</a>
 						<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
 						<a href="/contact">Контакт</a>
@@ -159,12 +170,35 @@
 				            </div>
 				            <div class="carousel-item">
 				                <div class="row">
-									
 									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
 										<div class="productBox productBoxMain" style="background:#ffffff;">
 											<img v-on:click="openModal('62225f5d7f3a20037a380f80', '636928448bca16ff9846dc9b')" src="images/staticProducts/wctop.jpg">
 											<hr>
 											<h2>WC TOP</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox productBoxMain" style="background:#ffffff;">
+											<img v-on:click="openModal('622262d97f3a20037a380f8d', '636929208bca16ff9846dc9e')" src="images/staticProducts/hd30.jpg">
+											<hr>
+											<h2 v-if="language=='mk'">ГЕРАМИН ХД 30</h2>
+											<h2 v-if="language=='en'">GERANUB HD 30</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox productBoxMain" style="background:#ffffff;">
+											<img v-on:click="openModal('62225d127f3a20037a380f79', '6369286e8bca16ff9846dc9c')" src="images/staticProducts/ikoforte.jpg">
+											<hr>
+											<h2 v-if="language=='mk'">ИКОФОРТЕ</h2>
+											<h2 v-if="language=='en'">IKOFORTE</h2>
+										</div>
+									</div>
+									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+										<div class="productBox productBoxMain" style="background:#ffffff;">
+											<img v-on:click="openModal('622263937f3a20037a380f90', '6369286e8bca16ff9846dc9c')" src="images/staticProducts/glori.jpg">
+											<hr>
+											<h2 v-if="language=='mk'">ГЛОРИ</h2>
+											<h2 v-if="language=='en'">GLORRY</h2>
 										</div>
 									</div>
 								</div>
