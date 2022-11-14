@@ -1,4 +1,4 @@
-x<div class="header" data-aos="fade-down">
+<div class="header" data-aos="fade-down">
 	<div class="container">
 		<div style="display: flex; justify-content: space-between; align-items: center;">
 			<a href="/"><img src="images/logo.png"></a>
@@ -90,28 +90,32 @@ x<div class="header" data-aos="fade-down">
 										<div class="productBox" style="background:#ffffff;">
 											<img v-on:click="openModal('62225e887f3a20037a380f7e', '636928448bca16ff9846dc9b')" src="images/staticProducts/gerlikvi.jpg">
 											<hr>
-											<h2>ГЕРАМИН ЛИКВИМИН</h2>
+											<h2 v-if="language == 'mk'">ГЕРАМИН ЛИКВИМИН</h2>
+											<h2 v-if="language == 'en'">GERAMIN LIKVIMIN</h2>
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
 										<div class="productBox"  style="background:#ffffff;">
 											<img v-on:click="openModal('636d908e74c744b561a37ce8', '636928448bca16ff9846dc9b')" src="images/staticProducts/gerplankt.jpg">
 											<hr>
-											<h2>ГЕРАМИН ПЛАНКТ</h2>
+											<h2 v-if="language == 'mk'">ГЕРАМИН ПЛАНКТ</h2>
+											<h2 v-if="language == 'en'">GERAMIN PLANKT</h2>
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
 										<div class="productBox" style="background:#ffffff;">
 											<img v-on:click="openModal('622262187f3a20037a380f89', '636928448bca16ff9846dc9b')" src="images/staticProducts/nvreki.jpeg">
 											<hr>
-											<h2>НАЈЛОНСКИ ВРЕЌИ</h2>
+											<h2 v-if="language == 'mk'">НАЈЛОНСКИ ВРЕЌИ</h2>
+											<h2 v-if="language == 'en'">GARBAGE BAGS</h2>
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
 										<div class="productBox" style="background:#ffffff;">
 											<img v-on:click="openModal('622262407f3a20037a380f8b', '636928448bca16ff9846dc9b')" src="images/staticProducts/brisac.jpg">
 											<hr>
-											<h2>ТОАЛЕТ ХАРТИЈА ВО ЛИСТОВИ</h2>
+											<h2 v-if="language == 'mk'">ТОАЛЕТ ХАРТИЈА ВО ЛИСТОВИ</h2>
+											<h2 v-if="language == 'en'">TOILET PAPER IN SHEETS</h2>
 										</div>
 									</div>
 								</div>
@@ -123,28 +127,32 @@ x<div class="header" data-aos="fade-down">
 
 											<img v-on:click="openModal('6222551e7f3a20037a380f65', '636928d88bca16ff9846dc9d')" src="images/staticProducts/avtopre.jpg">
 											<hr>
-											<h2>АВТОШАМПОН ПРЕМИУМ</h2>
+											<h2 v-if="language == 'mk'">АВТОШАМПОН ПРЕМИУМ</h2>
+											<h2 v-if="language == 'en'">AUTO SHAMPOO</h2>
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
 										<div class="productBox" style="background:#ffffff;">
 											<img v-on:click="openModal('6222635b7f3a20037a380f8f', '636928448bca16ff9846dc9b')" src="images/staticProducts/eko.jpeg">
 											<hr>
-											<h2>ЕКО МАКС</h2>
+											<h2 v-if="language == 'mk'">ЕКО МАКС</h2>
+											<h2 v-if="language == 'en'">EKO MAKS</h2>
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
 										<div class="productBox" style="background:#ffffff;">
 											<img v-on:click="openModal('62225add7f3a20037a380f73', '6369286e8bca16ff9846dc9c')" src="images/staticProducts/bakto.jpeg">
 											<hr>
-											<h2>БАКТОГЕЛ</h2>
+											<h2 v-if="language == 'mk'">БАКТОГЕЛ</h2>
+											<h2 v-if="language == 'en'">BAKTOGEL</h2>
 										</div>
 									</div>
 									<div class="col-6 col-sm-6 col-md-3 col-lg-3">
 										<div class="productBox" style="background:#ffffff;">
 											<img v-on:click="openModal('627b921cf915caebc12d0c63', '636928448bca16ff9846dc9b')" src="images/staticProducts/unisol.png">
 											<hr>
-											<h2>УНИСОЛ</h2>
+											<h2 v-if="language == 'mk'">УНИСОЛ</h2>
+											<h2 v-if="language == 'en'">UNISOL</h2>
 										</div>
 									</div>
 								</div>
