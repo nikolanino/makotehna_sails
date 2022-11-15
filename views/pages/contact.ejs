@@ -1,59 +1,75 @@
 <div class="header" data-aos="fade-down">
+	<div class="firstHeader">
+		<div class="container">
+			<div style="padding: 5px 10px;"><a v-on:click="changeLanguage('mk')" class="greenColor" v-bind:style="[language == 'mk' ? {'background':'#4d7c33', 'padding': '2px 7px'} : {'background':'transparent'}]">MK</a> <a v-on:click="changeLanguage('en')" class="greenColor" v-bind:style="[language == 'en' ? {'background':'#4d7c33', 'padding': '2px 7px'} : {'background':'transparent'}]">EN</a></div>
+		</div>
+	</div>
 	<div class="container">
 		<div style="display: flex; justify-content: space-between; align-items: center;">
 			<a href="/"><img src="images/logo.png"></a>
-
 			<p class="headerText" v-if="language == 'mk'">Компанија за Производство на<br> Професионални Хемиски Препарати</p>
 			<p class="headerText" v-if="language == 'en'">Company for Profession Chemical Production</p>
-
 			<div class="headerButtons">
-				<div class="navbar" v-if="language == 'mk'">
-				<div class="dropdown">
-							<button class="dropbtn" style="margin-right: 10px; font-weight: 600; text-transform: uppercase;">Производи</button>
-							<div class="dropdown-content" style="width: max-content;">
-								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer;">{{ category.categoryName }}</a>
+				<div v-if='device == "desktop"'>
+					<div class="navbar" v-if="language == 'mk'">
+						<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px; font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px;">Производи</button>
+							<div class="dropdown-content" style="width: max-content; right: 10px;">
+								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%;">{{ category.categoryName }}</a>
 							</div>
 						</div>
-					<a href="/about">За нас</a>
-					<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
-					<a href="/contact">Контакт</a>
-				</div>
-				<div class="navbar" v-if="language == 'en'">
-					<div class="dropdown">
-							<button class="dropbtn" style="margin-right: 10px; font-weight: 600; text-transform: uppercase;">Products</button>
-							<div class="dropdown-content" style="width: max-content;">
-								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer;">{{ category.categoryName }}</a>
+						<a href="/about">За нас</a>
+						<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
+						<a href="/contact">Контакт</a>
+					</div>
+					<div class="navbar" v-if="language == 'en'">
+						<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px; font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px;">Products</button>
+							<div class="dropdown-content" style="width: max-content; right: 10px;">
+								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%;">{{ category.categoryNameEN }}</a>
 							</div>
 						</div>
-					<a href="/about">About us</a>
-					<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
-					<a href="/contact">Contact</a>
-				</div>
-				<div class="mobileNavbar" v-if="language == 'mk'">
-					<div class="dropdown">
-						<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
-						<div class="dropdown-content">
-							<a href="/proizvodi">Производи</a>
-							<a href="/about">За нас</a>
-							<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
-							<a href="/contact">Контакт</a>
-						</div>
+						<a href="/about">About us</a>
+						<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
+						<a href="/contact">Contact</a>
 					</div>
 				</div>
-				<div class="mobileNavbar" v-if="language == 'en'">
-					<div class="dropdown">
-						<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
-						<div class="dropdown-content">
-							<a href="/proizvodi">Products</a>
-							<a href="/about">About us</a>
-							<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
-							<a href="/contact">Contact</a>
+				<div v-if='device == "mobile"'>
+					<div class="mobileNavbar" v-if="language == 'mk'">
+						<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
+							<div class="dropdown-content" style="width: max-content; right: 10px; min-width: max-content; padding: 15px 5px;">
+								<!-- <a href="/proizvodi">Производи</a> -->
+								<div class="dropdown-in">
+									<button class="dropbtn-in" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px;">Производи</button>
+									<div class="dropdown-content-in" style="width: max-content;">
+										<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%;">{{ category.categoryName }}</a>
+									</div>
+								</div>
+								<a href="/about" style="width: 100%;">За нас</a>
+								<a href="/pdf/catalogMK.pdf" target="_blank" style="width: 100%;" >Каталог</a>
+								<a href="/contact" style="width: 100%;">Контакт</a>
+							</div>
+						</div>
+					</div>
+					<div class="mobileNavbar" v-if="language == 'en'">
+						<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
+							<div class="dropdown-content" style="width: max-content; right: 10px; min-width: max-content; padding: 15px 5px;">
+								<div class="dropdown-in">
+									<button class="dropbtn-in" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px;">Products</button>
+									<div class="dropdown-content-in" style="width: max-content;">
+										<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%;">{{ category.categoryNameEN }}</a>
+									</div>
+								</div>
+								<a href="/about" style="width: 100%;">About us</a>
+								<a href="/pdf/catalogEN.pdf" target="_blank"  style="width: 100%;">Catalogue</a>
+								<a href="/contact"  style="width: 100%;">Contact</a>
+							</div>
 						</div>
 					</div>
 				</div>
 				<!-- <div><img src="images/flags/usFlag.png" v-on:click="changeLanguage()" v-if="language == 'mk'" style="width: 35px; cursor: pointer; margin-left: 10px;"><img src="images/flags/mkFlag.png" v-on:click="changeLanguage()" v-if="language == 'en'" style="width: 35px; cursor: pointer; margin-left: 10px;"></div> -->
-
-				<div style="border-left: 2px solid green; padding: 10px;"><a v-on:click="changeLanguage('mk')" class="greenColor" v-bind:style="[language == 'mk' ? {'border-bottom': '2px solid'} : {'border-bottom':'none'}]">MK</a><span class="greenColor"> / </span><a v-on:click="changeLanguage('en')" class="greenColor" v-bind:style="[language == 'en' ? {'border-bottom': '2px solid'} : {'border-bottom':'none'}]">EN</a></div>
 			</div>
 		</div>
 		
