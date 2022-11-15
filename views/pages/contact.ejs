@@ -8,26 +8,23 @@
 
 			<div class="headerButtons">
 				<div class="navbar" v-if="language == 'mk'">
-				<div class="dropdown show">
-				  <a style="background-color: #2e611b; color: white" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Производи
-				  </a>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				    <a class="dropdown-item" href="/category/622298b37f3a20037a380f95">ЛИЧНА ЗАШТИТНА ОПРЕМА ЗА ЕДНОКРАТНА УПОТРЕБА</a>
-				    <a class="dropdown-item" href="/category/62224d357f3a20037a380f61">ОДМАСТВАЧИ ЗА ВО МАШИНСКАТА ИНДУСТРИЈА</a>
-				    <a class="dropdown-item" href="/category/62224cfe7f3a20037a380f60">НАЈЛОНСКИ ВРЕЌИ И ХАРТИЈА ЗА ПРОФЕСИОНАЛНА УПОТРЕБА</a>
-				    <a class="dropdown-item" href="/category/62224cd97f3a20037a380f5f">ХИГИЕНА ЗА ХОТЕЛИ РЕСТОРАНИ И ГРАДИНКИ</a>
-				    <a class="dropdown-item" href="/category/62224cb67f3a20037a380f5e">ДЕЗИНФЕКЦИЈА</a>
-				    <a class="dropdown-item" href="/category/62224d627f3a20037a380f62">ОДМАСТУВАЧИ ЗА ВО ПРЕХРАМБЕНАТА ИНДУСТРИЈА</a>
-				    <a class="dropdown-item" href="/category/62224ca37f3a20037a380f5d">АВТОКОЗМЕТИКА</a>
-				  </div>
-				</div>
+				<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px; font-weight: 600; text-transform: uppercase;">Производи</button>
+							<div class="dropdown-content" style="width: max-content;">
+								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer;">{{ category.categoryName }}</a>
+							</div>
+						</div>
 					<a href="/about">За нас</a>
 					<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
 					<a href="/contact">Контакт</a>
 				</div>
 				<div class="navbar" v-if="language == 'en'">
-					<a href="/proizvodi" class="bigButton">Products</a>
+					<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px; font-weight: 600; text-transform: uppercase;">Products</button>
+							<div class="dropdown-content" style="width: max-content;">
+								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer;">{{ category.categoryName }}</a>
+							</div>
+						</div>
 					<a href="/about">About us</a>
 					<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
 					<a href="/contact">Contact</a>

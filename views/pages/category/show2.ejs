@@ -8,13 +8,23 @@
 
 			<div class="headerButtons">
 				<div class="navbar" v-if="language == 'mk'">
-					<a href="/proizvodi" class="bigButton">Производи</a>
+					<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px; font-weight: 600; text-transform: uppercase;">Производи</button>
+							<div class="dropdown-content" style="width: max-content;">
+								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer;">{{ category.categoryName }}</a>
+							</div>
+						</div>
 					<a href="/about">За нас</a>
 					<a href="/pdf/catalogMK.pdf" target="_blank">Каталог</a>
 					<a href="/contact">Контакт</a>
 				</div>
 				<div class="navbar" v-if="language == 'en'">
-					<a href="/proizvodi" class="bigButton">Products</a>
+					<div class="dropdown">
+							<button class="dropbtn" style="margin-right: 10px; font-weight: 600; text-transform: uppercase;">Products</button>
+							<div class="dropdown-content" style="width: max-content;">
+								<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer;">{{ category.categoryName }}</a>
+							</div>
+						</div>
 					<a href="/about">About us</a>
 					<a href="/pdf/catalogEN.pdf" target="_blank">Catalogue</a>
 					<a href="/contact">Contact</a>
@@ -56,8 +66,8 @@
 		<div class="container">
 			<h1 v-if="language == 'mk'"><%= category.categoryName %></h1>
 			<h1 v-if="language == 'en'"><%= category.categoryNameEN %></h1>
-			<a v-if="language == 'mk'" href="/proizvodi" class="btn btn-info" role="button" style="background-color: #2e611b; color: white; border: none;text-transform: uppercase; font-weight: 600;"> < Назад</a>
-			<a v-if="language == 'en'" href="/proizvodi" class="btn btn-info" role="button" style="background-color: #2e611b; color: white; border: none;text-transform: uppercase; font-weight: 600;">< Back</a>
+			<a v-if="language == 'mk'" href="/" class="btn btn-info" role="button" style="background-color: #2e611b; color: white; border: none;text-transform: uppercase; font-weight: 600;"> < Назад</a>
+			<a v-if="language == 'en'" href="/" class="btn btn-info" role="button" style="background-color: #2e611b; color: white; border: none;text-transform: uppercase; font-weight: 600;">< Back</a>
 			<hr class="mainLine">
 			<div class="row" v-if="language == 'mk'">
 				<div class="col-12 col-sm-12 col-md-4 col-lg-4">
