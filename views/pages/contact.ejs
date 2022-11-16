@@ -39,13 +39,6 @@
 						<div class="dropdown">
 							<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
 							<div class="dropdown-content" style="width: max-content; right: 10px; min-width: max-content; padding: 15px 5px;">
-								<!-- <a href="/proizvodi">Производи</a> -->
-<!-- 								<div class="dropdown-in">
-									<button class="dropbtn-in" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px;">Производи</button>
-									<div class="dropdown-content-in" style="width: max-content;">
-										<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%;">{{ category.categoryName }}</a>
-									</div>
-								</div> -->
 
 								<button class="dropbtn-in" v-on:click="categoriesMobileFun()" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px; width: 100%; margin-bottom: 5px;">Производи</button>
 								<a v-if='categoriesMobile === true' v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%; background: #e7e7e7;">{{ category.categoryName }}</a>
@@ -59,12 +52,8 @@
 						<div class="dropdown">
 							<button class="dropbtn" style="margin-right: 10px;"><i class="fa-solid fa-bars"></i></button>
 							<div class="dropdown-content" style="width: max-content; right: 10px; min-width: max-content; padding: 15px 5px;">
-								<div class="dropdown-in">
-									<button class="dropbtn-in" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px;">Products</button>
-									<div class="dropdown-content-in" style="width: max-content;">
-										<a v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%;">{{ category.categoryNameEN }}</a>
-									</div>
-								</div>
+								<button class="dropbtn-in" v-on:click="categoriesMobileFun()" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px; width: 100%; margin-bottom: 5px;">Products</button>
+								<a v-if='categoriesMobile === true' v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%; background: #e7e7e7;">{{ category.categoryNameEN }}</a>
 								<a href="/about" style="width: 100%;">About us</a>
 								<a href="/pdf/catalogEN.pdf" target="_blank"  style="width: 100%;">Catalogue</a>
 								<a href="/contact"  style="width: 100%;">Contact</a>
