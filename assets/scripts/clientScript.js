@@ -31,6 +31,8 @@
 
                 device: '',
 
+                categoriesMobile: false,
+
             }   
         },
 
@@ -136,6 +138,14 @@
 
                 })
             }, 
+
+            categoriesMobileFun(){
+                if(this.categoriesMobile === true){
+                    this.categoriesMobile = false;
+                }else{
+                    this.categoriesMobile = true;
+                }
+            },
 
             openModal(productID, categoryID){
                 sessionStorage.setItem('productID', productID);
