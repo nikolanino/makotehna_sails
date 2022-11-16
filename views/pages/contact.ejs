@@ -47,8 +47,8 @@
 									</div>
 								</div> -->
 
-								<button class="dropbtn-in" v-on:click="categoriesMobileFun()" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px;">Производиd</button>
-								<a v-if='categoriesMobile === true' v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%;">{{ category.categoryName }}</a>
+								<button class="dropbtn-in" v-on:click="categoriesMobileFun()" style="font-size: 18px; font-weight: 600; text-transform: uppercase; padding: 5px 20px; width: 100%; margin-bottom: 5px;">Производи</button>
+								<a v-if='categoriesMobile === true' v-for="category in categories" v-on:click="redirectToCategory(category.id)" style="font-size: 14px; cursor: pointer; width: 100%; background: #e7e7e7;">{{ category.categoryName }}</a>
 								<a href="/about" style="width: 100%;">За нас</a>
 								<a href="/pdf/catalogMK.pdf" target="_blank" style="width: 100%;" >Каталог</a>
 								<a href="/contact" style="width: 100%;">Контакт</a>
