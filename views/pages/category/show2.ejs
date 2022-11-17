@@ -88,7 +88,7 @@
 	                   				<a href="#" id="button_text_<%= product.id %>" onclick="showProduct('<%= product.id %>')" style='background: transparent!important;'><%= product.productName %></a>
 	                   			</div>
 
-	                   			<div id="productModal_<%= product.id %>" class="productBox" v-if='device == "mobile"' style='display: none; height: auto!important; position: sticky; top: 10px; margin-top: 10px;'>
+	                   			<div id="productModal_<%= product.id %>" class="productBox" v-if='device == "mobile"' style='display: none; height: auto!important; position: static; top: 10px; margin-top: 10px;'>
 									<div class="row">
 										<div class="col-12 col-sm-12 col-md-4 col-lg-4">
 											<img src="../../images/products/<%= product.productImageID %>" style="width: 100%!important;">
