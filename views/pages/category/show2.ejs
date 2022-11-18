@@ -227,17 +227,26 @@
 <script type="text/javascript">
 	function showProduct(id){
 
-        $( "*[id^='productModal_']" ).hide();
-        // $("#productModal_"+id).show();
+		if($("#productModal_"+id).css('background') == "#2e611b"){
 
-        $( "#productModal_"+id ).toggle();
+			$("#productModal_"+id).hide();
 
-        $( "*[id^='button_']" ).css('background', '#fff');
-        $("*[id^='button_text_']").css('background', '#fff');
-        $( "*[id^='button_text_']" ).css('color', '#2e611b');
-        $("#button_"+id).css('background', '#2e611b');
-        $("#button_text_"+id).css('background', '#2e611b');
-        $("#button_text_"+id).css('color', '#fff');
+			$("#button_"+id).css('background', '#fff');
+	        $("#button_text_"+id).css('background', '#fff');
+	        $("#button_text_"+id).css('color', '#2e611b');
+
+		} else {
+
+	        $( "*[id^='productModal_']" ).hide();
+	        $("#productModal_"+id).show();
+
+	        $( "*[id^='button_']" ).css('background', '#fff');
+	        $("*[id^='button_text_']").css('background', '#fff');
+	        $( "*[id^='button_text_']" ).css('color', '#2e611b');
+	        $("#button_"+id).css('background', '#2e611b');
+	        $("#button_text_"+id).css('background', '#2e611b');
+	        $("#button_text_"+id).css('color', '#fff');
+		}
 
     }
 </script>
