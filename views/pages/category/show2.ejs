@@ -238,14 +238,17 @@
 		} else {
 
 	        $( "*[id^='productModal_']" ).hide();
-	        $("#productModal_"+id).show();
 
-	        $( "*[id^='button_']" ).css('background', '#fff');
-	        $("*[id^='button_text_']").css('background', '#fff');
-	        $( "*[id^='button_text_']" ).css('color', '#2e611b');
-	        $("#button_"+id).css('background', '#2e611b');
-	        $("#button_text_"+id).css('background', '#2e611b');
-	        $("#button_text_"+id).css('color', '#fff');
+	        setTimeout(() => {
+		        $("#productModal_"+id).show();
+
+		        $( "*[id^='button_']" ).css('background', '#fff');
+		        $("*[id^='button_text_']").css('background', '#fff');
+		        $( "*[id^='button_text_']" ).css('color', '#2e611b');
+		        $("#button_"+id).css('background', '#2e611b');
+		        $("#button_text_"+id).css('background', '#2e611b');
+		        $("#button_text_"+id).css('color', '#fff');
+	        },100);
 		}
 
     }
