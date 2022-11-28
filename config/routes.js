@@ -30,7 +30,7 @@ module.exports.routes = {
   '/': { view: 'pages/index', locals: { layout: 'layouts/layoutMain' } },
   '/about': { view: 'pages/about', locals: { layout: 'layouts/layoutMain' }  },
   '/contact': { view: 'pages/contact', locals: { layout: 'layouts/layoutMain' }  },
-  '/proizvodi': { view: 'pages/products', controller: 'index', action: 'index', locals: { layout: 'layouts/layoutMain' }  },
+  //'/proizvodi': { view: 'pages/products', controller: 'index', action: 'index', locals: { layout: 'layouts/layoutMain' }  },
 
   /////////////////////////////////////////
 
