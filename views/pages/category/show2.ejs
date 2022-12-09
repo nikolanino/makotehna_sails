@@ -4,6 +4,7 @@
 			<div style="padding: 5px 10px;"><a v-on:click="changeLanguage('mk')" class="greenColor" v-bind:style="[language == 'mk' ? {'background':'#4d7c33', 'padding': '2px 7px'} : {'background':'transparent'}]">MK</a> <a v-on:click="changeLanguage('en')" class="greenColor" v-bind:style="[language == 'en' ? {'background':'#4d7c33', 'padding': '2px 7px'} : {'background':'transparent'}]">EN</a></div>
 		</div>
 	</div>
+	<input type="hidden" id='currentCategoryID' value="<%= category.id %>">
 	<div class="container">
 		<div style="display: flex; justify-content: space-between; align-items: center;">
 			<a href="/"><img src="../images/logo.png"></a>
@@ -241,6 +242,8 @@
 
 	        setTimeout(() => {
 		        $("#productModal_"+id).show();
+
+		        window.history.replaceState(null, null, "?p="+id);
 
 		        $( "*[id^='button_']" ).css('background', '#fff');
 		        $("*[id^='button_text_']").css('background', '#fff');

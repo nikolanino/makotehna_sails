@@ -60,5 +60,4 @@ module.exports.routes = {
   '/contact/sendmail': { controller: 'index', action: 'sendMail'},
   '/callLocale': { controller: 'index', action: 'changeLocale'},
 
-
 };
