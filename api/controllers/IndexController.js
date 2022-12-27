@@ -12,9 +12,9 @@
      secure: false,
      port: 25,
      auth: {
-        user: 'makotehnamk@gmail.com',
+        user: 'makotehnapage@gmail.com',
          //pass: 'm@kotEhn@!'
-	    pass: 'hghvnpvwyaxilkvj'
+	    pass: 'dvpbakxcptpzkksi'
      },
      tls: {
          rejectUnauthorized: false
