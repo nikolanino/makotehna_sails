@@ -12,6 +12,7 @@
                 categories: {},
 
                 images: [
+                    "../images/background_m.png",
                     "../images/background.jpeg",
                     "../images/1.jpeg",
                     "../images/2.jpeg",
