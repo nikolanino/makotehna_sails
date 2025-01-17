@@ -14,7 +14,7 @@
      auth: {
         user: 'makotehnapage@gmail.com',
          //pass: 'm@kotEhn@!'
-	    pass: 'dvpbakxcptpzkksi'
+	    pass: 'erlhttywsiczlfos'
      },
      tls: {
          rejectUnauthorized: false
